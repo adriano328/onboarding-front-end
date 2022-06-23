@@ -7,13 +7,16 @@ import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { HomePageComponent } from './modules/home/login/login.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    
 
 
   ],
@@ -23,6 +26,8 @@ import { HomePageComponent } from './modules/home/login/login.component';
     CardModule,
     InputTextModule,
     ButtonModule,
+    BrowserAnimationsModule
+   
   
   ],
   providers: [],

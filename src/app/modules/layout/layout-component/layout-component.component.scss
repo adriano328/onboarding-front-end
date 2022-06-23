@@ -2,7 +2,7 @@
     height: 100px;    
     .icon-toten-header{
         position: relative;
-        top: 15%;
+        top: 15px;
         left: 5%;
     }
    
@@ -43,7 +43,7 @@
   }
 }
 
-.col-7{
+.col-8{
     background-color: #4153b3;
 
     .col-12{
@@ -55,7 +55,25 @@
 
 }
 
-.col-1{
-    background-color: #4153b3;
+.menu{
+    background-color: #2a3791;
+    .opcoes-menu{
+        margin-top: 4px;
+        margin-right: 35px;
+        font-family: "Helvetica-Bold", "Helvetica Bold", "Helvetica", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 12px;
+        color: #FFFFFF;
+        float: right;
+    
+        i {
+            font-size: 30px;
+        }
+    
+    }
+    
+    .col-10{
+        background-color: #2a3791;
+    }
 }
-
