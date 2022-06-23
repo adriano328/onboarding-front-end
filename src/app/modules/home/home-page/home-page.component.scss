@@ -1,0 +1,49 @@
+.background {
+    width: 100%;
+    height: 100vh;
+    background-color: #027db4;
+
+    .panel-login{
+        padding: 15px;
+        background-color: white;
+        width: 340px;
+        height: 328px;
+        position: relative;
+        top: 100px;
+        left: 100px;
+
+        .text-login{
+            margin-top: 10px;
+            margin-left: 25px;
+        }
+
+        
+        
+    }
+    
+    
+}
+
+:host ::ng-deep .p-button{
+    margin-top: 15px;
+    width: 100%;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+  
+}
+
+
+:host ::ng-deep .p-inputtext:enabled:focus {
+    border: solid 1px gray;
+    box-shadow:none
+
+}
+
+:host ::ng-deep .p-button:enabled:focus{
+    box-shadow:none
+}
+
+
