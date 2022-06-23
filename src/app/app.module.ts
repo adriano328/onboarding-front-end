@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
-import { HomePageComponent } from './modules/home/home-page/home-page.component';
+import { HomePageComponent } from './modules/home/login/login.component';
 
 
 @NgModule({
