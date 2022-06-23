@@ -9,10 +9,12 @@ import {ButtonModule} from 'primeng/button';
 import { HomePageComponent } from './modules/home/login/login.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent
+
 
   ],
   imports: [
@@ -20,7 +22,8 @@ import { HomePageComponent } from './modules/home/login/login.component';
     AppRoutingModule,
     CardModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
