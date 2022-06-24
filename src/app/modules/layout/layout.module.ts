@@ -6,6 +6,7 @@ import { LayoutComponentComponent } from './layout-component/layout-component.co
 import { CategoriaComponent } from './categoria/categoria.component';
 import {PanelModule} from 'primeng/panel';
 import {ButtonModule} from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 
 
@@ -23,7 +24,9 @@ import {ButtonModule} from 'primeng/button';
     CommonModule,
     LayoutRoutingModule,
     PanelModule,
-    ButtonModule
+    ButtonModule,
+    TableModule,
+
    
   
   ]

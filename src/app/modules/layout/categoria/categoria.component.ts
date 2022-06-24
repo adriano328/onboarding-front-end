@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
+  products = [
+    {
+      nome: 'Categoria 1',
+      situacao: 'Ativo'
+    },
+    {
+      nome: 'Categoria 2',
+      situacao: 'Ativo'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.0",
+    "@angular/cdk": "^14.0.3",
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
@@ -18,6 +19,8 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "angular-font-awesome": "^3.1.2",
+    "font-awesome": "^4.7.0",
     "primeflex": "^3.2.1",
     "primeicons": "^5.0.0",
     "primeng": "^13.4.1",

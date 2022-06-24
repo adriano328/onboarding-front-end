@@ -1,26 +1,49 @@
-<div class="painel">
-    <p-panel header="Pesquisar" class="Pesquisar">
-       <div class="grid">
-        <div class="col-11">
-            <label for="">Nome</label><br>
-            <input type="text" pInputText/>
-        </div>
-        <div class="col-1">
-            <label for="">Situação</label><br>
-            <input type="text" pInputText/>
-        </div>
-     <div class="btn-categoria">
-            <p-button label="Pesquisar" class="btn"></p-button>
-            <p-button label="Limpar" class="btn"></p-button>
-        </div>
-       </div>
-    </p-panel>    
+<div class="quadro">
+    <div class="painel">
+        <p-panel header="Pesquisar">
+           <div class="grid">
+            <div class="col-11">
+                <label for="">Nome</label><br>
+                <input type="text" pInputText/>
+            </div>
+            <div class="col-1">
+                <label for="">Situação</label><br>
+                <input type="text" pInputText/>
+            </div>
+         <div class="btn-categoria">
+            <p-button class="btn"><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
+            <p-button class="btn"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
+            </div>
+           </div>
+        </p-panel><br><br>      
+
+        <p-panel header="Listar Categorias" class="Pesquisar" styleClass="customTitle">
+                <p-table [value]="products">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Situação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-product let-i="rowIndex">
+                        <tr>
+                            <td>{{ i + 1 }}</td>
+                            <td>{{product.nome}}</td>
+                            <td>{{product.situacao}}</td>
+                            <td>
+                                <i class="pi pi-trash"></i>
+                                <i class="pi pi-pencil" style="margin-left: 20px;"></i>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-panel>  
+                
+    </div>
+
+
+   
+
 </div>
-
-<div class="painel">
-    <p-panel header="Listar Categorias" class="Pesquisar">
-        
-    </p-panel>    
-</div>
-
-
