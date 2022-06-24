@@ -10,11 +10,7 @@ import { TableModule } from 'primeng/table';
 import { HomeComponent } from './home/home.component';
 import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria.component';
 import {RadioButtonModule} from 'primeng/radiobutton';
-
-
-
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +27,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     PanelModule,
     ButtonModule,
     TableModule,
-    RadioButtonModule
+    RadioButtonModule,
+    ReactiveFormsModule
    
   
   ]

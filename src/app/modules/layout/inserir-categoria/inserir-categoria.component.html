@@ -7,21 +7,21 @@
                 <input type="text" pInputText/>
                 
             </div>
-            <div class="col-2">
+            <div class="col-4">
                 <label for="">Situação</label><br>
-                <div class="radio">
-                    <p-radioButton name="groupname" value="ps4" formControlName="console" label="Ativo"></p-radioButton>         
-                </div>   
+                <form [formGroup]="form">
+                    <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo" style="margin-right: 10px "></p-radioButton>  
+                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton>       
+                </form>                  
             </div>
-            
-         <div class="btn-categoria">
-            <p-button class="btn"><i class="pi pi-check" style="margin-right: 10px;"></i>Salvar</p-button>
-            <p-button class="btn"><i class="pi pi-times-circle" style="margin-right: 10px;"></i>Limpar</p-button>
-            </div>
+            <div class="btn-inserir-categoria">
+                <p-button class="btn"><i class="pi pi-check" style="margin-right: 10px;"></i>Salvar</p-button>
+                <p-button class="btn"><i class="pi pi-times-circle" style="padding-left: 10px; margin-right: 10px;"></i>Limpar</p-button> 
+            </div> 
            </div>
         </p-panel><br><br>      
 
-                       
+             
     </div>
 
 

@@ -3,6 +3,7 @@
     
     .icon-toten-header{
         position: relative;
+        left: 20px;
     }
    
 
@@ -10,9 +11,11 @@
 
 .col-2{
     
+    
   .col-12{
     position: relative;
     top: 9%;
+    
     .sistema-de-onboarding{
         width: 300px;
         height: 21px;
@@ -43,9 +46,11 @@
 }
 
 .col-7{
+    
     background-color: #4153b3;
 
     .col-12{
+        
         position: relative;
         top: 15%;
         text-align: right;
@@ -61,17 +66,27 @@
 }
 
 .col-1{
+    
     background-color: #4153b3;
+    
+    .icon{
+        position: relative;
+        top: 10px;
+    }
 
 }
 
 .col-1-menu{
+    
     background-color: #2a3791;
     height: 40px;
-    margin-left: 20px;
+    margin-left: 20px;   
 }
 
+
+
 .opcoes-menu{
+    
     position: relative;
     top: 8px;
     left: 9px;
@@ -79,6 +94,7 @@
 
 .menu{
     background-color: #2a3791;
+    width: 100%;
     .opcoes-menu{
         margin-top: 4px;
         margin-right: 35px;
@@ -92,20 +108,26 @@
         i {
             font-size: 30px;
         }
-    
+        
     }
     
-    .col-10{
-        background-color: #2a3791;
-    }
+    
 }
+
+
 
 .footer{
     background-color: #2a3791;
     margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    .icon-toten-footer{
-        margin-left: 40%;
-    }
-  
+
+     
+}
+
+::ng-deep .grid{
+    margin-right: 0;
 }
