@@ -1,0 +1,49 @@
+.quadro{
+    background-color: white;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
+    height: 700px;
+
+    ::ng-deep .painel{
+        position: relative;
+        left: 120px;
+        top: 20px;
+        background-color: white;
+        height: 175px;
+        width: 1550px;
+        
+    
+    
+        input{
+            border: solid 1px;
+            width: 100%;
+            height: 30px;
+        }       
+      
+        .p-panel .p-panel-header{
+            background-color: #4153b3;
+            color: white; 
+
+            
+        }
+        
+        .btn-inserir-categoria{
+            display: inline-flex;
+            margin-left: 900px;
+
+            .btn{
+                margin-top: 15px;
+                padding-left: 24px;
+            }
+        }
+       
+
+       
+    }
+
+    
+}
+
+
+

@@ -12,6 +12,7 @@ import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdutoComponent } from './produto/produto.component';
+import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ProdutoComponent } from './produto/produto.component';
     HomeComponent,
     InserirCategoriaComponent,
     ProdutoComponent,
+    InserirProdutoComponent,
     
     
 

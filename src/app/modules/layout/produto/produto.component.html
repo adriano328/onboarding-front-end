@@ -2,7 +2,11 @@
     <div class="painel">
         <p-panel header="Pesquisar">
            <div class="grid">
-            <div class="col-11">
+            <div class="col-2">
+                <label for="">Categoria</label><br>
+                <input type="text" pInputText/>
+            </div>
+            <div class="col-9">
                 <label for="">Nome</label><br>
                 <input type="text" pInputText/>
             </div>
@@ -23,8 +27,10 @@
                         <tr>
                             <th>#</th>
                             <th>Nome</th>
+                            <th>Categoria</th>
                             <th>Situação</th>
                             <th>Ações</th>
+                            <th></th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-produto let-i="rowIndex">
