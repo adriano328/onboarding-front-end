@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
-  products = [
+  categoria = [
     {
       nome: 'Categoria 1',
       situacao: 'Ativo'

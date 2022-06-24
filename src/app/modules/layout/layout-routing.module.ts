@@ -4,6 +4,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { HomeComponent } from './home/home.component';
 import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria.component';
 import { LayoutComponentComponent } from './layout-component/layout-component.component';
+import { ProdutoComponent } from './produto/produto.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,9 @@ const routes: Routes = [
       {
         path: 'inserir-categoria', component: InserirCategoriaComponent
       },
-     
+      {
+        path: 'produto', component: ProdutoComponent
+      }
      
     ]
   }

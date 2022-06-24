@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria.component';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProdutoComponent } from './produto/produto.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CategoriaComponent,
     HomeComponent,
     InserirCategoriaComponent,
+    ProdutoComponent,
     
     
 
@@ -31,7 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TableModule,
     RadioButtonModule,
     ReactiveFormsModule,
-
+    
 
    
   

@@ -18,7 +18,7 @@
         </p-panel><br><br>      
 
         <p-panel header="Listar Categorias" class="Pesquisar" styleClass="customTitle">
-                <p-table [value]="categoria">
+                <p-table [value]="produto">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>#</th>
@@ -27,11 +27,12 @@
                             <th>Ações</th>
                         </tr>
                     </ng-template>
-                    <ng-template pTemplate="body" let-categoria let-i="rowIndex">
+                    <ng-template pTemplate="body" let-produto let-i="rowIndex">
                         <tr>
                             <td>{{ i + 1 }}</td>
-                            <td>{{categoria.nome}}</td>
-                            <td>{{categoria.situacao}}</td>
+                            <td>{{produto.nome}}</td>
+                            <td>{{produto.categoria}}</td>
+                            <td>{{produto.situacao}}</td>
                             <td>
                                 <i class="pi pi-trash"></i>
                                 <i class="pi pi-pencil" style="margin-left: 20px;"></i>
