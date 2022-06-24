@@ -17,7 +17,8 @@ const routes: Routes = [
       },
       {
         path: 'inserir-categoria', component: InserirCategoriaComponent
-      }
+      },
+     
     ]
   }
 ];

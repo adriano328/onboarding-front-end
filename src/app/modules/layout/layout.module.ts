@@ -12,6 +12,7 @@ import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     LayoutComponentComponent,
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ButtonModule,
     TableModule,
     RadioButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
    
   
   ]
