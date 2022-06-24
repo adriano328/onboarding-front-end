@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     InserirCategoriaComponent,
     
+    
 
   ],
   imports: [
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TableModule,
     RadioButtonModule,
     ReactiveFormsModule,
+
 
    
   
