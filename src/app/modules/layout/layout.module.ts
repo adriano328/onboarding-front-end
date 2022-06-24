@@ -7,6 +7,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import {PanelModule} from 'primeng/panel';
 import {ButtonModule} from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { HomeComponent } from './home/home.component';
+import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria.component';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 
 
@@ -17,6 +20,8 @@ import { TableModule } from 'primeng/table';
   declarations: [
     LayoutComponentComponent,
     CategoriaComponent,
+    HomeComponent,
+    InserirCategoriaComponent,
     
 
   ],
@@ -26,7 +31,7 @@ import { TableModule } from 'primeng/table';
     PanelModule,
     ButtonModule,
     TableModule,
-
+    RadioButtonModule
    
   
   ]

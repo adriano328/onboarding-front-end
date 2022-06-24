@@ -8,6 +8,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { HomePageComponent } from './modules/home/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -28,7 +29,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     InputTextModule,
     ButtonModule,
     BrowserAnimationsModule,
-
+    FontAwesomeModule,
+ 
     
    
   

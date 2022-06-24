@@ -1,5 +1,6 @@
 .header{
     height: 76px;    
+    
     .icon-toten-header{
         position: relative;
     }
@@ -41,7 +42,7 @@
   }
 }
 
-.col-8{
+.col-7{
     background-color: #4153b3;
 
     .col-12{
@@ -56,6 +57,24 @@
         color: #FFFFFF;
     }
 
+    
+}
+
+.col-1{
+    background-color: #4153b3;
+
+}
+
+.col-1-menu{
+    background-color: #2a3791;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.opcoes-menu{
+    position: relative;
+    top: 8px;
+    left: 9px;
 }
 
 .menu{
