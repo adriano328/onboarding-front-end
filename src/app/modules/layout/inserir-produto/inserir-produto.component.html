@@ -7,15 +7,20 @@
                 <input type="text" pInputText/>
                 
             </div>
-            <div class="col-2">
-                <label for="">Categoria</label><br>
-                <input type="text" pInputText/>
+            <div class="col-1">
+                <label for="">Categoria</label>
+                <select id="cars" style="border: solid 1px ; padding: 5px;">
+                    <option value="selecione">Selecione</option>
+                    <option value="ativo">Esportes</option>
+                    <option value="inativo">Eletronicos</option>
+                    <option value="inativo">Eletrodomesticos</option>
+                  </select>
             </div>
 
             <div class="col-2">
                 <label for="">Situação</label><br>
                 <form [formGroup]="form">
-                    <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo" style="margin-right: 10px "></p-radioButton>  
+                    <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo" style="margin-right: 30px "></p-radioButton>  
                     <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton>       
                 </form>                  
             </div>

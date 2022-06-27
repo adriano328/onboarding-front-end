@@ -13,6 +13,12 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdutoComponent } from './produto/produto.component';
 import { InserirProdutoComponent } from './inserir-produto/inserir-produto.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { InserirClienteComponent } from './inserir-cliente/inserir-cliente.component';
+import {TabViewModule} from 'primeng/tabview';
+import { InserirEnderecoComponent } from './inserir-endereco/inserir-endereco.component';
+
+
 
 
 @NgModule({
@@ -23,6 +29,10 @@ import { InserirProdutoComponent } from './inserir-produto/inserir-produto.compo
     InserirCategoriaComponent,
     ProdutoComponent,
     InserirProdutoComponent,
+    ClienteComponent,
+    InserirClienteComponent,
+    InserirEnderecoComponent,
+ 
     
     
 
@@ -35,7 +45,7 @@ import { InserirProdutoComponent } from './inserir-produto/inserir-produto.compo
     TableModule,
     RadioButtonModule,
     ReactiveFormsModule,
-    
+    TabViewModule
 
    
   

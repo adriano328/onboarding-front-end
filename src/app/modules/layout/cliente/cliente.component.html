@@ -2,7 +2,15 @@
     <div class="painel">
         <p-panel header="Pesquisar">
            <div class="grid">
-            <div class="col-11">
+            <div class="col-1">
+                <label for="">Categoria</label>
+                <select id="cars" style="border: solid 1px ; padding: 5px;">
+                    <option value="selecione">Selecione</option>
+                    <option value="ativo">Física</option>
+                    <option value="inativo">Juridica</option>
+                  </select>
+            </div>
+            <div class="col-9">
                 <label for="">Nome</label><br>
                 <input type="text" pInputText/>
             </div>
@@ -21,26 +29,28 @@
            </div>
         </p-panel><br><br>      
 
-
         <p-panel >
             <ng-template pTemplate="header">
-                <p style="float: left">Categorias</p>
+                <p>Lista de Clientes</p>
                 <p-button class="btn-cabecalho"><i class="pi pi-plus" style="margin-right: 10px;"></i>Adicionar</p-button>
             </ng-template>
-            <p-table [value]="categoria">
+            <p-table [value]="cliente">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
+                        <th>Categoria</th>
                         <th>Situação</th>
                         <th>Ações</th>
+                        <th></th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-categoria let-i="rowIndex">
+                <ng-template pTemplate="body" let-cliente let-i="rowIndex">
                     <tr>
                         <td>{{ i + 1 }}</td>
-                        <td>{{categoria.nome}}</td>
-                        <td>{{categoria.situacao}}</td>
+                        <td>{{cliente.nome}}</td>
+                        <td>{{cliente.cpf}}</td>
+                        <td>{{cliente.situacao}}</td>
                         <td>
                             <i class="pi pi-trash"></i>
                             <i class="pi pi-pencil" style="margin-left: 20px;"></i>
@@ -48,12 +58,11 @@
                     </tr>
                 </ng-template>
             </p-table>
-        </p-panel>
-
+        </p-panel> 
                 
     </div>
 
-    
+
    
 
 </div>

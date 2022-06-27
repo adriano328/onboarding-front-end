@@ -2,17 +2,25 @@
     <div class="painel">
         <p-panel header="Pesquisar">
            <div class="grid">
-            <div class="col-2">
-                <label for="">Categoria</label><br>
-                <input type="text" pInputText/>
+            <div class="col-1">
+                <label for="">Categoria</label>
+                <select id="cars" style="border: solid 1px ; padding: 5px;">
+                    <option value="selecione">Selecione</option>
+                    <option value="ativo">Produto</option>
+                    <option value="inativo">Serviço</option>
+                  </select>
             </div>
-            <div class="col-9">
+            <div class="col-8">
                 <label for="">Nome</label><br>
                 <input type="text" pInputText/>
             </div>
             <div class="col-1">
-                <label for="">Situação</label><br>
-                <input type="text" pInputText/>
+                <label for="">Situação</label>
+                <select id="cars" style="border: solid 1px ; padding: 5px;">
+                    <option value="selecione">Selecione</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                  </select>
             </div>
         <div class="btn-categoria">
             <p-button class="btn"><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
@@ -21,33 +29,37 @@
            </div>
         </p-panel><br><br>      
 
-        <p-panel header="Listar Categorias" class="Pesquisar" styleClass="customTitle">
-                <p-table [value]="produto">
-                    <ng-template pTemplate="header">
-                        <tr>
-                            <th>#</th>
-                            <th>Nome</th>
-                            <th>Categoria</th>
-                            <th>Situação</th>
-                            <th>Ações</th>
-                            <th></th>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-produto let-i="rowIndex">
-                        <tr>
-                            <td>{{ i + 1 }}</td>
-                            <td>{{produto.nome}}</td>
-                            <td>{{produto.categoria}}</td>
-                            <td>{{produto.situacao}}</td>
-                            <td>
-                                <i class="pi pi-trash"></i>
-                                <i class="pi pi-pencil" style="margin-left: 20px;"></i>
-                            </td>
-                        </tr>
-                    </ng-template>
-                </p-table>
-            </p-panel>  
-                
+
+        <p-panel >
+            <ng-template pTemplate="header">
+                <p>Lista Produtos</p>
+                <p-button class="btn-cabecalho"><i class="pi pi-plus" style="margin-right: 10px;"></i>Adicionar</p-button>
+            </ng-template>
+            <p-table [value]="produto">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Situação</th>
+                        <th>Ações</th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-produto let-i="rowIndex">
+                    <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.categoria}}</td>
+                        <td>{{produto.situacao}}</td>
+                        <td>
+                            <i class="pi pi-trash"></i>
+                            <i class="pi pi-pencil" style="margin-left: 20px;"></i>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-panel>                
     </div>
 
 
