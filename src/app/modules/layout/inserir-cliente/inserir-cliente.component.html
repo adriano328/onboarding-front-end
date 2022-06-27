@@ -22,7 +22,7 @@
                 <label for="">Situação</label><br>
                <form [formGroup]="radio1">
                     <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="margin-left: 10px"></p-radioButton> 
+                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton> 
                     </form>      
                               
             </div>
@@ -90,7 +90,7 @@
                                             <td>{{inserirendereco.cep}}</td>
                                             <td>{{inserirendereco.municipio}}</td>
                                             <td>{{inserirendereco.uf}}</td>
-                                            <td><p-radioButton name="groupname" value="ps4" formControlName="console"></p-radioButton></td> 
+                                            <!-- <td><p-radioButton name="groupname" value="ps4"></p-radioButton></td>  -->
                                             <td>
                                                 <i class="pi pi-trash"></i>
                                                 <i class="pi pi-pencil" style="margin-left: 20px;"></i>
@@ -125,11 +125,11 @@
                                 <label for="">Padrão</label><br>
                                <form [formGroup]="radio2">
                                     <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="margin-left: 10px"></p-radioButton> 
+                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton> 
                                     </form>                  
                             </div>
                             <div class="col-5">
-                                <p-button class="btn-telefone"><i class="pi pi-plus"></i><p style="margin-left: 10px;">Adicionar</p></p-button>
+                                <p-button class="btn-telefone"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
                             </div>
                             <div class="col-12">
                                 <p-panel>
@@ -148,8 +148,10 @@
                                             <tr>
                                                 <td>{{inserirtelefone.tipo}}</td>
                                                 <td>{{inserirtelefone.nrTelefone}}</td>
-                                                <td>{{inserirtelefone.contato}}</td>                                               
-                                                <td><p-radioButton name="groupname" value="ps4" formControlName="console"></p-radioButton></td>
+                                                <td>{{inserirtelefone.contato}}</td>
+                                                <form [formGroup]="radio5">
+                                                    <td><p-radioButton name="ativo" formControlName="ativo" value="ps4"></p-radioButton></td>
+                                                </form>                                           
                                                 <td>{{inserirtelefone.uf}}</td>   
                                                 <td>
                                                     <i class="pi pi-trash"></i>
@@ -174,9 +176,9 @@
 
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
-                                <form [formGroup]="radio2">
+                                <form [formGroup]="radio3">
                                     <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="margin-left: 10px"></p-radioButton> 
+                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton> 
                                     </form>                  
                                 </div>                                            
                         </div>
@@ -198,7 +200,10 @@
                                         <tr>
                                             <td>{{ i + 1 }}</td>
                                             <td>{{inseriremail.email}}</td>
-                                            <td><p-radioButton name="groupname" value="ps4" formControlName="console"></p-radioButton></td>
+                                            
+                                            <form [formGroup]="radio4">
+                                            <td><p-radioButton name="ativo" formControlName="ativo" value="ps4"></p-radioButton></td>
+                                        </form>
                                             <td>
                                                 <i class="pi pi-trash"></i>
                                                 <i class="pi pi-pencil" style="margin-left: 20px;"></i>
@@ -211,14 +216,14 @@
 
                     </p-tabPanel>
                 </p-tabView>
+
+                   <div class="btn-categoria">
+            <p-button class="btn"><i class="pi pi-search"></i>Pesquisar</p-button>
+            <p-button class="btn"><i class="pi pi-refresh"></i>Limpar</p-button>
+        </div>
             </div>
             
 
-
-        <div class="btn-categoria">
-            <p-button class="btn"><i class="pi pi-search"></i>Pesquisar</p-button>
-            <p-button class="btn"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
-        </div>
            </div>
         </p-panel><br><br>      
 

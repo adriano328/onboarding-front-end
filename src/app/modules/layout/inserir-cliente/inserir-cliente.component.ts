@@ -43,6 +43,8 @@ export class InserirClienteComponent implements OnInit {
   radio1!:FormGroup;
   radio2!: FormGroup;
   radio3!: FormGroup;
+  radio4!:FormGroup;
+  radio5!: FormGroup
 
   constructor(
     private formBuilder: FormBuilder
@@ -62,6 +64,17 @@ export class InserirClienteComponent implements OnInit {
       ativo: [''],
       desativo: ['']
      })
+
+     this.radio4 = this.formBuilder.group({
+      ativo: [''],
+      desativo: ['']
+     })
+
+     
+     this.radio5 = this.formBuilder.group({
+      ativo: [''],
+     })
+
 
 
    }
