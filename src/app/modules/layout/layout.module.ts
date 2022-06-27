@@ -17,7 +17,8 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { InserirClienteComponent } from './inserir-cliente/inserir-cliente.component';
 import {TabViewModule} from 'primeng/tabview';
 import { InserirEnderecoComponent } from './inserir-endereco/inserir-endereco.component';
-
+import { MenubarModule } from 'primeng/menubar';
+import {MenuItem} from 'primeng/api';
 
 
 
@@ -31,8 +32,7 @@ import { InserirEnderecoComponent } from './inserir-endereco/inserir-endereco.co
     InserirProdutoComponent,
     ClienteComponent,
     InserirClienteComponent,
-    InserirEnderecoComponent,
- 
+    InserirEnderecoComponent
     
     
 
@@ -45,8 +45,9 @@ import { InserirEnderecoComponent } from './inserir-endereco/inserir-endereco.co
     TableModule,
     RadioButtonModule,
     ReactiveFormsModule,
-    TabViewModule
-
+    TabViewModule,
+    MenubarModule,
+    
    
   
   ]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MenuItem } from 'primeng/api';
 import { NEVER } from 'rxjs';
 
 @Component({
@@ -8,6 +9,8 @@ import { NEVER } from 'rxjs';
   styleUrls: ['./inserir-cliente.component.scss']
 })
 export class InserirClienteComponent implements OnInit {
+
+  items!: MenuItem[];
 
   inserirendereco = [
     {
@@ -80,6 +83,7 @@ export class InserirClienteComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
 
   
