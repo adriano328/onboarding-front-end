@@ -3,27 +3,29 @@
     margin-left: 60px;
     margin-right: 60px;
     margin-top: 20px;
-    height: 700px;
+    height: 37.3vw;
 
     ::ng-deep .painel{
         position: relative;
-        left: 65px;
-        top: 20px;
         background-color: white;
         height: 175px;
-        width: 1550px;
+        width: 80vw;
+        left: 5.5vw;
+        top: 2vw;
         
     
     
         input{
+            position: relative;
             border: solid 1px;
-            width: 100%;
+            left: 2vw;
+            width: 50vw;
             height: 30px;
         }
     
         .btn-categoria{
             display: inline-flex;
-            margin-left: 955px;
+            margin-left: 46.4vw;
             
             .btn{
                 margin-top: 5px;

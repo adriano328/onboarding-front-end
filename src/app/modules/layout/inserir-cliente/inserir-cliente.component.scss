@@ -7,14 +7,13 @@
 
     ::ng-deep .painel{
         position: relative;
-        left: 65px;
-        top: 20px;
+        
         background-color: white;
         height: 175px;
-        width: 1550px;
-        
-    
-    
+        width: 85vw;
+        left: 3vw;
+        top: 2vw;
+
         input{
             border: solid 1px;
             width: 100%;
@@ -23,7 +22,7 @@
     
         .btn-categoria{
             display: inline-flex;
-            margin-left: 1235px;
+            margin-left: 64vw;
             
             .btn{
                 margin-top: 5px;

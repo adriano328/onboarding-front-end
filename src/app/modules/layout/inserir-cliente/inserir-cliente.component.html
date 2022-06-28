@@ -22,7 +22,7 @@
                 <label for="">Situação</label><br>
                <form [formGroup]="radio1">
                     <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton> 
+                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="padding-left: 1vw"></p-radioButton> 
                     </form>      
                               
             </div>
@@ -113,24 +113,22 @@
                                     <option value="Pessoa Jurídica">Celular</option>
                                   </select>
                             </div>
-                            <div class="col-2">
-                                <label for="">Nr. Telefone</label><br>
-                                <input type="text" pInputText/>
+                            <div class="col-3">
+                                <label for="" style ="margin-left: 2vw;">Nr. Telefone</label><br>
+                                <input type="text" style ="margin-left: 2vw;" pInputText/>
                             </div>
-                            <div class="col-5">
-                                <label for="">Contato</label><br>
-                                <input type="text" pInputText/>
+                            <div class="col-4">
+                                <label for="" style="margin-left: 2vw;">Contato</label><br>
+                                <input type="text" style="margin-left: 2vw;" pInputText/>
                             </div>
                             <div class="col-2">
-                                <label for="">Padrão</label><br>
-                               <form [formGroup]="radio2">
+                                <label for="" style="margin-left: 2vw">Padrão</label><br>
+                               <form [formGroup]="radio2" style="margin-left: 2vw;">
                                     <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton> 
+                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="margin-left: 0.5vw"></p-radioButton> 
                                     </form>                  
                             </div>
-                            <div class="col-5">
-                                <p-button class="btn-telefone"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
-                            </div>
+                           
                             <div class="col-12">
                                 <p-panel>
                                     <p-table [value]="inserirtelefone">
@@ -176,9 +174,9 @@
 
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
-                                <form [formGroup]="radio3">
+                                <form [formGroup]="radio3" style="margin-left: 1vw;">
                                     <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton> 
+                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="margin-left: 1vw"></p-radioButton> 
                                     </form>                  
                                 </div>                                            
                         </div>
@@ -217,7 +215,7 @@
                     </p-tabPanel>
                 </p-tabView>
 
-                   <div class="btn-categoria">
+                   <div class="btn-categoria" style="margin-top: 1vw;">
             <p-button class="btn"><i class="pi pi-search"></i>Salvar</p-button>
             <p-button class="btn"><i class="pi pi-refresh"></i>Limpar</p-button>
         </div>

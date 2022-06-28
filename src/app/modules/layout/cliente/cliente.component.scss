@@ -11,19 +11,21 @@
         top: 20px;
         background-color: white;
         height: 175px;
-        width: 1550px;
+        width: 80vw;
         
     
     
         input{
+            position: relative;
+            left: 2vw;
             border: solid 1px;
-            width: 100%;
+            width: 95%;
             height: 30px;
         }
     
         .btn-categoria{
             display: inline-flex;
-            margin-left: 1081px;
+            margin-left: 39vw;
             
             .btn{
                 margin-top: 5px;

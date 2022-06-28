@@ -2,17 +2,16 @@
     background-color: white;
     margin-left: 60px;
     margin-right: 60px;
-    margin-top: 20px;
-    height: 700px;
+    margin-top: 15px;
+    height: 42vw;
 
     ::ng-deep .painel{
         position: relative;
-        left: 65px;
-        top: 20px;
         background-color: white;
         height: 175px;
-        width: 1550px;
-        
+        width: 86vw;
+        left: 3vw;
+        top: 2vw;
     
     
         input{
@@ -30,7 +29,7 @@
 
         .col-2{
             position: relative;
-            left: 30px;
+            left: 4vw;
         }
         
         
