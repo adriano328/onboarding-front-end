@@ -3,38 +3,42 @@
     
     .icon-toten-header{
         position: relative;
-        left: 20px;
+        left: 1vw;
+        top: 0.6vw;
+        
     }
    
 
 }
 
-.col-2{
+.col-3{
     
     
   .col-12{
     position: relative;
-    top: 9%;
+    top: 0.2vw;
+    left: 1vw;
     
     .sistema-de-onboarding{
-        width: 300px;
+        position: relative;
+        left: 2vw;
+        width: 15vw;
         height: 21px;
         background-color: rgba(255, 255, 255, 0);
-        box-sizing: border-box;
         font-family: "Arial", sans-serif;
         font-weight: 700;
         color: #000000;
-        text-align: left;
-        line-height: normal;
+        text-align: center;
         font-size: large;
     }
 
     .treinamento{
         position: relative;
-        left: 40%;
+        left: 6vw;
         font-weight: 700;
         color: #000000;
         line-height: normal;
+        font-size: medium;
     }  
         width: 113px;
         height: 21px;
@@ -45,7 +49,7 @@
   }
 }
 
-.col-7{
+.col-6{
     
     background-color: #4153b3;
 
@@ -120,6 +124,29 @@
     }
     
    
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link, .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover {
+    background: #2a3791;
+    border: none;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    border-radius: 3px;
+    transition: box-shadow 0.2s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    border-radius: 3px;
+    transition: box-shadow 0.2s;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 ::ng-deep.p-menubar{
