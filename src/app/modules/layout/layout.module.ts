@@ -22,6 +22,7 @@ import {MenuItem} from 'primeng/api';
 
 
 
+
 @NgModule({
   declarations: [
     LayoutComponentComponent,
@@ -47,9 +48,10 @@ import {MenuItem} from 'primeng/api';
     ReactiveFormsModule,
     TabViewModule,
     MenubarModule,
-    
    
+    
   
   ]
 })
 export class LayoutModule { }
+

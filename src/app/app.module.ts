@@ -9,6 +9,8 @@ import { HomePageComponent } from './modules/home/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MenubarModule} from 'primeng/menubar';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import {MenubarModule} from 'primeng/menubar';
     ButtonModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-
+    DropdownModule
    
   
   ],

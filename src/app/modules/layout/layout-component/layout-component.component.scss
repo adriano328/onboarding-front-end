@@ -119,9 +119,59 @@
         margin-left: 5px;
     }
     
+   
+}
+
+::ng-deep.p-menubar{
+    padding: 0.5rem;
+    background: #2a3791;
+    color: white;
+    border: none;
+    font-family: "Helvetica-Bold", "Helvetica Bold", "Helvetica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    color: #FFFFFF;
     
 }
 
+
+::ng-deep .p-menuitem-link:hover{
+    background-color: #2a3791 !important;
+    color: white !important;
+    outline: none;
+}
+
+
+
+
+::ng-deep.p-menuitem-link {
+    padding: 0.75rem 1rem;
+    color: white;
+    background-color: #2a3791;
+    border-radius: 0;
+    transition: box-shadow 0.2s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text {
+    color: white;
+}
+
+::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
+    color: white;
+    margin-left: 0.5rem;
+}
+
+::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+    color: white;
+}
+
+::ng-deep .pi-th-large:before {
+    content: "\e918";
+    color: white;
+}
 
 
 .footer{
