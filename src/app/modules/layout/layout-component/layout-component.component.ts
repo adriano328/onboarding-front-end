@@ -27,5 +27,13 @@ export class LayoutComponentComponent implements OnInit {
       }
   ];
 }
+
+router(){
+  let selectEl = document.getElementsByTagName('select');
+  selectEl[0].addEventListener('change', function() {
+    location.href=this.value;
+});
+  
+}
   }
 
