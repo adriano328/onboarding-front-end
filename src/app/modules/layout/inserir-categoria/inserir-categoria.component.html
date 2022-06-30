@@ -1,24 +1,28 @@
+<p-toast></p-toast>
 <div class="quadro">
     <div class="painel">
         <p-panel header="Pesquisar">
+            
            <div class="grid">
+            <form [formGroup]="form">
             <div class="col-8">
                 <label for="">Nome</label><br>
-                <input type="text" pInputText/>
+                <input type="text" formControlName="nome" pInputText/>
                 
             </div>
+        </form>
             <div class="col-4">
                 <label for="">Situação</label><br>
-                <form [formGroup]="form">
-                    <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo" style="margin-right: 10px "></p-radioButton>  
-                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo"></p-radioButton>       
-                </form>                  
+                    <p-radioButton name="ativo" value="true" [(ngModel)]="situacao" label="Ativo" style="margin-right: 10px "></p-radioButton>  
+                    <p-radioButton name="desativo" value="false" [(ngModel)]="situacao" label="Inativo"></p-radioButton>       
+                                 
             </div>
             <div class="btn-inserir-categoria">
-                <p-button class="btn"><i class="pi pi-check" style="margin-right: 10px;"></i>Salvar</p-button>
+                <p-button (click)="save()" class="btn"><i class="pi pi-check" style="margin-right: 10px;"></i>Salvar</p-button>
                 <p-button class="btn"><i class="pi pi-times-circle" style="padding-left: 10px; margin-right: 10px;"></i>Cancelar</p-button> 
             </div> 
            </div>
+        
         </p-panel><br><br>      
 
              

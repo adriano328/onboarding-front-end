@@ -13,7 +13,11 @@
         left: 3vw;
         top: 2vw;
     
-    
+        .form{
+            position: relative;
+            top: 0.1vw;
+        }
+
         input{
             border: solid 1px;
             width: 100%;
@@ -29,13 +33,15 @@
 
         .col-2{
             position: relative;
-            left: 4vw;
+            left: 0.6vw;
+            top: 1vw;
         }
         
         
         .btn-inserir-categoria{
             display: inline-flex;
-            margin-left: 900px;
+            margin-left: 51vw;
+            margin-top: 1vw;
 
             .btn{
                 margin-top: 15px;

@@ -1,14 +1,16 @@
 <div class="quadro">
     <div class="painel">
         <p-panel header="Pesquisar">
+            <form [formGroup]="form">
            <div class="grid">
             <div class="col-11">
+               
                 <label for="">Nome</label><br>
-                <input type="text" pInputText/>
+                <input type="text" formControlName="nome" pInputText/>
             </div>
             <div class="col-1">
                 <label for="">Situação</label>
-                <select id="cars" style="border: solid 1px ; padding: 5px;">
+                <select id="cars"  style="border: solid 1px ; padding: 5px;">
                     <option value="selecione">Selecione</option>
                     <option value="ativo">Ativo</option>
                     <option value="inativo">Inativo</option>
@@ -19,6 +21,7 @@
             <p-button class="btn"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
         </div>
            </div>
+        </form>
         </p-panel><br><br>      
 
 
@@ -27,7 +30,7 @@
                 <p style="float: left">Categorias</p>
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-categoria"><i class="pi pi-plus" style="margin-right: 10px;"></i>Adicionar</p-button>
             </ng-template>
-            <p-table [value]="categoria">
+            <p-table [value]="[]">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ICategoria } from 'src/app/interface/ICategoria';
 
 @Component({
   selector: 'app-categoria',
@@ -7,20 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
-  categoria = [
-    {
-      nome: 'Categoria 1',
-      situacao: 'Ativo'
-    },
-    {
-      nome: 'Categoria 2',
-      situacao: 'Ativo'
-    }
-  ];
+  categoriaSave: ICategoria = {} as ICategoria
+  
+  form!: FormGroup;
+  
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      nome:['']
+    })
   }
 
 }

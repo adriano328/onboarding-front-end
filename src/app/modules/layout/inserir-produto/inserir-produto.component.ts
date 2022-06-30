@@ -1,24 +1,89 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ICategoria } from 'src/app/interface/ICategoria';
+import { IProduto } from 'src/app/interface/Iproduto';
+import { CategoriaService } from 'src/app/services/categoria.service';
+import { ProdutoService } from 'src/app/services/produto.service';
+import { CategoriaComponent } from '../categoria/categoria.component';
 
 @Component({
   selector: 'app-inserir-produto',
   templateUrl: './inserir-produto.component.html',
-  styleUrls: ['./inserir-produto.component.scss']
+  styleUrls: ['./inserir-produto.component.scss'],
+  providers: [ProdutoService, CategoriaService]
 })
 export class InserirProdutoComponent implements OnInit {
   
+  produtoSave: IProduto = {} as IProduto;
+
   form!:FormGroup;
+  situacao!: boolean;
+  categoria!: String;
+
+  listCategoria: ICategoria[] = [];
+
+  categorias: Array<categoria> = [];
+
+  selectedCat!: string;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService
+    
   ) {
   this.form = this.formBuilder.group({
-   ativo: [''],
-   desativo: ['']
-  }) }
+   nome:['']
+  })}
 
   ngOnInit(): void {
+
+    this.categoriaService.findAll().then(success => {
+      console.log(success);
+      
+      this.listCategoria = success!;
+    });    
+
+    this.categorias.push(
+      {
+        nome: "Selecione",
+        value: 'selecione'
+      },
+      {
+        nome: "Esportes",
+        value: 'esportes'
+      },
+      {
+        nome: "Eletronicos",
+        value:'eletronicos'
+      },
+      {
+        nome: "Eletrodomesticos",
+        value: 'eletronicos'
+      },
+    )
+  }
+
+  save(){
+    this.produtoSave.nome = this.form.value.nome;
+    this.produtoSave.situacao = this.situacao;
+    this.produtoSave.categoria = this.selectedCat
+
+    console.log(this.produtoSave);
+    
+
+    this.produtoService.save(this.produtoSave).then(sucess => {
+      // console.log(sucess);
+    }).catch(error => {
+      // console.log(error);
+      
+    })
   }
 
 }
+
+interface categoria{
+  nome: String,
+  value: string
+}
+

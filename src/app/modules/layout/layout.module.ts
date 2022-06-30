@@ -19,7 +19,9 @@ import {TabViewModule} from 'primeng/tabview';
 import { InserirEnderecoComponent } from './inserir-endereco/inserir-endereco.component';
 import { MenubarModule } from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
-
+import { HttpClientModule} from '@angular/common/http';
+import {ToastModule} from 'primeng/toast';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 
@@ -48,7 +50,10 @@ import {MenuItem} from 'primeng/api';
     ReactiveFormsModule,
     TabViewModule,
     MenubarModule,
-   
+    HttpClientModule,
+    FormsModule,
+    ToastModule,
+    DropdownModule
     
   
   ]
