@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { NEVER } from 'rxjs';
+import { IEndereco } from 'src/app/interface/IEndereco';
 
 @Component({
   selector: 'app-inserir-cliente',
@@ -10,7 +11,11 @@ import { NEVER } from 'rxjs';
 })
 export class InserirClienteComponent implements OnInit {
 
+  enderecoSave: IEndereco = {} as IEndereco;
+
   items!: MenuItem[];
+
+  form!:FormGroup;
 
   inserirendereco = [
     {
@@ -86,6 +91,14 @@ export class InserirClienteComponent implements OnInit {
     
   }
 
+  save(){
+    this.enderecoSave.endereco = this.form.value.endereco;
+    this.enderecoSave.bairro = this.form.value.bairro;
+    this.enderecoSave.cep = this.form.value.cep;
+    this.enderecoSave.municipio = this.form.value.municipio;
+    this.enderecoSave.uf = this.form.value.uf;
+
+  }
   
 
 }
