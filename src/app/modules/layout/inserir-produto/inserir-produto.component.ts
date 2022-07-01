@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ICategoria } from 'src/app/interface/ICategoria';
-import { IProduto } from 'src/app/interface/Iproduto';
+import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { CategoriaComponent } from '../categoria/categoria.component';
