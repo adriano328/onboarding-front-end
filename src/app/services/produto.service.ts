@@ -15,4 +15,9 @@ export class ProdutoService {
         return this.http.post(url, produto).toPromise();
     }
 
+    async findAll(){
+        const url = `${environment.api}/lista-produto`;
+        return await this.http.get<IProduto>(url).toPromise();
+    }
+
 }

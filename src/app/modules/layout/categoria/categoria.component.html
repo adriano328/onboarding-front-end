@@ -10,11 +10,7 @@
             </div>
             <div class="col-1">
                 <label for="">Situação</label>
-                <select id="cars"  style="border: solid 1px ; padding: 5px;">
-                    <option value="selecione">Selecione</option>
-                    <option value="ativo">Ativo</option>
-                    <option value="inativo">Inativo</option>
-                  </select>
+                <p-dropdown [options]="situacoes" [(ngModel)]="selectedtipo" optionLabel="situacao"></p-dropdown>
             </div>
         <div class="btn-categoria">
             <p-button class="btn"><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
@@ -30,7 +26,7 @@
                 <p style="float: left">Categorias</p>
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-categoria"><i class="pi pi-plus" style="margin-right: 10px;"></i>Adicionar</p-button>
             </ng-template>
-            <p-table [value]="[]">
+            <p-table [value]="listCategoria">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>

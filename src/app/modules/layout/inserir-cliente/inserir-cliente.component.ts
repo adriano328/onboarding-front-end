@@ -102,3 +102,7 @@ export class InserirClienteComponent implements OnInit {
   
 
 }
+
+interface tipo{
+  tipo: String
+}

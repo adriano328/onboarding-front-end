@@ -16,7 +16,7 @@ export class CategoriaService {
      return this.http.post(url, categoria).toPromise();
     }
 
-  async  findAll(){
+  async findAll(){
         const url = `${environment.api}/categoria/lista-categoria`;
         return await this.http.get<ICategoria[]>(url).toPromise();
     }
