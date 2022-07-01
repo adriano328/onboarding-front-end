@@ -16,8 +16,8 @@ export class ProdutoService {
     }
 
     async findAll(){
-        const url = `${environment.api}/lista-produto`;
-        return await this.http.get<IProduto>(url).toPromise();
+        const url = `${environment.api}/produto/lista-produto`;
+        return await this.http.get<IProduto[]>(url).toPromise();
     }
 
 }

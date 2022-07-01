@@ -35,7 +35,8 @@
                 <p>Lista Produtos</p>
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus" style="margin-right: 10px;"></i>Adicionar</p-button>
             </ng-template>
-            <p-table [value]="listProduto">
+            <p-table [value]="listProduto" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[6,25,50]">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>
@@ -50,7 +51,7 @@
                     <tr>
                         <td>{{ i + 1 }}</td>
                         <td>{{produto.nome}}</td>
-                        <td>{{produto.categoria}}</td>
+                        <td>{{produto.categoria.nome}}</td>
                         <td>{{produto.situacao}}</td>
                         <td>
                             <i class="pi pi-trash"></i>

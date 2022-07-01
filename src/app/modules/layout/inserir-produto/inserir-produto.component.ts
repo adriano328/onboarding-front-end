@@ -24,7 +24,7 @@ export class InserirProdutoComponent implements OnInit {
 
   categorias: Array<categoria> = [];
 
-  selectedCat!: string;
+  selectedCat!: ICategoria;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -65,9 +65,11 @@ export class InserirProdutoComponent implements OnInit {
   }
 
   save(){
+    console.log( this.selectedCat!);
+    
     this.produtoSave.nome = this.form.value.nome;
     this.produtoSave.situacao = this.situacao;
-    this.produtoSave.categoria = this.selectedCat
+    this.produtoSave.categoria = this.selectedCat!
 
     console.log(this.produtoSave);
     

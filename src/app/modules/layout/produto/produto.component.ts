@@ -11,23 +11,20 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ProdutoComponent implements OnInit {
 
-produtoList: IProduto = {} as IProduto;
+produtoList: IProduto = {} as IProduto
 
 listProduto: IProduto[] = [];
 
   constructor(
   private produtoService: ProdutoService
 
-  ) { }
+  ) {
+    this.produtoService.findAll().then(sucess =>{
+      this.listProduto = sucess!;
+    })
+  }
 
   ngOnInit(): void {
-    this.produtoService.findAll().then(sucess => {
-      console.log(sucess);
-
-      
-    });
-
-    
 
   }
 

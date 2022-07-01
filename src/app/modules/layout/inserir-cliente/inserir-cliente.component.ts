@@ -15,6 +15,19 @@ export class InserirClienteComponent implements OnInit {
 
   items!: MenuItem[];
 
+  public tipos: Array<tipo> = [];
+    
+  selectedTipos!: String;
+
+  public sexos: Array<sexo> =[];
+
+  selectedSexos!: String;
+
+
+  public telefones: Array<telefone> =[];
+
+  selectedTelefones!: String;
+
   form!:FormGroup;
 
   inserirendereco = [
@@ -44,8 +57,7 @@ export class InserirClienteComponent implements OnInit {
    {
     email: 'lucasadrianodias@gmail.com',
     
-   }
-
+   },
   ]
 
   radio1!:FormGroup;
@@ -83,12 +95,25 @@ export class InserirClienteComponent implements OnInit {
       ativo: [''],
      })
 
-
-
    }
 
   ngOnInit(): void {
-    
+ 
+  this.tipos.push(
+  {tipo: 'Pessoa Fisica'},
+  {tipo: 'Pessoa Juridica'})
+
+  this.sexos.push(
+    {sexo: 'Masculino'},
+    {sexo: 'Feminimo'}
+  )
+
+  this.telefones.push(
+    {telefone: 'Celular'},
+    {telefone: 'Residencial'},
+    {telefone: 'Comercial'}
+  )
+
   }
 
   save(){
@@ -105,4 +130,12 @@ export class InserirClienteComponent implements OnInit {
 
 interface tipo{
   tipo: String
+}
+
+interface sexo{
+  sexo: String
+}
+
+interface telefone{
+  telefone: String
 }

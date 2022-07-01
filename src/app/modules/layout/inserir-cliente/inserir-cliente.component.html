@@ -3,39 +3,34 @@
         <p-panel header="Novo">
            <div class="grid">
             <div class="col-1">
-                <label for="">Tipo</label>
-    
-                
-
-
+                <label for="">Tipo</label> 
+                <p-dropdown [options]="tipos" [(ngModel)]="selectedTipos" optionLabel="tipo"></p-dropdown>
             </div>
-            <div class="col-6">
-                <label for="">CPF/CNPJ</label><br>
-                <input type="text" pInputText/>
+            <div class="col-6" style="margin-top: 0.1vw;">
+                <label for="" style="margin-left: 1vw;">CPF/CNPJ</label><br>
+                <input type="text" style="margin-left: 1vw;" pInputText/>
             </div>
-            <div class="col-2">
-                <label for="">Inscrição Estadual</label><br>
-                <input type="text" pInputText/>
+            <div class="col-2" style="margin-top: 0.1vw;">
+                <label for="" style="margin-left: 1vw;">Inscrição Estadual</label><br>
+                <input type="text" style="margin-left: 1vw;" pInputText/>
             </div>
-            <div class="col-2">
-                <label for="">Situação</label><br>
-               <form [formGroup]="radio1">
+            <div class="col-2" style="margin-top: 0.1vw;">
+                <label for="" style="margin-left: 1vw;">Situação</label><br>
+               <form [formGroup]="radio1" style="margin-left: 1vw;">
                     <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
                     <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="padding-left: 1vw"></p-radioButton> 
                     </form>      
                               
             </div>
             <div class="col-9">
-                <label for="">Razão Social</label><br>
+                <label for="">Nome ou Razão Social</label><br>
                 <input type="text" pInputText/>
             </div>
             <div class="col-1">
                 <label for="">Sexo</label>
-                <select id="cars" style="border: solid 1px ; padding: 5px;">
-                    <option value="selecione">Selecione</option>
-                    <option value="Pessoa Fisica">Masculino</option>
-                    <option value="Pessoa Jurídica">Feminino</option>
-                  </select>
+                <p-dropdown [options]="sexos" [(ngModel)]="selectedSexos" optionLabel="sexo"></p-dropdown>
+
+
             </div>
             <div class="col-2">
                 <label for="">Data Nascimento</label><br>
@@ -107,11 +102,7 @@
                         <div class="grid">
                             <div class="col-1">
                                 <label for="">Tipo</label>
-                                <select id="cars" style="border: solid 1px ; padding: 5px;">
-                                    <option value="selecione">Selecione</option>
-                                    <option value="Pessoa Fisica">Residencial</option>
-                                    <option value="Pessoa Jurídica">Celular</option>
-                                  </select>
+                                <p-dropdown [options]="telefones" [(ngModel)]="selectedTelefones" optionLabel="telefone"></p-dropdown>
                             </div>
                             <div class="col-3">
                                 <label for="" style ="margin-left: 2vw;">Nr. Telefone</label><br>

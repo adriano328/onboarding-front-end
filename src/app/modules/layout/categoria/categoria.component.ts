@@ -12,6 +12,7 @@ import { CategoriaService } from 'src/app/services/categoria.service';
 })
 export class CategoriaComponent implements OnInit {
 
+  
   categoriaSave: ICategoria = {} as ICategoria
   
   listCategoria: ICategoria[] = [];
