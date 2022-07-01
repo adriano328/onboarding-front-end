@@ -3,11 +3,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { NEVER } from 'rxjs';
 import { IEndereco } from 'src/app/interface/IEndereco';
+import { EnderecoService } from 'src/app/services/endereco.service';
 
 @Component({
   selector: 'app-inserir-cliente',
   templateUrl: './inserir-cliente.component.html',
-  styleUrls: ['./inserir-cliente.component.scss']
+  styleUrls: ['./inserir-cliente.component.scss'],
+  providers: [EnderecoService]
 })
 export class InserirClienteComponent implements OnInit {
 
@@ -67,7 +69,8 @@ export class InserirClienteComponent implements OnInit {
   radio5!: FormGroup
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private endereco: EnderecoService
   ) {
     this.radio1 = this.formBuilder.group({
       ativo: [''],

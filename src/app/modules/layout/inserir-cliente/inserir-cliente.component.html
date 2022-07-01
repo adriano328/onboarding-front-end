@@ -17,8 +17,8 @@
             <div class="col-2" style="margin-top: 0.1vw;">
                 <label for="" style="margin-left: 1vw;">Situação</label><br>
                <form [formGroup]="radio1" style="margin-left: 1vw;">
-                    <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="padding-left: 1vw"></p-radioButton> 
+                    <p-radioButton name="ativo" value="ps4" label="Ativo"></p-radioButton>  
+                    <p-radioButton name="desativo" value="ps4" label="Inativo" style="padding-left: 1vw"></p-radioButton> 
                     </form>      
                               
             </div>
@@ -85,7 +85,6 @@
                                             <td>{{inserirendereco.cep}}</td>
                                             <td>{{inserirendereco.municipio}}</td>
                                             <td>{{inserirendereco.uf}}</td>
-                                            <!-- <td><p-radioButton name="groupname" value="ps4"></p-radioButton></td>  -->
                                             <td>
                                                 <i class="pi pi-trash"></i>
                                                 <i class="pi pi-pencil" style="margin-left: 20px;"></i>
@@ -114,10 +113,10 @@
                             </div>
                             <div class="col-2">
                                 <label for="" style="margin-left: 2vw">Padrão</label><br>
-                               <form [formGroup]="radio2" style="margin-left: 2vw;">
-                                    <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="margin-left: 0.5vw"></p-radioButton> 
-                                    </form>                  
+                               
+                                    <p-radioButton name="ativo" value="ps4" label="Ativo"></p-radioButton>  
+                                    <p-radioButton name="desativo" value="ps4" label="Inativo" style="margin-left: 0.5vw"></p-radioButton> 
+                                               
                             </div>
                            
                             <div class="col-12">
@@ -139,7 +138,7 @@
                                                 <td>{{inserirtelefone.nrTelefone}}</td>
                                                 <td>{{inserirtelefone.contato}}</td>
                                                 <form [formGroup]="radio5">
-                                                    <td><p-radioButton name="ativo" formControlName="ativo" value="ps4"></p-radioButton></td>
+                                                    <td><p-radioButton name="ativo" value="ps4"></p-radioButton></td>
                                                 </form>                                           
                                                 <td>{{inserirtelefone.uf}}</td>   
                                                 <td>
@@ -166,8 +165,8 @@
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
                                 <form [formGroup]="radio3" style="margin-left: 1vw;">
-                                    <p-radioButton name="ativo" value="ps4" formControlName="ativo" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" formControlName="desativo" label="Inativo" style="margin-left: 1vw"></p-radioButton> 
+                                    <p-radioButton name="ativo" value="ps4" label="Ativo"></p-radioButton>  
+                                    <p-radioButton name="desativo" value="ps4" label="Inativo" style="margin-left: 1vw"></p-radioButton> 
                                     </form>                  
                                 </div>                                            
                         </div>
@@ -191,7 +190,7 @@
                                             <td>{{inseriremail.email}}</td>
                                             
                                             <form [formGroup]="radio4">
-                                            <td><p-radioButton name="ativo" formControlName="ativo" value="ps4"></p-radioButton></td>
+                                            <td><p-radioButton name="ativo" value="ps4"></p-radioButton></td>
                                         </form>
                                             <td>
                                                 <i class="pi pi-trash"></i>
