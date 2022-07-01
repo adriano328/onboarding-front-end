@@ -4,11 +4,7 @@
            <div class="grid">
             <div class="col-1">
                 <label for="" style="margin-left: 1vw;">Categoria</label>
-                <select id="cars" style="border: solid 1px ; padding: 5px; margin-left: 1vw;">
-                    <option value="selecione">Selecione</option>
-                    <option value="ativo">Produto</option>
-                    <option value="inativo">Serviço</option>
-                  </select>
+                <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
             </div>
             <div class="col-8">
                 <label for="" style="margin-left: 2vw;">Nome</label><br>
@@ -16,11 +12,7 @@
             </div>
             <div class="col-1">
                 <label for="" style="margin-left: 1vw;">Situação</label>
-                <select id="cars" style="border: solid 1px ; padding: 5px; margin-left: 1vw;" >
-                    <option value="selecione">Selecione</option>
-                    <option value="ativo">Ativo</option>
-                    <option value="inativo">Inativo</option>
-                  </select>
+                <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
             </div>
         <div class="btn-categoria">
             <p-button class="btn"><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
