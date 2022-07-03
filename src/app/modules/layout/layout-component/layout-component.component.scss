@@ -54,7 +54,6 @@
     background-color: #4153b3;
 
     .col-12{
-        
         position: relative;
         top: 15%;
         text-align: right;
@@ -132,7 +131,6 @@
 }
 
 :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
-    padding: 0.75rem 1rem;
     color: #ffffff;
     border-radius: 3px;
     transition: box-shadow 0.2s;
@@ -141,7 +139,6 @@
 }
 
 :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-    padding: 0.75rem 1rem;
     color: #ffffff;
     border-radius: 3px;
     transition: box-shadow 0.2s;
@@ -150,7 +147,8 @@
 }
 
 ::ng-deep.p-menubar{
-    padding: 0.5rem;
+    position: relative;
+    top: 0.1vw;
     background: #2a3791;
     color: white;
     border: none;
@@ -173,7 +171,6 @@
 
 
 ::ng-deep.p-menuitem-link {
-    padding: 0.75rem 1rem;
     color: white;
     background-color: #2a3791;
     border-radius: 0;

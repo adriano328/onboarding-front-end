@@ -24,9 +24,10 @@
         <p-panel >
             <ng-template pTemplate="header">
                 <p style="float: left">Categorias</p>
-                <p-button class="btn-cabecalho" routerLink="/layout/inserir-categoria"><i class="pi pi-plus" style="margin-right: 10px;"></i>Adicionar</p-button>
+                <p-button class="btn-cabecalho" routerLink="/layout/inserir-categoria"><i class="pi pi-plus"></i><p style="padding-left: 0.3vw">Adicionar</p></p-button>
             </ng-template>
-            <p-table [value]="listCategoria">
+            <p-table [value]="listCategoria" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[6,25,50]">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>
