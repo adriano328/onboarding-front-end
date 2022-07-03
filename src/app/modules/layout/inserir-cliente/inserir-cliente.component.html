@@ -1,68 +1,69 @@
 <div class="quadro">
     <div class="painel">
         <p-panel header="Novo">
-           <div class="grid">
-            <div class="col-1">
+            <form [formGroup]="form_pessoa">
+            <div class="grid">
+            <div class="col-1">                
                 <label for="">Tipo</label> 
-                <p-dropdown [options]="tipos" [(ngModel)]="selectedTipos" optionLabel="tipo"></p-dropdown>
+                <p-dropdown [options]="tipos" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" optionLabel="tipo"></p-dropdown>
             </div>
-            <div class="col-6" style="margin-top: 0.1vw;">
-                <label for="" style="margin-left: 1vw;">CPF/CNPJ</label><br>
-                <input type="text" style="margin-left: 1vw;" pInputText/>
-            </div>
-            <div class="col-2" style="margin-top: 0.1vw;">
-                <label for="" style="margin-left: 1vw;">Inscrição Estadual</label><br>
-                <input type="text" style="margin-left: 1vw;" pInputText/>
-            </div>
-            <div class="col-2" style="margin-top: 0.1vw;">
-                <label for="" style="margin-left: 1vw;">Situação</label><br>
-               <form [formGroup]="radio1" style="margin-left: 1vw;">
-                    <p-radioButton name="ativo" value="ps4" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="ps4" label="Inativo" style="padding-left: 1vw"></p-radioButton> 
-                    </form>      
-                              
-            </div>
-            <div class="col-9">
-                <label for="">Nome ou Razão Social</label><br>
-                <input type="text" pInputText/>
-            </div>
-            <div class="col-1">
-                <label for="">Sexo</label>
-                <p-dropdown [options]="sexos" [(ngModel)]="selectedSexos" optionLabel="sexo"></p-dropdown>
-
-
+            <div class="col-6" style="margin-top: 0.1vw;"> 
+                <label for="" style="margin-left: 2vw;">CPF/CNPJ</label><br>
+                <input type="text" formControlName="cpf_cnpj" style="margin-left: 2vw;" pInputText/>
             </div>
             <div class="col-2">
-                <label for="">Data Nascimento</label><br>
-                <input type="text" pInputText/>
+                <label for="" style="margin-left: 2vw;">Inscrição Estadual</label><br>
+                <input type="text"  formControlName="inscricao_estadual" style="margin-left: 2vw;" pInputText/>
             </div>
+            <div class="col-2" style="margin-top: 0.1vw; margin-left: 2.5vw;">
+                <label for="" style="margin-left: 0.1vw;">Situação</label><br>
+                    <p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" value="ps4" label="Ativo"></p-radioButton>  
+                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" label="Inativo"></p-radioButton>               
+            </div>
+            <div class="col-8">
+                <label for="">Nome ou Razão Social</label><br>
+                <input type="text" formControlName="razao_social" pInputText/>
+            </div>
+            <div class="col-1">
+                <label for="">Sexo</label><br>
+                <p-dropdown [options]="sexos" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSexos" optionLabel="sexo"></p-dropdown>
+            </div>
+            <div class="col-2" style="margin-left: 1vw;">
+                <label for="">Data Nascimento</label><br>
+                <input type="text" formControlName="data_nascimento" pInputText/>
+            </div>
+       
+        </div>
+    </form>
             <div class="col-12">
                 <p-tabView>
                     <p-tabPanel header="Endereço">
+                        <form [formGroup]="form_endereco">
                        <div class="grid">
                         <div class="col-10">
-                          
                             <label for="">Endereço</label><br>
-                            <input type="text" pInputText/>
+                            <input type="text" formControlName="endereco" pInputText/>
                         </div>
                         <div class="col-2">
                             <label for="">Bairro</label><br>
-                            <input type="text" pInputText/>
+                            <input type="text" formControlName="bairro" pInputText/>
                         </div>
                         <div class="col-2">
                             <label for="">Cep</label><br>
-                            <input type="text" pInputText/>
+                            <input type="text" formControlName="cep" pInputText/>
                         </div>
                         <div class="col-7">
                             <label for="">Município</label><br>
-                            <input type="text" pInputText/>
+                            <input type="text" formControlName="municipio"  pInputText/>
                         </div>
                         <div class="col-1">
                             <label for="">UF</label><br>
-                            <input type="text" pInputText/>
+                            <input type="text" formControlName="uf" pInputText/>
                         </div>
-                        <div class="col-2">
-                            <p-button class="btn-endereco"><i class="pi pi-plus"></i><p style="margin-left: 10px;">Adicionar</p></p-button>
+                    </div>
+                </form>
+                        <div class="col-2" style="margin-left: 73vw; margin-bottom: 2vw;">
+                            <p-button class="btn-endereco"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
                         </div>
                         <div class="col-12">
                             <p-panel>
@@ -85,6 +86,7 @@
                                             <td>{{inserirendereco.cep}}</td>
                                             <td>{{inserirendereco.municipio}}</td>
                                             <td>{{inserirendereco.uf}}</td>
+                                            <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>
                                             <td>
                                                 <i class="pi pi-trash"></i>
                                                 <i class="pi pi-pencil" style="margin-left: 20px;"></i>
@@ -94,31 +96,30 @@
                                 </p-table>
                             </p-panel>  
                         </div>
-                       </div>
-                        
+                    
                     </p-tabPanel>
                     <p-tabPanel header="Contato Telefonico">
-                        <div class="grid">
+                        <form [formGroup]="form_telefone">
+                    <div class="grid">           
                             <div class="col-1">
                                 <label for="">Tipo</label>
-                                <p-dropdown [options]="telefones" [(ngModel)]="selectedTelefones" optionLabel="telefone"></p-dropdown>
+                                <p-dropdown [options]="telefones" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTelefones" optionLabel="telefone"></p-dropdown>
                             </div>
                             <div class="col-3">
-                                <label for="" style ="margin-left: 2vw;">Nr. Telefone</label><br>
-                                <input type="text" style ="margin-left: 2vw;" pInputText/>
+                                <label for="">Nr. Telefone</label><br>
+                                <input type="text" formControlName="nr_telefone" pInputText/>
                             </div>
                             <div class="col-4">
-                                <label for="" style="margin-left: 2vw;">Contato</label><br>
-                                <input type="text" style="margin-left: 2vw;" pInputText/>
+                                <label for="">Contato</label><br>
+                                <input type="text" formControlName="contato" pInputText/>
                             </div>
                             <div class="col-2">
-                                <label for="" style="margin-left: 2vw">Padrão</label><br>
-                               
-                                    <p-radioButton name="ativo" value="ps4" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" label="Inativo" style="margin-left: 0.5vw"></p-radioButton> 
-                                               
+                                <label for="">Padrão</label><br>
+                                    <p-radioButton name="ativo" value="ps4" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadrao"  label="Ativo"></p-radioButton>  
+                                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadrao" label="Inativo"></p-radioButton>                     
                             </div>
-                           
+                        </div> 
+                    </form> 
                             <div class="col-12">
                                 <p-panel>
                                     <p-table [value]="inserirtelefone">
@@ -137,9 +138,7 @@
                                                 <td>{{inserirtelefone.tipo}}</td>
                                                 <td>{{inserirtelefone.nrTelefone}}</td>
                                                 <td>{{inserirtelefone.contato}}</td>
-                                                <form [formGroup]="radio5">
-                                                    <td><p-radioButton name="ativo" value="ps4"></p-radioButton></td>
-                                                </form>                                           
+                                                <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>                                     
                                                 <td>{{inserirtelefone.uf}}</td>   
                                                 <td>
                                                     <i class="pi pi-trash"></i>
@@ -149,28 +148,22 @@
                                         </ng-template>
                                     </p-table>
                                 </p-panel>  
-                            </div>
-                           
-                        </div>
-                    
+                            </div>                    
                     </p-tabPanel>
                     <p-tabPanel header="E-mail">
-                        <div class="grid">
-
+                        <form [formGroup]="form_email">
+                        <div class="grid">                         
                             <div class="col-4">
                                 <label for="">E-mail</label>
-                                <input type="text" pInputText/>
+                                <input type="text" formControlName="email" pInputText/>
                             </div>
-
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
-                                <form [formGroup]="radio3" style="margin-left: 1vw;">
-                                    <p-radioButton name="ativo" value="ps4" label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" label="Inativo" style="margin-left: 1vw"></p-radioButton> 
-                                    </form>                  
-                                </div>                                            
-                        </div>
-
+                                    <p-radioButton name="ativo" value="ps4" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedEmail"  label="Ativo"></p-radioButton>  
+                                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedEmail" label="Inativo"></p-radioButton>                  
+                                </div>
+                            </div>
+                        </form>
                         <p-button class="btn-email"><i class="pi pi-search"></i>Pesquisar</p-button>
                             
                         <div class="lista">
@@ -188,11 +181,10 @@
                                         <tr>
                                             <td>{{ i + 1 }}</td>
                                             <td>{{inseriremail.email}}</td>
+                                        
+                                            <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status_email" value="ps4"></p-radioButton></td>
                                             
-                                            <form [formGroup]="radio4">
-                                            <td><p-radioButton name="ativo" value="ps4"></p-radioButton></td>
-                                        </form>
-                                            <td>
+                                            <td>                                               
                                                 <i class="pi pi-trash"></i>
                                                 <i class="pi pi-pencil" style="margin-left: 20px;"></i>
                                             </td>
@@ -201,7 +193,6 @@
                                 </p-table>
                             </p-panel>  
                         </div>    
-
                     </p-tabPanel>
                 </p-tabView>
 
@@ -210,16 +201,9 @@
             <p-button class="btn"><i class="pi pi-refresh"></i>Limpar</p-button>
         </div>
             </div>
-            
-
-           </div>
-        </p-panel><br><br>      
-
-        
-                
+           
+        </p-panel><br><br>                
     </div>
-
-
-   
-
 </div>
+
+

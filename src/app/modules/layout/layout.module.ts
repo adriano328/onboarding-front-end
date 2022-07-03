@@ -24,6 +24,7 @@ import { DropdownModule } from 'primeng/dropdown';
 
 
 
+
 @NgModule({
   declarations: [
     LayoutComponentComponent,
@@ -52,7 +53,8 @@ import { DropdownModule } from 'primeng/dropdown';
     HttpClientModule,
     FormsModule,
     ToastModule,
-    DropdownModule
+    DropdownModule,
+    ReactiveFormsModule 
     
   
   ]

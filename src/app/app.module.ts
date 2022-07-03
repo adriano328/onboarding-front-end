@@ -10,7 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MenubarModule} from 'primeng/menubar';
 import {DropdownModule} from 'primeng/dropdown';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +18,7 @@ import {DropdownModule} from 'primeng/dropdown';
   declarations: [
     AppComponent,
     HomePageComponent,
+    
     
   ],
   imports: [
@@ -28,7 +29,9 @@ import {DropdownModule} from 'primeng/dropdown';
     ButtonModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    DropdownModule
+    DropdownModule,
+    ReactiveFormsModule
+    
    
   
   ],

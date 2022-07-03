@@ -25,6 +25,13 @@ export class InserirClienteComponent implements OnInit {
 
   selectedSexos!: String;
 
+  selectedPadrao!:String;
+
+  selectedEmail!: String;
+
+  status!: String;
+
+  status_email!:String;
 
   public telefones: Array<telefone> =[];
 
@@ -67,6 +74,10 @@ export class InserirClienteComponent implements OnInit {
   radio3!: FormGroup;
   radio4!:FormGroup;
   radio5!: FormGroup
+  form_pessoa!: FormGroup;
+  form_endereco!: FormGroup;
+  form_telefone!: FormGroup;
+  form_email!:  FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -96,6 +107,30 @@ export class InserirClienteComponent implements OnInit {
      
      this.radio5 = this.formBuilder.group({
       ativo: [''],
+     })
+
+     this.form_pessoa = formBuilder.group({
+      cpf_cnpj: [''],
+      inscricao_estadual: [''],
+      razao_social: [''],
+      data_nascimento: [''],
+     })
+
+     this.form_endereco = formBuilder.group({
+      endereco: [''],
+      bairro: [''],
+      cep: [''],
+      municipio: [''],
+      uf: [''],
+     })
+
+     this.form_telefone = formBuilder.group({
+      nr_telefone: [''],
+      contato: [''],
+     })
+
+     this.form_email = formBuilder.group({
+      email: [''],
      })
 
    }
