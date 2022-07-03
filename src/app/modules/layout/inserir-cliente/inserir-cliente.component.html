@@ -105,7 +105,7 @@
                                 <label for="">Tipo</label>
                                 <p-dropdown [options]="telefones" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTelefones" optionLabel="telefone"></p-dropdown>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3" style="margin-left: 1.4vw;">
                                 <label for="">Nr. Telefone</label><br>
                                 <input type="text" formControlName="nr_telefone" pInputText/>
                             </div>
@@ -159,8 +159,8 @@
                             </div>
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
-                                    <p-radioButton name="ativo" value="ps4" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedEmail"  label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedEmail" label="Inativo"></p-radioButton>                  
+                                    <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedEmail"  label="Ativo"></p-radioButton>  
+                                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedEmail" label="Inativo"></p-radioButton>                  
                                 </div>
                             </div>
                         </form>
@@ -196,7 +196,7 @@
                     </p-tabPanel>
                 </p-tabView>
 
-                   <div class="btn-categoria" style="margin-top: 1vw;">
+                   <div class="btn-categoria" style="margin-top: 1vw; margin-left: 67.3vw;">
             <p-button class="btn"><i class="pi pi-search"></i>Salvar</p-button>
             <p-button class="btn"><i class="pi pi-refresh"></i>Limpar</p-button>
         </div>
