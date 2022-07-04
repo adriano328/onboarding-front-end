@@ -1,7 +1,7 @@
 <div class="quadro">
     <div class="painel">
         <p-panel header="Pesquisar">
-            <form [formGroup]="form">
+            <form (ngSubmit)="submit()" [formGroup]="form" #formDir="ngForm">
            <div class="grid">
             <div class="col-11">
                 <label for="">Nome</label><br>

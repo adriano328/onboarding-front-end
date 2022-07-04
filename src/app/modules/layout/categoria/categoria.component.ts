@@ -35,8 +35,11 @@ export class CategoriaComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       nome:['', Validators.required]      
-    })
+    }),
 
+   
+
+    
    
     
 
@@ -47,6 +50,10 @@ export class CategoriaComponent implements OnInit {
     }
     
    )
+  }
+
+  submit(){
+    console.log("Envio realizado")
   }
 
   resetForm(){
