@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { NEVER } from 'rxjs';
 import { IEndereco } from 'src/app/interface/IEndereco';
@@ -85,27 +85,27 @@ export class InserirClienteComponent implements OnInit {
   ) {
     
      this.form_pessoa = formBuilder.group({
-      cpf_cnpj: [''],
-      inscricao_estadual: [''],
-      razao_social: [''],
-      data_nascimento: [''],
+      cpf_cnpj: ['', Validators.required],
+      inscricao_estadual: ['', Validators.required],
+      razao_social: ['', Validators.required],
+      data_nascimento: ['', Validators.required],
      })
 
      this.form_endereco = formBuilder.group({
-      endereco: [''],
-      bairro: [''],
-      cep: [''],
-      municipio: [''],
-      uf: [''],
+      endereco: ['', Validators.required],
+      bairro: ['', Validators.required],
+      cep: ['', Validators.required],
+      municipio: ['', Validators.required],
+      uf: ['', Validators.required],
      })
 
      this.form_telefone = formBuilder.group({
-      nr_telefone: [''],
-      contato: [''],
+      nr_telefone: ['', Validators.required],
+      contato: ['', Validators.required],
      })
 
      this.form_email = formBuilder.group({
-      email: [''],
+      email: ['',[Validators.required, Validators.email]],
      })
 
    }

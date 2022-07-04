@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -33,8 +33,8 @@ export class InserirProdutoComponent implements OnInit {
     
   ) {
   this.form = this.formBuilder.group({
-   nome:[''],
-   situacao:['']
+   nome:['', Validators.required],
+   situacao:['', Validators.required]
   })}
 
   ngOnInit(): void {
@@ -80,7 +80,7 @@ export class InserirProdutoComponent implements OnInit {
     
 
     this.produtoService.save(this.produtoSave).then(sucess => {
-      // console.log(sucess);
+      
     }).catch(error => {
       // console.log(error);
       
