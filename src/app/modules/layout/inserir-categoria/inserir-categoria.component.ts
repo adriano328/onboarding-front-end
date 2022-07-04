@@ -27,6 +27,13 @@ export class InserirCategoriaComponent implements OnInit {
   }) }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      nome:['']
+    })
+  }
+
+  reserForm(){
+    this.form.reset();
   }
 
   save(){
@@ -42,7 +49,9 @@ export class InserirCategoriaComponent implements OnInit {
       if(error.status == "400"){
         this.messageService.add({severity:'error', summary:'Categoria', detail:'Erro ao salvar categoria'});
       }
-    });    
+    },
+    
+    );    
     
   }
 }

@@ -17,17 +17,17 @@
                     </div>   
             </div>
             <div class="btn-categoria">
-                <p-button class="btn"><i class="pi pi-search" style="margin-right: 1vw;"></i>Pesquisar</p-button>
+                <p-button class="btn"><i class="pi pi-search" ></i>Pesquisar</p-button>
                 <p-button type="submit" (click)="resetForm();" style="margin-left:1vw"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
             </div>
     </form> 
-        </p-panel>      
+        </p-panel><br><br>
 
 
         <p-panel >
             <ng-template pTemplate="header">
                 <p>Lista Produtos</p>
-                <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus" style="margin-right: 1vw;"></i>Adicionar</p-button>
+                <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus" style="margin-right: 1vw; width: 0.1vw;"></i>Adicionar</p-button>
             </ng-template>
             <p-table [value]="listProduto" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[6,25,50]">
@@ -56,8 +56,4 @@
             </p-table>
         </p-panel>                
     </div>
-
-
-   
-
 </div>

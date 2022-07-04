@@ -83,32 +83,7 @@ export class InserirClienteComponent implements OnInit {
     private formBuilder: FormBuilder,
     private endereco: EnderecoService
   ) {
-    this.radio1 = this.formBuilder.group({
-      ativo: [''],
-
-      desativo: ['']
-     })
-
-     this.radio2 = this.formBuilder.group({
-      ativo: [''],
-      desativo: ['']
-     })
-
-     this.radio3 = this.formBuilder.group({
-      ativo: [''],
-      desativo: ['']
-     })
-
-     this.radio4 = this.formBuilder.group({
-      ativo: [''],
-      desativo: ['']
-     })
-
-     
-     this.radio5 = this.formBuilder.group({
-      ativo: [''],
-     })
-
+    
      this.form_pessoa = formBuilder.group({
       cpf_cnpj: [''],
       inscricao_estadual: [''],
@@ -152,6 +127,13 @@ export class InserirClienteComponent implements OnInit {
     {telefone: 'Comercial'}
   )
 
+  }
+
+  resetForm(){
+    this.form_pessoa.reset();
+    this.form_endereco.reset();
+    this.form_telefone.reset();
+    this.form_email.reset();
   }
 
   save(){

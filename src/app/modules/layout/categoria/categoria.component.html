@@ -5,20 +5,19 @@
            <div class="grid">
             <div class="col-11">
                 <label for="">Nome</label><br>
-                <input type="text" formControlName="nome" style="border-radius: 0.5vw;" pInputText/>
+                <input type="text" formControlName="nome" pInputText/>
             </div>
             <div class="col-1">
                 <label for="">Situação</label>
                 <p-dropdown [options]="situacoes" [(ngModel)]="selectedtipo" optionLabel="situacao"></p-dropdown>
             </div>
         <div class="btn-categoria">
-            <p-button class="btn"><i class="pi pi-search"></i>Pesquisar</p-button>
+            <p-button class="btn"><i class="pi pi-search"></i><p style="margin-left: 0.5vw;">Pesquisar</p></p-button>
             <p-button type="submit" (click)="resetForm();" style="margin-left:1vw"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
         </div>
            </div>
         </form>
         </p-panel><br><br>      
-
 
         <p-panel >
             <ng-template pTemplate="header">
@@ -47,12 +46,6 @@
                     </tr>
                 </ng-template>
             </p-table>
-        </p-panel>
-
-                
+        </p-panel>      
     </div>
-
-    
-   
-
 </div>
