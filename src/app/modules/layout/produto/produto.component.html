@@ -2,30 +2,30 @@
     <div class="painel">
         <p-panel header="Pesquisar">
            <div class="grid">
-            <div class="col-1">
-                <label for="" style="margin-left: 1vw;">Categoria</label>
-                <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
-            </div>
-            <div class="col-8">
-                <label for="" style="margin-left: 2vw;">Nome</label><br>
-                <input type="text" pInputText/>
-            </div>
-            <div class="col-1">
-                <label for="" style="margin-left: 1vw;">Situação</label>
-                <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
-            </div>
-        <div class="btn-categoria">
-            <p-button class="btn"><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
-            <p-button class="btn"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
-        </div>
+                <div class="col-1">
+                    <label for="" style="margin-left: 1vw;">Categoria</label><br>
+                    <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
+                </div>
+                <div class="col-9">
+                    <label for="">Nome</label><br>
+                    <input type="text" pInputText/>
+                </div>
+                <div class="col-1">
+                    <label for="">Situação</label>
+                    <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome"></p-dropdown>
+                </div>       
            </div>
-        </p-panel><br><br>      
+           <div class="btn-categoria">
+            <p-button class="btn"><i class="pi pi-search" style="margin-right: 1vw;"></i>Pesquisar</p-button>
+            <p-button class="btn"><i class="pi pi-refresh" style="margin-right: 1vw;"></i>Limpar</p-button>
+        </div>
+        </p-panel>      
 
 
         <p-panel >
             <ng-template pTemplate="header">
                 <p>Lista Produtos</p>
-                <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus" style="margin-right: 10px;"></i>Adicionar</p-button>
+                <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus" style="margin-right: 1vw;"></i>Adicionar</p-button>
             </ng-template>
             <p-table [value]="listProduto" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[6,25,50]">
@@ -47,7 +47,7 @@
                         <td>{{produto.situacao}}</td>
                         <td>
                             <i class="pi pi-trash"></i>
-                            <i class="pi pi-pencil" style="margin-left: 20px;"></i>
+                            <i class="pi pi-pencil" style="margin-left: 2px; padding-left: 1vw;"></i>
                         </td>
                     </tr>
                 </ng-template>

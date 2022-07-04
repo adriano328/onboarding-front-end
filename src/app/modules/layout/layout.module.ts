@@ -21,7 +21,7 @@ import {MenuItem} from 'primeng/api';
 import { HttpClientModule} from '@angular/common/http';
 import {ToastModule} from 'primeng/toast';
 import { DropdownModule } from 'primeng/dropdown';
-
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -54,7 +54,8 @@ import { DropdownModule } from 'primeng/dropdown';
     FormsModule,
     ToastModule,
     DropdownModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    InputTextModule
     
   
   ]
