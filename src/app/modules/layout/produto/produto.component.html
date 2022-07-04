@@ -1,6 +1,7 @@
 <div class="quadro">
     <div class="painel">
         <p-panel header="Pesquisar">
+            <form [formGroup]="form">
            <div class="grid">
                 <div class="col-1">
                     <label for="" style="margin-left: 1vw;">Categoria</label><br>
@@ -8,16 +9,17 @@
                 </div>
                 <div class="col-9">
                     <label for="">Nome</label><br>
-                    <input type="text" pInputText/>
+                    <input type="text" formControlName="nome" pInputText/>
                 </div>
                 <div class="col-1">
                     <label for="">Situação</label>
                     <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome"></p-dropdown>
-                </div>       
+                </div>   
            </div>
+        </form> 
            <div class="btn-categoria">
             <p-button class="btn"><i class="pi pi-search" style="margin-right: 1vw;"></i>Pesquisar</p-button>
-            <p-button class="btn"><i class="pi pi-refresh" style="margin-right: 1vw;"></i>Limpar</p-button>
+            <p-button (click)="resetForm();" style="margin-left:1vw"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
         </div>
         </p-panel>      
 

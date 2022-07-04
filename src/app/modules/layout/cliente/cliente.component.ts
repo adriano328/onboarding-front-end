@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-cliente',
@@ -25,9 +27,17 @@ export class ClienteComponent implements OnInit {
 
   selectedSituacao!: String;
 
-  constructor() { }
+  form1!: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+
+  this.form1 = this.formBuilder.group({
+      nome:['']
+  })
 
   this.tipos.push(
   {tipo: 'Pessoa Fisica'},
@@ -37,12 +47,19 @@ export class ClienteComponent implements OnInit {
     {situacao: 'Ativo'},
     {situacao: 'Inativo'}
   )
-     
+
   }
+
+  resetForm(){
+    this.form1.reset();
+  }
+    
 
   
 
 }
+
+
 
 interface tipo{
   tipo: String

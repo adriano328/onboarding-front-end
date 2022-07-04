@@ -1,5 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -17,6 +18,8 @@ produtoList: IProduto = {} as IProduto
 
 listProduto: IProduto[] = [];
 
+form!: FormGroup;
+
 listCategoria: ICategoria[] = [];
 
 selectedCat!: ICategoria;
@@ -24,6 +27,7 @@ selectedCat!: ICategoria;
   constructor(
   private produtoService: ProdutoService,
   private categoriaService: CategoriaService
+  
 
   ) {
     this.produtoService.findAll().then(sucess =>{
@@ -38,6 +42,12 @@ selectedCat!: ICategoria;
       this.listCategoria = success!;
     });    
   }
+
+  resetForm(){
+    this.form.reset();
+  }
+
+  
 
 }
 

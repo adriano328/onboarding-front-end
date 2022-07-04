@@ -37,6 +37,9 @@ export class CategoriaComponent implements OnInit {
       nome:['']      
     })
 
+   
+    
+
    this.situacoes.push(
     {situacao:"Ativo"},
     {
@@ -46,8 +49,13 @@ export class CategoriaComponent implements OnInit {
    )
   }
 
+  resetForm(){
+    this.form.reset();
+  }
+
 }
 
 interface situacao{
   situacao: String;
 }
+
