@@ -17,19 +17,12 @@
         input{
             border: solid 1px;
             width: 100%;
-            height: 25px;
+            height: 1.5vw;
+            border-radius: 0.5vw;
+
         }
     
-        .btn-categoria{
-            display: inline-flex;
-            margin-left: 64vw;
-            
-            .btn{
-                margin-top: 5px;
-                padding-left: 24px;
-            }
-        }
-        
+         
     
         .listar-categoria{
             position: relative;
@@ -43,10 +36,6 @@
             
         }
         
-       .btn-endereco{
-        position: relative;
-        top: 15px;
-       }
 
        .btn-telefone{
         position: relative;

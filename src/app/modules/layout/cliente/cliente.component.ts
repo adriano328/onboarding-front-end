@@ -13,13 +13,41 @@ export class ClienteComponent implements OnInit {
       cpf: '048.146.171-00',
       situacao: 'Ativo',
     },
-    
+
+       
   ];
 
+  public tipos: Array<tipo> = [];
+    
+  selectedTipos!: String;
+
+  public situacoes: Array<situacao> = [];
+
+  selectedSituacao!: String;
 
   constructor() { }
 
   ngOnInit(): void {
+
+  this.tipos.push(
+  {tipo: 'Pessoa Fisica'},
+  {tipo: 'Pessoa Juridica'}),
+
+  this.situacoes.push(
+    {situacao: 'Ativo'},
+    {situacao: 'Inativo'}
+  )
+     
   }
 
+  
+
+}
+
+interface tipo{
+  tipo: String
+}
+
+interface situacao{
+  situacao: String
 }

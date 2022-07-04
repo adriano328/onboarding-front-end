@@ -18,7 +18,7 @@
             <div class="col-2" style="margin-top: 0.1vw; margin-left: 2.5vw;">
                 <label for="" style="margin-left: 0.1vw;">Situação</label><br>
                     <p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" value="ps4" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" label="Inativo"></p-radioButton>               
+                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" label="Inativo" style="margin-left: 1vw"></p-radioButton>               
             </div>
             <div class="col-8">
                 <label for="">Nome ou Razão Social</label><br>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </form>
-                        <div class="col-2" style="margin-left: 73vw; margin-bottom: 2vw;">
+                        <div class="col-2" style="margin-left: 73vw; margin-bottom: 1vw;">
                             <p-button class="btn-endereco"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
                         </div>
                         <div class="col-12">
@@ -116,7 +116,7 @@
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
                                     <p-radioButton name="ativo" value="ps4" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadrao"  label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadrao" label="Inativo"></p-radioButton>                     
+                                    <p-radioButton name="desativo" value="ps4" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadrao" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
                             </div>
                         </div> 
                     </form> 
@@ -160,13 +160,13 @@
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
                                     <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedEmail"  label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedEmail" label="Inativo"></p-radioButton>                  
+                                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedEmail" label="Inativo" style="margin-left: 1vw"></p-radioButton>                  
                                 </div>
                             </div>
                         </form>
-                        <p-button class="btn-email"><i class="pi pi-search"></i>Pesquisar</p-button>
+                        <p-button class="btn-email"><i class="pi pi-plus"></i><p style="padding-left: 0.5vw;" >Adicionar</p></p-button>
                             
-                        <div class="lista">
+                        <div class="lista" style="margin-top: 1vw;">
                             <p-panel header="Lista E-mail">
                                 <p-table [value]="inseriremail">
                                     <ng-template pTemplate="header">
@@ -196,9 +196,9 @@
                     </p-tabPanel>
                 </p-tabView>
 
-                   <div class="btn-categoria" style="margin-top: 1vw; margin-left: 67.3vw;">
+                   <div class="btn-categoria" style="margin-top: 1vw; margin-left: 69.8vw;">
             <p-button class="btn"><i class="pi pi-search"></i>Salvar</p-button>
-            <p-button class="btn"><i class="pi pi-refresh"></i>Limpar</p-button>
+            <p-button class="btn" style="margin-left: 1vw"><i class="pi pi-refresh"></i>Limpar</p-button>
         </div>
             </div>
            

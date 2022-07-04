@@ -3,24 +3,18 @@
         <p-panel header="Pesquisar">
            <div class="grid">
             <div class="col-1" >
-                <label for="" style="margin-left: 1vw;">Categoria</label>
-                <select id="cars" style="border: solid 1px ; padding: 5px; margin-left: 1vw;">
-                    <option value="selecione">Selecione</option>
-                    <option value="ativo">Física</option>
-                    <option value="inativo">Juridica</option>
-                  </select>
+                <div class="col-1">                
+                    <label for="">Tipo</label> 
+                    <p-dropdown [options]="tipos" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" optionLabel="tipo"></p-dropdown>
+                </div>
             </div>
-            <div class="col-7">
-                <label for="" style="margin-left: 2vw;">Nome</label><br>
+            <div class="col-9" style="margin-top: 0.4vw;">
+                <label for="" style="margin-left: 3vw;">Nome</label><br>
                 <input type="text" pInputText/>
             </div>
-            <div class="col-1">
+            <div class="col-1" style="margin-top: 0.4vw;">
                 <label for="">Situação</label>
-                <select id="cars" style="border: solid 1px ; padding: 5px;">
-                    <option value="selecione">Selecione</option>
-                    <option value="ativo">Ativo</option>
-                    <option value="inativo">Inativo</option>
-                  </select>
+                <p-dropdown [options]="situacoes" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" optionLabel="situacao"></p-dropdown>
             </div>
         <div class="btn-categoria">
             <p-button class="btn"><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
