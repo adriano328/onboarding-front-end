@@ -1,10 +1,11 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { ProdutoService } from 'src/app/services/produto.service';
+
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
@@ -26,8 +27,8 @@ selectedCat!: ICategoria;
 
   constructor(
   private produtoService: ProdutoService,
-  private categoriaService: CategoriaService
-  
+  private categoriaService: CategoriaService,
+  private formBuilder: FormBuilder,
 
   ) {
     this.produtoService.findAll().then(sucess =>{
@@ -40,7 +41,11 @@ selectedCat!: ICategoria;
       console.log(success);
       
       this.listCategoria = success!;
-    });    
+    });
+    
+    this.form = this.formBuilder.group({
+      nome:['']
+    })
   }
 
   resetForm(){
