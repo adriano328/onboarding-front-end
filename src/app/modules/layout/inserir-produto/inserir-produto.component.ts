@@ -33,7 +33,8 @@ export class InserirProdutoComponent implements OnInit {
     
   ) {
   this.form = this.formBuilder.group({
-   nome:['']
+   nome:[''],
+   situacao:['']
   })}
 
   ngOnInit(): void {
@@ -62,6 +63,10 @@ export class InserirProdutoComponent implements OnInit {
         value: 'eletronicos'
       },
     )
+  }
+
+  resetForm(){
+    this.form.reset();
   }
 
   save(){
