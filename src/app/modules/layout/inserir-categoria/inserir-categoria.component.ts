@@ -34,26 +34,23 @@ export class InserirCategoriaComponent implements OnInit {
     })
   }
 
-  resetForm(){
-    this.form.reset();
-  }
 
   save(){
 
     this.categoriaSave.nome = this.form.value.nome;
     this.categoriaSave.situacao = this.situacao
 
-    this.categoriaService.save(this.categoriaSave).then(success => {
-      if(success){
-        this.messageService.add({severity:'success', summary:'Categoria', detail:'Categoria salva com sucesso!'});
-      }
-    }).catch(error => {
-      if(error.status == "400"){
-        this.messageService.add({severity:'error', summary:'Categoria', detail:'Erro ao salvar categoria'});
-      }
-    },
-    
-    );    
+  if(this.form.valid && this.selectedSituacao != undefined){
+    this.categoriaService.save(this.categoriaSave).then(sucess => {
+      this.messageService.add({severity:'success', summary:'Categoria', detail:'Categoria salva com sucesso!'});
+      setTimeout(()=>{
+        this.form.reset();
+        this.selectedSituacao = {}
+      }, 700);
+    })
+  }else{
+    this.messageService.add({severity:'error', summary:'Categoria', detail:'Erro ao salvar Categoria!'})
+  }
     
   }
 }
