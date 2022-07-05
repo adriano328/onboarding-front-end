@@ -17,6 +17,8 @@ export class InserirCategoriaComponent implements OnInit {
   form!:FormGroup;
   situacao!: boolean;
 
+  selectedSituacao!: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private categoriaService: CategoriaService,
