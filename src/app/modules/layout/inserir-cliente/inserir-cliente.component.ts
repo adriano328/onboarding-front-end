@@ -87,7 +87,7 @@ export class InserirClienteComponent implements OnInit {
      this.form_pessoa = formBuilder.group({
       cpf_cnpj: ['05711830180', Validators.required],
       inscricao_estadual: ['123456', Validators.required],
-      razao_social: ['123456', Validators.required],
+      razao_social: ['Lucas LTDA', Validators.required],
       data_nascimento: ['07/08/1997', Validators.required],
      })
 
