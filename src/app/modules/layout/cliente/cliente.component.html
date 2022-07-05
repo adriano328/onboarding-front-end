@@ -32,7 +32,7 @@
                 <p>Lista de Clientes</p>
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-cliente"><i class="pi pi-plus" style="margin-right: 10px;" ></i>Adicionar</p-button>
             </ng-template>
-            <p-table [value]="cliente" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            <p-table [value]="listCliente" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[6,25,50]">
                 <ng-template pTemplate="header">
                     <tr>
@@ -47,8 +47,8 @@
                 <ng-template pTemplate="body" let-cliente let-i="rowIndex">
                     <tr>
                         <td>{{ i + 1 }}</td>
-                        <td>{{cliente.nome}}</td>
-                        <td>{{cliente.cpf}}</td>
+                        <td>{{cliente.nomeRazao}}</td>
+                        <td>{{cliente.cpfoucnpj}}</td>
                         <td>{{cliente.situacao}}</td>
                         <td>
                             <i class="pi pi-trash"></i>

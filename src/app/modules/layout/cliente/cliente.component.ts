@@ -1,23 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ICliente } from 'src/app/interface/ICliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
-  styleUrls: ['./cliente.component.scss']
+  styleUrls: ['./cliente.component.scss'],
+  providers:[ClienteService]
 })
 export class ClienteComponent implements OnInit {
 
-  cliente = [
-    {
-      nome: 'Lucas Adriano Dias Ramos',
-      cpf: '048.146.171-00',
-      situacao: 'Ativo',
-    },
-
-       
-  ];
+  listCliente: ICliente[] = []
 
   public tipos: Array<tipo> = [];
     
@@ -31,7 +26,13 @@ export class ClienteComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-  ) { }
+    private clienteService: ClienteService,
+  
+  ) { 
+    this.clienteService.findAll().then(sucess =>{
+      this.listCliente = sucess!;
+    })
+  }
 
   ngOnInit(): void {
 

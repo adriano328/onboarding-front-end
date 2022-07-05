@@ -37,12 +37,7 @@ export class CategoriaComponent implements OnInit {
       nome:['', Validators.required]      
     }),
 
-   
-
-    
-   
-    
-
+  
    this.situacoes.push(
     {situacao:"Ativo"},
     {

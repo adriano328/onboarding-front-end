@@ -13,4 +13,9 @@ export class ClienteService{
 
      return this.http.post(url, cliente).toPromise();
     }
+
+    async findAll(){
+        const url = `${environment.api}/cliente/lista-cliente`;
+        return await this.http.get<ICliente[]>(url).toPromise();
+    }
 }
