@@ -13,8 +13,8 @@
         </form>
             <div class="col-4">
                 <label for="">Situação</label><br>
-                    <p-radioButton name="ativo" value="true" [(ngModel)]="situacao" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="false" [(ngModel)]="situacao" label="Inativo" style="margin-left: 1vw;"></p-radioButton>       
+                    <p-radioButton name="ativo" value="true" [(ngModel)]="situacao" [ngModelOptions]="{standalone: true}" label="Ativo"></p-radioButton>  
+                    <p-radioButton name="desativo" value="false" [(ngModel)]="situacao" [ngModelOptions]="{standalone: true}" label="Inativo" style="margin-left: 1vw;"></p-radioButton>       
                                  
             </div>
             <div class="btn-inserir-categoria">

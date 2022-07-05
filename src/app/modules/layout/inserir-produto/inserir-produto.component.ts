@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -10,7 +11,7 @@ import { CategoriaComponent } from '../categoria/categoria.component';
   selector: 'app-inserir-produto',
   templateUrl: './inserir-produto.component.html',
   styleUrls: ['./inserir-produto.component.scss'],
-  providers: [ProdutoService, CategoriaService]
+  providers: [ProdutoService, CategoriaService, MessageService]
 })
 export class InserirProdutoComponent implements OnInit {
   
@@ -26,11 +27,15 @@ export class InserirProdutoComponent implements OnInit {
 
   selectedCat!: ICategoria;
 
+  situacoes: Array<situacao>=[]
+
+  selectedSituacao!: situacao;
+
   constructor(
     private formBuilder: FormBuilder,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
-    
+    private categoriaService: CategoriaService,
+    private messageService: MessageService
     
   ) {
   this.form = this.formBuilder.group({
@@ -82,10 +87,14 @@ export class InserirProdutoComponent implements OnInit {
 
     this.produtoService.save(this.produtoSave).then(sucess => {
       if(sucess){
-        
+        this.messageService.add({severity:'success', summary:'Produto', detail:'Produto salvo com sucesso!'})
       }
     }).catch(error => {
-      // console.log(error);
+       if(error.status == "400"){
+        this.messageService.add({severity:'error', summary:'Produto', detail:'Erro ao salvar Produto!'})
+       }
+
+    
       
     })
   }
@@ -97,3 +106,6 @@ interface categoria{
   value: string
 }
 
+interface situacao{
+  situacao: boolean
+}

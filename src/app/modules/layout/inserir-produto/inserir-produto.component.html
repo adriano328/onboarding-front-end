@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="quadro">
     <div class="painel">
         <p-panel header="Produto">
@@ -16,9 +17,8 @@
 
             <div class="col-2">
                 <label for="">Situação</label><br>
-                    <p-radioButton name="ativo" value="true"  [(ngModel)]="situacao" label="Ativo"></p-radioButton>  
-                    <p-radioButton style="margin-left:1vw" name="desativo" value="false" [(ngModel)]="situacao" label="Inativo"></p-radioButton>       
-                          
+                    <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Ativo"></p-radioButton>  
+                    <p-radioButton style="margin-left:1vw" name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Inativo"></p-radioButton>             
             </div>
             <div class="btn-inserir-categoria">
                 <p-button (click)="save(); resetForm();" class="btn"><i class="pi pi-check" style="margin-right: 1vw;"></i>Salvar</p-button>

@@ -5,7 +5,7 @@
            <div class="grid">
                 <div class="col-1">
                     <label for="" style="margin-left: 1vw;">Categoria</label><br>
-                    <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
+                    <p-dropdown [options]="listCategoria" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
                 </div>
                 <div class="col-9">
                     <label for="">Nome</label><br>
@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-1">
                     <label for="">Situação</label>
-                    <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome"></p-dropdown>
+                    <p-dropdown [options]="listCategoria" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCat" optionLabel="nome"></p-dropdown>
                     </div>   
             </div>
             <div class="btn-categoria">

@@ -10,5 +10,7 @@ export class ClienteService{
 
     save(cliente: ICliente){
         const url = `${environment.api}/cliente`;
+
+     return this.http.post(url, cliente).toPromise();
     }
 }
