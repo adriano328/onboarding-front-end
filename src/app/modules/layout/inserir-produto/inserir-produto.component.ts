@@ -29,7 +29,7 @@ export class InserirProdutoComponent implements OnInit {
 
   situacoes: Array<situacao>=[]
 
-  selectedSituacao!: situacao;
+  selectedSituacao!: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,7 +40,6 @@ export class InserirProdutoComponent implements OnInit {
   ) {
   this.form = this.formBuilder.group({
    nome:['', Validators.required],
-   situacao:['', Validators.required]
   })}
 
   ngOnInit(): void {
@@ -71,32 +70,29 @@ export class InserirProdutoComponent implements OnInit {
     )
   }
 
-  resetForm(){
-    this.form.reset();
-  }
+
+   
+  
 
   save(){
-    console.log( this.selectedCat!);
     
     this.produtoSave.nome = this.form.value.nome;
     this.produtoSave.situacao = this.situacao;
     this.produtoSave.categoria = this.selectedCat!
 
-    console.log(this.produtoSave);
-    
 
-    this.produtoService.save(this.produtoSave).then(sucess => {
-      if(sucess){
-        this.messageService.add({severity:'success', summary:'Produto', detail:'Produto salvo com sucesso!'})
-      }
-    }).catch(error => {
-       if(error.status == "400"){
-        this.messageService.add({severity:'error', summary:'Produto', detail:'Erro ao salvar Produto!'})
-       }
-
-    
-      
-    })
+    if(this.form.valid && this.selectedSituacao != undefined){
+      this.produtoService.save(this.produtoSave).then(sucess => {
+          this.messageService.add({severity:'success', summary:'Produto', detail:'Produto salvo com sucesso!'})
+          setTimeout(() => {
+            this.form.reset();
+            this.selectedSituacao = {}
+          }, 700);
+      })
+    } else {
+      this.messageService.add({severity:'error', summary:'Produto', detail:'Erro ao salvar Produto!'})
+    }
+  
   }
 
 }

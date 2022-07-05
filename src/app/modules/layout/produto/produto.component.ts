@@ -1,6 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -44,7 +44,7 @@ selectedCat!: ICategoria;
     });
     
     this.form = this.formBuilder.group({
-      nome:['']
+      nome:['', Validators.required]
     })
   }
 
