@@ -18,7 +18,6 @@ export class InserirProdutoComponent implements OnInit {
   produtoSave: IProduto = {} as IProduto;
 
   form!:FormGroup;
-  situacao!: boolean;
   categoria!: String;
 
   listCategoria: ICategoria[] = [];
@@ -77,7 +76,7 @@ export class InserirProdutoComponent implements OnInit {
   save(){
     
     this.produtoSave.nome = this.form.value.nome;
-    this.produtoSave.situacao = this.situacao;
+    this.produtoSave.situacao = this.selectedSituacao;
     this.produtoSave.categoria = this.selectedCat!
 
 

@@ -46,7 +46,7 @@
                         <td>{{ i + 1 }}</td>
                         <td>{{produto.nome}}</td>
                         <td>{{produto.categoria.nome}}</td>
-                        <td>{{produto.situacao}}</td>
+                        <td>{{produto.situacao == true? "Ativo": "Inativo"}} </td>
                         <td>
                             <i class="pi pi-trash"></i>
                             <i class="pi pi-pencil" style="margin-left: 2px; padding-left: 1vw;"></i>

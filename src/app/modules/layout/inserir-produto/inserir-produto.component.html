@@ -12,7 +12,7 @@
        
             <div class="col-2">
                 <label for="">Categoria</label>
-                <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
+                <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat" optionLabel="nome"></p-dropdown>
             </div>
 
             <div class="col-2">
@@ -22,7 +22,7 @@
             </div>
             <div class="btn-inserir-categoria">
                 <p-button (click)="save();" class="btn"><i class="pi pi-check" style="margin-right: 1vw;"></i>Salvar</p-button>
-                <p-button class="btn" routerLink="/layout/produto"><i class="pi pi-times-circle" style=" margin-right: 1vw;"></i>Cancelar</p-button> 
+                <p-button class="btn" routerLink="/layout/produto"><i class="pi pi-times-circle"></i>Cancelar</p-button> 
             </div> 
         </div>            
     </p-panel><br><br>  
