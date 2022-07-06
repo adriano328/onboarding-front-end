@@ -8,12 +8,13 @@ import { IEndereco } from 'src/app/interface/IEndereco';
 import { ITelefone } from 'src/app/interface/ITelefone';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { EnderecoService } from 'src/app/services/endereco.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-inserir-cliente',
   templateUrl: './inserir-cliente.component.html',
   styleUrls: ['./inserir-cliente.component.scss'],
-  providers: [EnderecoService, ClienteService]
+  providers: [EnderecoService, ClienteService, MessageService]
 })
 export class InserirClienteComponent implements OnInit {
 
@@ -40,8 +41,9 @@ export class InserirClienteComponent implements OnInit {
 
   selectedTipoTelefones!: String;
 
-  form!:FormGroup;
+  selectedPadraoEndereco!: boolean;
 
+  form!:FormGroup;
 
   radio1!:FormGroup;
   radio2!: FormGroup;
@@ -65,7 +67,8 @@ export class InserirClienteComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private endereco: EnderecoService,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private messageService: MessageService
   ) {
 
     this.tipoPessoa = [
@@ -153,17 +156,35 @@ export class InserirClienteComponent implements OnInit {
     this.pessoaSave.dtaNascimento = this.form_pessoa.value.data_nascimento
     this.pessoaSave.tipo = this.selectedTipos;
     this.pessoaSave.situacao = this.selectedSituacao;
-
-    
     this.pessoaSave.sexo = this.selectedSexos;
     this.pessoaSave.enderecos = this.enderecoList;
     this.pessoaSave.emails = this.emaiList;
     this.pessoaSave.telefones = this.telefoneList;
-
-    console.log(this.pessoaSave);
     
 
-    this.clienteService.save(this.pessoaSave);
+    
+
+   if(this.form_pessoa && this.form_endereco && this.form_telefone && this.form_email 
+    && this.selectedTipos && this.selectedSexos && this.selectedPadraoTelefone && this.selectedSituacao
+        && this.selectedEmail && this.selectedTipoTelefones != undefined){
+        this.clienteService.save(this.pessoaSave).then(sucess => {
+          this.messageService.add({severity:'success', summary:'Cliente', detail:'Cliente salvo com sucesso!'})
+          setTimeout(()=> {
+            this.form_pessoa.reset();
+            this.form_endereco.reset();
+            this.form_telefone.reset();
+            this.form_email.reset();
+          },700);
+
+          
+        })
+      }else{
+        this.messageService.add({severity:'error', summary:'Cliente', detail:'Erro ao salvar Cliente'})
+      }
+
+     
+    
+
     
   }
 

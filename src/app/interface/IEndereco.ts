@@ -5,4 +5,5 @@ export interface IEndereco{
     cep: String;
     municipio: String;
     uf: String
+    padrao: Boolean
 }

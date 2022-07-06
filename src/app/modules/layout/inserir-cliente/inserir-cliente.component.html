@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="quadro">
     <div class="painel">
         <p-panel header="Novo">
@@ -59,6 +60,11 @@
                         <div class="col-1">
                             <label for="">UF</label><br>
                             <input type="text" formControlName="uf" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Padrão</label><br>
+                                <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadraoEndereco"  label="Ativo"></p-radioButton>  
+                                <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadraoEndereco" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
                         </div>
                     </div>
                 </form>
@@ -137,7 +143,7 @@
                                         </ng-template>
                                         <ng-template pTemplate="body" let-inserirtelefone let-i="rowIndex">
                                             <tr>
-                                                <td>{{inserirtelefone.tipo.telefone}}</td>
+                                                <td>{{inserirtelefone.tipo}}</td>
                                                 <td>{{inserirtelefone.numeroTelefone}}</td>
                                                 <td>{{inserirtelefone.contato}}</td>
                                                 <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>                                     
