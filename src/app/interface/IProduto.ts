@@ -1,7 +1,7 @@
 import { ICategoria } from "./ICategoria";
 
 export interface IProduto{
-    id: number;
+    id: any;
     nome: String;
     categoria: ICategoria;
     situacao: boolean;

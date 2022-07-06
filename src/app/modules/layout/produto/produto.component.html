@@ -1,7 +1,7 @@
 <div class="quadro">
     <div class="painel">
         <p-panel header="Pesquisar">
-            <form [formGroup]="form">
+            <form [formGroup]="form" #produtoForm="ngForm">
            <div class="grid">
                 <div class="col-1">
                     <label for="" style="margin-left: 1vw;">Categoria</label><br>
@@ -43,7 +43,7 @@
                 </ng-template>
                 <ng-template pTemplate="body" let-produto let-i="rowIndex">
                     <tr>
-                        <td>{{ i + 1 }}</td>
+                        <td>{{i + 1}}</td>
                         <td>{{produto.nome}}</td>
                         <td>{{produto.categoria.nome}}</td>
                         <td>{{produto.situacao == true? "Ativo": "Inativo"}} </td>

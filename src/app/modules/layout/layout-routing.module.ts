@@ -38,6 +38,9 @@ const routes: Routes = [
       },
       {
         path: 'inserir-endereco', component: InserirEnderecoComponent
+      },
+      {
+        path: 'editar/:id', component: ProdutoComponent
       }
      
     ]

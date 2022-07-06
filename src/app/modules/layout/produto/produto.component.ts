@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -29,6 +30,8 @@ selectedCat!: ICategoria;
   private produtoService: ProdutoService,
   private categoriaService: CategoriaService,
   private formBuilder: FormBuilder,
+  private router: Router,
+  private route: ActivatedRoute
 
   ) {
     this.produtoService.findAll().then(sucess =>{
@@ -51,6 +54,8 @@ selectedCat!: ICategoria;
   resetForm(){
     this.form.reset();
   }
+
+
 
   
 

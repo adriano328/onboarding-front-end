@@ -3,6 +3,7 @@ import { IEndereco } from "./IEndereco";
 import { ITelefone } from "./ITelefone";
 
 export interface ICliente{
+ Id: number;   
  tipo: string;
  cpfoucnpj: String;
  inscricaoEstadual: String;

@@ -34,7 +34,8 @@ export class InserirProdutoComponent implements OnInit {
     private formBuilder: FormBuilder,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    
     
   ) {
   this.form = this.formBuilder.group({
@@ -93,6 +94,9 @@ export class InserirProdutoComponent implements OnInit {
     }
   
   }
+
+  
+
 
 }
 

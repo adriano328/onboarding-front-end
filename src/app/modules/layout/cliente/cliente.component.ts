@@ -55,7 +55,9 @@ export class ClienteComponent implements OnInit {
     this.form1.reset();
   }
     
+  onEdit(){
 
+  }
   
 
 }

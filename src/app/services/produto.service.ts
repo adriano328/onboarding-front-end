@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { IProduto } from "../interface/IProduto";
 
@@ -19,5 +20,7 @@ export class ProdutoService {
         const url = `${environment.api}/produto/lista-produto`;
         return await this.http.get<IProduto[]>(url).toPromise();
     }
+
+ 
 
 }
