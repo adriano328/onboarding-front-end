@@ -2,6 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { IProduto } from 'src/app/interface/IProduto';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -55,9 +56,19 @@ selectedCat!: ICategoria;
     this.form.reset();
   }
 
+  excluir(produto: IProduto): void{
+    this.produtoService.excluir(produto.id).subscribe();
+    this.carregarProdutos();
+  }
 
+  carregarProdutos(): void{
+    this.produtoService.buscarTodos().subscribe(retorno =>{ this.listProduto = retorno;
+    });
+  }
 
   
+  
+
 
 }
 

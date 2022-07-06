@@ -49,7 +49,7 @@
                         <td>{{produto.situacao == true? "Ativo": "Inativo"}} </td>
                         <td>
                             <i class="pi pi-trash"></i>
-                            <i class="pi pi-pencil" style="margin-left: 2px; padding-left: 1vw;"></i>
+                            <i class="pi pi-pencil" style="margin-left: 2px; padding-left: 1vw;" (click)="excluir(produto)" ></i>
                         </td>
                     </tr>
                 </ng-template>
