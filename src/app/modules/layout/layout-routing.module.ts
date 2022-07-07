@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { HomeComponent } from './home/home.component';
@@ -40,8 +41,9 @@ const routes: Routes = [
         path: 'inserir-endereco', component: InserirEnderecoComponent
       },
       {
-        path: 'editar/:id', component: ProdutoComponent
-      }
+        path: 'atualizar-produto/:{id}', component:  AtualizarProdutoComponent
+      },
+      
      
     ]
   }

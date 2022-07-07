@@ -41,9 +41,8 @@ selectedCat!: ICategoria;
   }
 
   ngOnInit(): void {
+    this.carregarProdutos();
     this.categoriaService.findAll().then(success => {
-      console.log(success);
-      
       this.listCategoria = success!;
     });
     
@@ -56,14 +55,16 @@ selectedCat!: ICategoria;
     this.form.reset();
   }
 
-  excluir(produto: IProduto): void{
-    this.produtoService.excluir(produto.id).subscribe();
-    this.carregarProdutos();
+  excluir(id: number): void{
+    if( this.produtoService.excluir(id).subscribe()){
+      this.carregarProdutos();
+    }
   }
 
-  carregarProdutos(): void{
-    this.produtoService.buscarTodos().subscribe(retorno =>{ this.listProduto = retorno;
-    });
+  carregarProdutos(){
+   this.produtoService.findAll().then(success => {
+    this.listProduto = success!;
+   })
   }
 
   

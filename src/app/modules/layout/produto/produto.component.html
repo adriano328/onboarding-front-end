@@ -45,11 +45,12 @@
                     <tr>
                         <td>{{i + 1}}</td>
                         <td>{{produto.nome}}</td>
+                        <td>{{produto.nome}}</td>
                         <td>{{produto.categoria.nome}}</td>
                         <td>{{produto.situacao == true? "Ativo": "Inativo"}} </td>
                         <td>
-                            <i class="pi pi-trash"></i>
-                            <i class="pi pi-pencil" style="margin-left: 2px; padding-left: 1vw;" (click)="excluir(produto)" ></i>
+                            <i class="pi pi-trash" style="cursor: pointer;" (click)="excluir(produto.id)"></i>
+                            <i class="pi pi-pencil" style="margin-left: 1vw" routerLink="/layout/atualizar-produto/{{produto.id}}"></i>
                         </td>
                     </tr>
                 </ng-template>

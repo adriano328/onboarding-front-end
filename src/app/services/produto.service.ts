@@ -24,15 +24,27 @@ export class ProdutoService {
         return await this.http.get<IProduto[]>(url).toPromise();
     }
 
-    excluir(id: number): Observable<any>{
+    excluir(id: number): Observable<IProduto>{
         return this.http.delete<any>(`${this.URL}/${id}`).pipe(
-                
-            
+            map(retorno => retorno)
         )
     }
 
-    buscarTodos(): Observable<IProduto[]>{
-        return this.http.get<IProduto[]>(this.URL);
+    buscarTodos(){
+        return this.http.get<IProduto[]>(`${this.URL}/lista-produto`);
     }
+
+    buscarPorId(id: number): Observable<IProduto>{
+        return this.http.get<IProduto>(`${this.URL}/${id}`).pipe(
+            map(retorno => retorno)
+        )
+    }
+
+    atualizar(produto:IProduto): Observable<IProduto>{
+        return this.http.put<IProduto>(`${this.URL}/${produto.id}`, produto).pipe(
+            map(retorno => retorno)
+        )
+    }
+
 
 }

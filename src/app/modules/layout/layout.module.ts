@@ -22,6 +22,7 @@ import { HttpClientModule} from '@angular/common/http';
 import {ToastModule} from 'primeng/toast';
 import { DropdownModule } from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
+import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 
 
 
@@ -35,7 +36,8 @@ import {InputTextModule} from 'primeng/inputtext';
     InserirProdutoComponent,
     ClienteComponent,
     InserirClienteComponent,
-    InserirEnderecoComponent
+    InserirEnderecoComponent,
+    AtualizarProdutoComponent
     
     
 
