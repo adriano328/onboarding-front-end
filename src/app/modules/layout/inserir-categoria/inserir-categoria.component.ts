@@ -15,6 +15,7 @@ export class InserirCategoriaComponent implements OnInit {
   categoriaSave: ICategoria = {} as ICategoria;
 
   form!:FormGroup;
+
  
   selectedSituacao!: any;
 
@@ -24,12 +25,13 @@ export class InserirCategoriaComponent implements OnInit {
     private messageService: MessageService
   ) {
   this.form = this.formBuilder.group({
-   nome: ['', Validators.required]
+   nome: ['', Validators.required],
+  
   }) }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      nome:['', , Validators.required]
+      nome:['', Validators.required]
     })
   }
 
@@ -53,3 +55,8 @@ export class InserirCategoriaComponent implements OnInit {
     
   }
 }
+
+interface situacao{
+  situacao: String;
+}
+
