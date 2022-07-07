@@ -45,8 +45,6 @@ export class InserirProdutoComponent implements OnInit {
   ngOnInit(): void {
 
     this.categoriaService.findAll().then(success => {
-      console.log(success);
-      
       this.listCategoria = success!;
     });    
 

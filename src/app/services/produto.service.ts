@@ -40,8 +40,8 @@ export class ProdutoService {
         )
     }
 
-    atualizar(produto:IProduto): Observable<IProduto>{
-        return this.http.put<IProduto>(`${this.URL}/${produto.id}`, produto).pipe(
+    atualizar(produto:IProduto){
+        return this.http.put<IProduto>(`${this.URL}`, produto).pipe(
             map(retorno => retorno)
         )
     }

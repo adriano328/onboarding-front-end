@@ -41,7 +41,7 @@ const routes: Routes = [
         path: 'inserir-endereco', component: InserirEnderecoComponent
       },
       {
-        path: 'atualizar-produto/:{id}', component:  AtualizarProdutoComponent
+        path: 'atualizar-produto/:id', component:  AtualizarProdutoComponent
       },
       
      

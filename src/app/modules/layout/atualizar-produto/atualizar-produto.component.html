@@ -1,1 +1,35 @@
-<p>atualizar-produto works!</p>
+<p-toast></p-toast>
+<div class="quadro">
+    <div class="painel">
+        <p-panel header="Produto">
+           <div class="grid">
+            <div class="col-6">
+            <form [formGroup]="form" class="form">           
+                <label for="">Nome</label><br>
+                <input type="text" [(ngModel)]="produtoSave.nome" formControlName="nome" pInputText/>
+            </form>
+            </div>
+       
+            <div class="col-2">
+                <label for="">Categoria</label>
+                <p-dropdown [options]="listCategoria" [(ngModel)]="produtoSave.categoria" optionLabel="nome"></p-dropdown>
+            </div>
+
+            <div class="col-2">
+                <label for="">Situação</label><br>
+                    <p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}" [(ngModel)]="produtoSave.situacao" label="Ativo"></p-radioButton>  
+                    <p-radioButton style="margin-left:1vw" name="desativo" [value]="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="produtoSave.situacao" label="Inativo"></p-radioButton>             
+            </div>
+            <div class="btn-inserir-categoria">
+                <p-button (click)="save();" class="btn"><i class="pi pi-check" style="margin-right: 1vw;"></i>Salvar</p-button>
+                <p-button class="btn" routerLink="/layout/produto"><i class="pi pi-times-circle"></i>Cancelar</p-button> 
+            </div> 
+        </div>            
+    </p-panel><br><br>  
+             
+    </div>
+
+
+   
+
+</div>
