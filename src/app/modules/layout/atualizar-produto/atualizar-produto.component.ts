@@ -74,7 +74,7 @@ export class AtualizarProdutoComponent implements OnInit {
       
       this.produtoService.atualizar(this.produtoSave).subscribe();
     } else {
-  
+      
       this.messageService.add({severity:'error', summary:'Produto', detail:'Erro ao salvar Produto!'})
     }
   

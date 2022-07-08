@@ -6,7 +6,7 @@
             <div class="grid">
             <div class="col-1">                
                 <label for="">Tipo</label> 
-                <p-dropdown [options]="tipoPessoa" [(ngModel)]="clienteSave.tipo"  [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" optionValue="descricao" optionLabel="descricao"></p-dropdown>
+                <p-dropdown [options]="tipoPessoa" [(ngModel)]="clienteSave.tipo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" optionValue="descricao" optionLabel="descricao"></p-dropdown>
             </div>
             <div class="col-6" style="margin-top: 0.1vw;"> 
                 <label for="" style="margin-left: 2vw;">CPF/CNPJ</label><br>
@@ -18,8 +18,8 @@
             </div>
             <div class="col-2" style="margin-top: 0.1vw; margin-left: 2.5vw;">
                 <label for="" style="margin-left: 0.1vw;">Situação</label><br>
-                    <p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" value="true" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Inativo" style="margin-left: 1vw"></p-radioButton>               
+                    <p-radioButton name="ativo" [(ngModel)]="clienteSave.situacao" [ngModelOptions]="{standalone: true}" [value]="true" label="Ativo"></p-radioButton>  
+                    <p-radioButton name="desativo" [value]="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="clienteSave.situacao" label="Inativo" style="margin-left: 1vw"></p-radioButton>               
             </div>
             <div class="col-8">
                 <label for="">Nome ou Razão Social</label><br>
@@ -27,7 +27,7 @@
             </div>
             <div class="col-1">
                 <label for="">Sexo</label><br>
-                <p-dropdown [options]="sexo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSexos" optionValue="value" optionLabel="descricao"></p-dropdown>
+                <p-dropdown [options]="sexo" [ngModelOptions]="{standalone: true}" [(ngModel)]="clienteSave.sexo" optionValue="value" optionLabel="descricao"></p-dropdown>
             </div>
             <div class="col-2" style="margin-left: 1vw;">
                 <label for="">Data Nascimento</label><br>

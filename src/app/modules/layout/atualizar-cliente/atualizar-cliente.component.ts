@@ -13,12 +13,12 @@ import { EnderecoService } from 'src/app/services/endereco.service';
   selector: 'app-atualizar-cliente',
   templateUrl: './atualizar-cliente.component.html',
   styleUrls: ['./atualizar-cliente.component.scss'],
-  providers: [ClienteService, MessageService]
+  providers: [ClienteService, MessageService, EnderecoService]
 })
 export class AtualizarClienteComponent implements OnInit {
 
   clienteSave: ICliente = {} as ICliente;
-
+ 
   items!: MenuItem[];
 
   tipoPessoa: any[] = [];
@@ -90,29 +90,28 @@ export class AtualizarClienteComponent implements OnInit {
     ]
     
      this.form_pessoa = formBuilder.group({
-      cpf_cnpj: ['05711830180', Validators.required],
-      inscricao_estadual: ['123456', Validators.required],
-      razao_social: ['Lucas LTDA', Validators.required],
-      data_nascimento: ['07/08/1997', Validators.required],
+      cpf_cnpj: ['', Validators.required],
+      inscricao_estadual: ['', Validators.required],
+      razao_social: ['', Validators.required],
+      data_nascimento: ['', Validators.required],
      })
 
      this.form_endereco = formBuilder.group({
-      endereco: ['Rua mexico', Validators.required],
-      bairro: ['Jardim imperial', Validators.required],
-      cep: ['78143312', Validators.required],
-      municipio: ['Várzea grande', Validators.required],
-      uf: ['MT', Validators.required],
+      endereco: ['', Validators.required],
+      bairro: ['', Validators.required],
+      cep: ['', Validators.required],
+      municipio: ['', Validators.required],
+      uf: ['', Validators.required],
      })
 
      this.form_telefone = formBuilder.group({
-      nr_telefone: ['65993038547', Validators.required],
-      contato: ['65993038547', Validators.required],
+      nr_telefone: ['', Validators.required],
+      contato: ['', Validators.required],
      })
 
      this.form_email = formBuilder.group({
-      email: ['alefepdias@gmail.com',[Validators.required, Validators.email]],
+      email: ['',[Validators.required, Validators.email]],
      })
-
 
      const idUrl = this.activedRouter.snapshot.paramMap.get('id');
      const id = Number(idUrl);
@@ -174,10 +173,20 @@ export class AtualizarClienteComponent implements OnInit {
 
     
 
-   if(this.form_pessoa.valid && this.form_endereco.valid && this.form_telefone.valid && this.form_email.valid 
-    && this.clienteSave.tipo && this.clienteSave.sexo && this.clienteSave.telefones && this.clienteSave.situacao
-        && this.clienteSave.emails && this.clienteSave.telefones != undefined){
-      
+   if(this.form_pessoa && this.form_endereco && this.form_telefone && this.form_email 
+    && this.selectedTipos && this.selectedSexos && this.selectedPadraoTelefone && this.selectedSituacao
+        && this.selectedEmail && this.selectedTipoTelefones != undefined){
+        this.clienteService.save(this.pessoaSave).then(sucess => {
+          this.messageService.add({severity:'success', summary:'Cliente', detail:'Cliente salvo com sucesso!'})
+          setTimeout(()=> {
+            this.form_pessoa.reset();
+            this.form_endereco.reset();
+            this.form_telefone.reset();
+            this.form_email.reset();
+          },700);
+
+          
+        })
       }else{
         this.messageService.add({severity:'error', summary:'Cliente', detail:'Erro ao salvar Cliente'})
       }

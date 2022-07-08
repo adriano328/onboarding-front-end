@@ -9,7 +9,7 @@ import {map, catchError} from 'rxjs/operators';
 
 export class ClienteService{
 
-    private URL: string = 'http://localhost:8080/produto'
+    private URL: string = 'http://localhost:8080/cliente'
 
     constructor(private http: HttpClient){}
 
@@ -30,6 +30,12 @@ export class ClienteService{
 
     buscarPorId(id: number): Observable<ICliente>{
         return this.http.get<ICliente>(`${this.URL}/${id}`).pipe(
+            map(retorno => retorno)
+        )
+    }
+
+    atualizar(cliente: ICliente){
+        return this.http.put<ICliente>(`${this.URL}`, cliente).pipe(
             map(retorno => retorno)
         )
     }
