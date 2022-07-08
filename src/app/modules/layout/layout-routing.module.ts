@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
 import { AtualizarClienteComponent } from './atualizar-cliente/atualizar-cliente.component';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
+import { AtualizarTelefoneComponent } from './atualizar-telefone/atualizar-telefone.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { HomeComponent } from './home/home.component';
@@ -50,6 +51,9 @@ const routes: Routes = [
       },
       {
         path: 'atualizar-cliente/:id', component: AtualizarClienteComponent
+      },
+      {
+        path: 'atualizar-tefone/:id', component: AtualizarTelefoneComponent
       }
      
     ]

@@ -8,6 +8,7 @@ import { IEndereco } from 'src/app/interface/IEndereco';
 import { ITelefone } from 'src/app/interface/ITelefone';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { EnderecoService } from 'src/app/services/endereco.service';
+import { AtualizarTelefoneComponent } from '../atualizar-telefone/atualizar-telefone.component';
 
 @Component({
   selector: 'app-atualizar-cliente',
@@ -70,7 +71,8 @@ export class AtualizarClienteComponent implements OnInit {
     private clienteService: ClienteService,
     private messageService: MessageService,
     private activedRouter: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    
   ) {
 
     this.tipoPessoa = [

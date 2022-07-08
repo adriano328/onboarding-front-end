@@ -25,6 +25,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
 import { AtualizarClienteComponent } from './atualizar-cliente/atualizar-cliente.component';
+import { AtualizarTelefoneComponent } from './atualizar-telefone/atualizar-telefone.component';
 
 
 
@@ -41,7 +42,8 @@ import { AtualizarClienteComponent } from './atualizar-cliente/atualizar-cliente
     InserirEnderecoComponent,
     AtualizarProdutoComponent,
     AtualizarCategoriaComponent,
-    AtualizarClienteComponent
+    AtualizarClienteComponent,
+    AtualizarTelefoneComponent
     
     
 
