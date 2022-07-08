@@ -26,6 +26,8 @@ import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto
 import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
 import { AtualizarClienteComponent } from './atualizar-cliente/atualizar-cliente.component';
 import { AtualizarTelefoneComponent } from './atualizar-telefone/atualizar-telefone.component';
+import { AtualizarEnderecoComponent } from './atualizar-endereco/atualizar-endereco.component';
+import { AtualizarEmailComponent } from './atualizar-email/atualizar-email.component';
 
 
 
@@ -43,7 +45,9 @@ import { AtualizarTelefoneComponent } from './atualizar-telefone/atualizar-telef
     AtualizarProdutoComponent,
     AtualizarCategoriaComponent,
     AtualizarClienteComponent,
-    AtualizarTelefoneComponent
+    AtualizarTelefoneComponent,
+    AtualizarEnderecoComponent,
+    AtualizarEmailComponent
     
     
 

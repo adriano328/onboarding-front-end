@@ -2,6 +2,8 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
 import { AtualizarClienteComponent } from './atualizar-cliente/atualizar-cliente.component';
+import { AtualizarEmailComponent } from './atualizar-email/atualizar-email.component';
+import { AtualizarEnderecoComponent } from './atualizar-endereco/atualizar-endereco.component';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 import { AtualizarTelefoneComponent } from './atualizar-telefone/atualizar-telefone.component';
 import { CategoriaComponent } from './categoria/categoria.component';
@@ -54,6 +56,12 @@ const routes: Routes = [
       },
       {
         path: 'atualizar-tefone/:id', component: AtualizarTelefoneComponent
+      },
+      {
+        path: 'atualizar-endereco/:id', component: AtualizarEnderecoComponent
+      },
+      {
+        path: 'atualizar-email/:id', component: AtualizarEmailComponent
       }
      
     ]

@@ -95,7 +95,7 @@
                                             <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>
                                             <td>
                                                 <i class="pi pi-trash"></i>
-                                                <i class="pi pi-pencil"></i>
+                                                <i class="pi pi-pencil" routerLink="/layout/atualizar-endereco/{{endereco.id}}"></i>
                                             </td>
                                         </tr>
                                     </ng-template>
@@ -184,16 +184,15 @@
                                             <th>Ação</th>
                                         </tr>
                                     </ng-template>
-                                    <ng-template pTemplate="body" let-inseriremail let-i="rowIndex">
+                                    <ng-template pTemplate="body" let-email let-i="rowIndex">
                                         <tr>
                                             <td>{{ i + 1 }}</td>
-                                            <td>{{inseriremail.email}}</td>
-                                        
+                                            <td>{{email.email}}</td>
                                             <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status_email" value="ps4"></p-radioButton></td>
                                             
                                             <td>                                               
                                                 <i class="pi pi-trash"></i>
-                                                <i class="pi pi-pencil"></i>
+                                                <i class="pi pi-pencil" routerLink="/layout/atualizar-email/{{email.id}}"></i>
                                             </td>
                                         </tr>
                                     </ng-template>
