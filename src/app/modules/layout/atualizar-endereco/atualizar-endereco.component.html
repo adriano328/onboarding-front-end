@@ -1,1 +1,49 @@
-<p>atualizar-endereco works!</p>
+<p-toast></p-toast>
+<div class="quadro">
+    <div class="painel">
+        <p-panel header="Endereço">
+            <div class="col-12">
+                <p-tabView>
+                        <form [formGroup]="form_endereco">
+                       <div class="grid">
+                        <div class="col-10">
+                            <label for="">Endereço</label><br>
+                            <input type="text" [(ngModel)]="enderecoSave.endereco" formControlName="endereco" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Bairro</label><br>
+                            <input type="text" [(ngModel)]="enderecoSave.bairro" formControlName="bairro" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Cep</label><br>
+                            <input type="text" [(ngModel)]="enderecoSave.cep" formControlName="cep" pInputText/>
+                        </div>
+                        <div class="col-7">
+                            <label for="">Município</label><br>
+                            <input type="text" [(ngModel)]="enderecoSave.municipio" formControlName="municipio"  pInputText/>
+                        </div>
+                        <div class="col-1">
+                            <label for="">UF</label><br>
+                            <input type="text" [(ngModel)]="enderecoSave.uf" formControlName="uf" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Padrão</label><br>
+                                <p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="enderecoSave.padrao"  label="Ativo"></p-radioButton>  
+                                <p-radioButton name="desativo" [value]="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="enderecoSave.padrao" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
+                        </div>
+                    </div>
+                </form>
+              
+                </p-tabView>
+
+                   <div class="btn-categoria">
+            <p-button class="btn" (click)="atualizar()"><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
+            <p-button type="submit" (click)="resetForm();" class="btn" style="margin-left: 1vw"><i class="pi pi-refresh"></i><p style="margin-left: 0.7vw;">Limpar</p></p-button>
+        </div>
+            </div>
+           
+        </p-panel><br><br>                
+    </div>
+</div>
+
+
