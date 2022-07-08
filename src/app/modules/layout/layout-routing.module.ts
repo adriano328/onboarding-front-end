@@ -45,7 +45,7 @@ const routes: Routes = [
         path: 'atualizar-produto/:id', component:  AtualizarProdutoComponent
       },
       {
-        path: 'atualizar-categoria', component: AtualizarCategoriaComponent
+        path: 'atualizar-categoria/:id', component: AtualizarCategoriaComponent
       }
      
     ]
