@@ -1,1 +1,33 @@
-<p>atualizar-categoria works!</p>
+<p-toast></p-toast>
+<div class="quadro">
+    <div class="painel">
+        <p-panel header="Categoria">
+           <div class="grid">
+            <form [formGroup]="form">
+            <div class="col-8">
+                <label for="">Nome</label><br>
+                <input type="text" style="border-radius: 0.5vw;" [(ngModel)]="categoriaSave.nome" formControlName="nome" pInputText/>
+                
+            </div>
+        </form>
+            <div class="col-4">
+                <label for="">Situação</label><br>
+                    <p-radioButton name="ativo" [value]="true" [(ngModel)]="categoriaSave.situacao" [ngModelOptions]="{standalone: true}" label="Ativo"></p-radioButton>  
+                    <p-radioButton name="desativo" [value]="false" [(ngModel)]="categoriaSave.situacao" [ngModelOptions]="{standalone: true}" label="Inativo"></p-radioButton>       
+                                 
+            </div>
+            <div class="btn-inserir-categoria">
+                <p-button (click)="save()" class="btn"><i class="pi pi-check"></i><p style="padding-left: 0.5vw;">Salvar<p></p-button>
+                <p-button class="btn" routerLink="/layout/categoria"><i class="pi pi-times-circle"></i><p style="padding-left: 0.5vw;">Cancelar</p></p-button> 
+            </div> 
+           </div>
+        
+        </p-panel><br><br>      
+
+             
+    </div>
+
+
+   
+
+</div>
