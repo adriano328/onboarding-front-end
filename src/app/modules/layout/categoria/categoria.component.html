@@ -25,7 +25,7 @@
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-categoria"><i class="pi pi-plus"></i><p style="padding-left: 0.3vw">Adicionar</p></p-button>
             </ng-template>
             <p-table [value]="listCategoria" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
-            currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas" [rowsPerPageOptions]="[6,25,50]">
+            currentPageReportTemplate="" [rowsPerPageOptions]="[6,25,50]">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>

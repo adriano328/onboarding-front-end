@@ -24,6 +24,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
+import { AtualizarClienteComponent } from './atualizar-cliente/atualizar-cliente.component';
 
 
 
@@ -39,7 +40,8 @@ import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-cat
     InserirClienteComponent,
     InserirEnderecoComponent,
     AtualizarProdutoComponent,
-    AtualizarCategoriaComponent
+    AtualizarCategoriaComponent,
+    AtualizarClienteComponent
     
     
 

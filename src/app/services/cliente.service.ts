@@ -1,11 +1,16 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { ICliente } from "../interface/ICliente";
+import {map, catchError} from 'rxjs/operators';
 
 @Injectable()
 
 export class ClienteService{
+
+    private URL: string = 'http://localhost:8080/produto'
+
     constructor(private http: HttpClient){}
 
     save(cliente: ICliente){
@@ -18,4 +23,15 @@ export class ClienteService{
         const url = `${environment.api}/cliente/lista-cliente`;
         return await this.http.get<ICliente[]>(url).toPromise();
     }
+
+    buscarTodos(){
+        return this.http.get<ICliente[]>(`${this.URL}/lista-cliente`)
+    }
+
+    buscarPorId(id: number): Observable<ICliente>{
+        return this.http.get<ICliente>(`${this.URL}/${id}`).pipe(
+            map(retorno => retorno)
+        )
+    }
+
 }

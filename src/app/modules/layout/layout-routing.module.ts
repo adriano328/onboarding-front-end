@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AtualizarCategoriaComponent } from './atualizar-categoria/atualizar-categoria.component';
+import { AtualizarClienteComponent } from './atualizar-cliente/atualizar-cliente.component';
 import { AtualizarProdutoComponent } from './atualizar-produto/atualizar-produto.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -46,6 +47,9 @@ const routes: Routes = [
       },
       {
         path: 'atualizar-categoria/:id', component: AtualizarCategoriaComponent
+      },
+      {
+        path: 'atualizar-cliente/:id', component: AtualizarClienteComponent
       }
      
     ]

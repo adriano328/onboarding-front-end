@@ -33,7 +33,7 @@
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-cliente"><i class="pi pi-plus" style="margin-right: 10px;" ></i>Adicionar</p-button>
             </ng-template>
             <p-table [value]="listCliente" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
-            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[6,25,50]">
+            currentPageReportTemplate="" [rowsPerPageOptions]="[6,25,50]">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>
@@ -52,7 +52,7 @@
                         <td>{{cliente.situacao == true? "Ativo":"Inativo"}}</td>
                         <td>
                             <i class="pi pi-trash"></i>
-                            <i class="pi pi-pencil" style="margin-left: 20px;"></i>
+                            <i class="pi pi-pencil" routerLink="/layout/atualizar-cliente/:id"></i>
                         </td>
                     </tr>
                 </ng-template>

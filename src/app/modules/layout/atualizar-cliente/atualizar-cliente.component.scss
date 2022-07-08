@@ -1,0 +1,71 @@
+.quadro{
+    background-color: white;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
+    height: 45vw;
+
+    ::ng-deep .painel{
+        position: relative;
+        
+        background-color: white;
+        height: 175px;
+        width: 85vw;
+        left: 4vw;
+        top: 2vw;
+
+        input{
+            border: solid 1px;
+            width: 100%;
+            height: 1.5vw;
+           
+
+        }
+    
+         
+    
+        .listar-categoria{
+            position: relative;
+            border: solid 1px;
+        }
+    
+        .p-panel .p-panel-header{
+            background-color: #4153b3;
+            color: white;
+
+            
+        }
+        
+
+       .btn-telefone{
+        position: relative;
+        top: 10px;
+        left: 966px;
+       }
+
+       .btn-email{
+        position: relative;
+        top: 1vw;
+        left: 73.7vw;
+        bottom: 1vw;
+      
+       }
+
+       .lista{
+        position: relative;
+        top: 20px;    
+    }
+       
+
+    .btn-categoria{
+        position: relative;
+        left: 68.3vw;
+    }
+
+    }
+
+    
+}
+
+
+

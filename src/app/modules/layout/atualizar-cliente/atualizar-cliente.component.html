@@ -1,0 +1,216 @@
+<p-toast></p-toast>
+<div class="quadro">
+    <div class="painel">
+        <p-panel header="Novo">
+            <form [formGroup]="form_pessoa">
+            <div class="grid">
+            <div class="col-1">                
+                <label for="">Tipo</label> 
+                <p-dropdown [options]="tipoPessoa" [(ngModel)]="clienteSave.tipo"  [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" optionValue="descricao" optionLabel="descricao"></p-dropdown>
+            </div>
+            <div class="col-6" style="margin-top: 0.1vw;"> 
+                <label for="" style="margin-left: 2vw;">CPF/CNPJ</label><br>
+                <input type="text" [(ngModel)]="clienteSave.cpfoucnpj" formControlName="cpf_cnpj" style="margin-left: 2vw;" pInputText/>
+            </div>
+            <div class="col-2">
+                <label for="" style="margin-left: 2vw;">Inscrição Estadual</label><br>
+                <input type="text" [(ngModel)]="clienteSave.inscricaoEstadual" formControlName="inscricao_estadual" style="margin-left: 2vw;" pInputText/>
+            </div>
+            <div class="col-2" style="margin-top: 0.1vw; margin-left: 2.5vw;">
+                <label for="" style="margin-left: 0.1vw;">Situação</label><br>
+                    <p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" value="true" label="Ativo"></p-radioButton>  
+                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Inativo" style="margin-left: 1vw"></p-radioButton>               
+            </div>
+            <div class="col-8">
+                <label for="">Nome ou Razão Social</label><br>
+                <input type="text" [(ngModel)]="clienteSave.nomeRazao" formControlName="razao_social" pInputText/>
+            </div>
+            <div class="col-1">
+                <label for="">Sexo</label><br>
+                <p-dropdown [options]="sexo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSexos" optionValue="value" optionLabel="descricao"></p-dropdown>
+            </div>
+            <div class="col-2" style="margin-left: 1vw;">
+                <label for="">Data Nascimento</label><br>
+                <input type="text" [(ngModel)]="clienteSave.dtaNascimento" formControlName="data_nascimento" pInputText/>
+            </div>
+       
+        </div>
+    </form>
+            <div class="col-12">
+                <p-tabView>
+                    <p-tabPanel header="Endereço">
+                        <form [formGroup]="form_endereco">
+                       <div class="grid">
+                        <div class="col-10">
+                            <label for="">Endereço</label><br>
+                            <input type="text" formControlName="endereco" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Bairro</label><br>
+                            <input type="text" formControlName="bairro" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Cep</label><br>
+                            <input type="text" formControlName="cep" pInputText/>
+                        </div>
+                        <div class="col-7">
+                            <label for="">Município</label><br>
+                            <input type="text" formControlName="municipio"  pInputText/>
+                        </div>
+                        <div class="col-1">
+                            <label for="">UF</label><br>
+                            <input type="text" formControlName="uf" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Padrão</label><br>
+                                <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadraoEndereco"  label="Ativo"></p-radioButton>  
+                                <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadraoEndereco" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
+                        </div>
+                    </div>
+                </form>
+                        <div class="col-2" style="margin-left: 73vw; margin-bottom: 1vw;">
+                            <p-button class="btn-endereco" (click)="addEnderecoOnListSave()"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
+                        </div>
+                        <div class="col-12">
+                            <p-panel>
+                                <p-table [value]="enderecoList">
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>Endereço</th>
+                                            <th>Bairro</th>
+                                            <th>Cep</th>
+                                            <th>Município</th>
+                                            <th>UF</th>
+                                            <th>Padrão</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-endereco let-i="rowIndex">
+                                        <tr>
+                                            <td>{{endereco.endereco}}</td>
+                                            <td>{{endereco.bairro}}</td>
+                                            <td>{{endereco.cep}}</td>
+                                            <td>{{endereco.municipio}}</td>
+                                            <td>{{endereco.uf}}</td>
+                                            <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>
+                                            <td>
+                                                <i class="pi pi-trash"></i>
+                                                <i class="pi pi-pencil" style="margin-left: 20px;"></i>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </p-panel>  
+                        </div>
+                    
+                    </p-tabPanel>
+                    <p-tabPanel header="Contato Telefonico">
+                        <form [formGroup]="form_telefone">
+                    <div class="grid">           
+                            <div class="col-1">
+                                <label for="">Tipo</label>
+                                <p-dropdown [options]="tipoTelefone" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipoTelefones" optionValue="descricao" optionLabel="descricao"></p-dropdown>
+                            </div>
+                            <div class="col-3" style="margin-left: 1.4vw;">
+                                <label for="">Nr. Telefone</label><br>
+                                <input type="text" formControlName="nr_telefone" pInputText/>
+                            </div>
+                            <div class="col-4">
+                                <label for="">Contato</label><br>
+                                <input type="text" formControlName="contato" pInputText/>
+                            </div>
+                            <div class="col-2">
+                                <label for="">Padrão</label><br>
+                                    <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadraoTelefone"  label="Ativo"></p-radioButton>  
+                                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadraoTelefone" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
+                            </div>
+                            <div class="col-2" style="margin-left: 73vw; margin-bottom: 1vw;">
+                                <p-button class="btn-endereco" (click)="addTelefoneOnListSave()"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
+                            </div>
+                        </div> 
+                    </form> 
+                            <div class="col-12">
+                                <p-panel>
+                                    <p-table [value]="telefoneList">
+                                        <ng-template pTemplate="header">
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Nr. Telefone</th>
+                                                <th>Contato</th>
+                                                <th>Padrão</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </ng-template>
+                                        <ng-template pTemplate="body" let-inserirtelefone let-i="rowIndex">
+                                            <tr>
+                                                <td>{{inserirtelefone.tipo}}</td>
+                                                <td>{{inserirtelefone.numeroTelefone}}</td>
+                                                <td>{{inserirtelefone.contato}}</td>
+                                                <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>                                     
+                                                <td>
+                                                    <i class="pi pi-trash"></i>
+                                                    <i class="pi pi-pencil" style="margin-left: 20px;"></i>
+                                                </td>
+                                            </tr>
+                                        </ng-template>
+                                    </p-table>
+                                </p-panel>  
+                            </div>                    
+                    </p-tabPanel>
+                    <p-tabPanel header="E-mail">
+                        <form [formGroup]="form_email">
+                        <div class="grid">                         
+                            <div class="col-4">
+                                <label for="">E-mail</label>
+                                <input type="text" formControlName="email" pInputText/>
+                            </div>
+                            <div class="col-2">
+                                <label for="">Padrão</label><br>
+                                    <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedEmail"  label="Ativo"></p-radioButton>  
+                                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedEmail" label="Inativo" style="margin-left: 1vw"></p-radioButton>                  
+                                </div>
+                            </div>
+                        </form>
+                        <p-button class="btn-email" (click)="addEmailOnListSave()"><i class="pi pi-plus"></i><p style="padding-left: 0.5vw;" >Adicionar</p></p-button>
+                            
+                        <div class="lista" style="margin-top: 1vw;">
+                            <p-panel header="Lista E-mail">
+                                <p-table [value]="emaiList">
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>E-mail</th>
+                                            <th>Padrão</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-inseriremail let-i="rowIndex">
+                                        <tr>
+                                            <td>{{ i + 1 }}</td>
+                                            <td>{{inseriremail.email}}</td>
+                                        
+                                            <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status_email" value="ps4"></p-radioButton></td>
+                                            
+                                            <td>                                               
+                                                <i class="pi pi-trash"></i>
+                                                <i class="pi pi-pencil" style="margin-left: 20px;"></i>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </p-panel>  
+                        </div>    
+                    </p-tabPanel>
+                </p-tabView>
+
+                   <div class="btn-categoria">
+            <p-button class="btn" (click)="save()"><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
+            <p-button type="submit" (click)="resetForm();" class="btn" style="margin-left: 1vw"><i class="pi pi-refresh"></i><p style="margin-left: 0.7vw;">Limpar</p></p-button>
+        </div>
+            </div>
+           
+        </p-panel><br><br>                
+    </div>
+</div>
+
+
