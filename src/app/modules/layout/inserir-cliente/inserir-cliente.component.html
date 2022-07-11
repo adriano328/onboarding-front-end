@@ -63,8 +63,7 @@
                         </div>
                         <div class="col-2">
                             <label for="">Padrão</label><br>
-                                <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadraoEndereco"  label="Ativo"></p-radioButton>  
-                                <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadraoEndereco" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
+                                <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadraoEndereco"  label="Sim"></p-radioButton>  
                         </div>
                     </div>
                 </form>
@@ -92,7 +91,7 @@
                                             <td>{{endereco.cep}}</td>
                                             <td>{{endereco.municipio}}</td>
                                             <td>{{endereco.uf}}</td>
-                                            <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>
+                                            <td><p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadraoEndereco" [value]="true"></p-radioButton></td>
                                             <td>
                                                 <i class="pi pi-trash"></i>
                                                 <i class="pi pi-pencil" style="margin-left: 20px;"></i>
@@ -109,7 +108,7 @@
                     <div class="grid">           
                             <div class="col-1">
                                 <label for="">Tipo</label>
-                                <p-dropdown [options]="tipoTelefone" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipoTelefones" optionValue="descricao" optionLabel="descricao"></p-dropdown>
+                                <p-dropdown [options]="tipoTelefone" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipoTelefones" optionValue="descricao" optionLabel="descricao" ></p-dropdown>
                             </div>
                             <div class="col-3" style="margin-left: 1.4vw;">
                                 <label for="">Nr. Telefone</label><br>
@@ -122,7 +121,6 @@
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
                                     <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadraoTelefone"  label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadraoTelefone" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
                             </div>
                             <div class="col-2" style="margin-left: 73vw; margin-bottom: 1vw;">
                                 <p-button class="btn-endereco" (click)="addTelefoneOnListSave()"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
@@ -167,7 +165,6 @@
                             <div class="col-2">
                                 <label for="">Padrão</label><br>
                                     <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedEmail"  label="Ativo"></p-radioButton>  
-                                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedEmail" label="Inativo" style="margin-left: 1vw"></p-radioButton>                  
                                 </div>
                             </div>
                         </form>

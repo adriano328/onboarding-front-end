@@ -165,7 +165,7 @@ export class InserirClienteComponent implements OnInit {
     
 
    if(this.form_pessoa && this.form_endereco && this.form_telefone && this.form_email 
-    && this.selectedTipos && this.selectedSexos && this.selectedPadraoTelefone && this.selectedSituacao
+    && this.selectedTipos && this.selectedSexos && this.selectedSituacao
         && this.selectedEmail && this.selectedTipoTelefones != undefined){
         this.clienteService.save(this.pessoaSave).then(sucess => {
           this.messageService.add({severity:'success', summary:'Cliente', detail:'Cliente salvo com sucesso!'})
