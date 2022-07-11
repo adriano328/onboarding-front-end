@@ -5,24 +5,22 @@
            <div class="grid">
             <div class="col-6">
             <form [formGroup]="form" class="form">           
-                <label for="">Nome</label><br>
+                <label for="">Nome</label>
                 <input type="text" formControlName="nome" pInputText/>
             </form>
             </div>
-       
-            <div class="col-2">
-                <label for="">Categoria</label>
+            <div class="col-1">
+                <label for="">Categoria</label><br>
                 <p-dropdown [options]="listCategoria" [(ngModel)]="selectedCat"  optionLabel="nome"></p-dropdown>
             </div>
-
             <div class="col-2">
                 <label for="">Situação</label><br>
                     <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Ativo"></p-radioButton>  
-                    <p-radioButton style="margin-left:1vw" name="desativo" value="false"  [(ngModel)]="selectedSituacao" label="Inativo"></p-radioButton>             
+                    <p-radioButton class="radiobtn" name="desativo" value="false"  [(ngModel)]="selectedSituacao" label="Inativo"></p-radioButton>             
             </div>
             <div class="btn-inserir-categoria">
-                <p-button (click)="save();" class="btn"><i class="pi pi-check" style="margin-right: 1vw;"></i>Salvar</p-button>
-                <p-button class="btn" routerLink="/layout/produto"><i class="pi pi-times-circle"></i>Cancelar</p-button> 
+                <p-button (click)="save();" class="btn"><i class="pi pi-check"></i><p style="margin-left: 0.5vw;">Salvar</p></p-button>
+                <p-button class="btn" routerLink="/layout/produto"><i class="pi pi-times-circle"></i><p style="margin-left: 0.5vw;">Cancelar</p></p-button> 
             </div> 
         </div>            
     </p-panel><br><br>  

@@ -12,16 +12,12 @@
         width: 86vw;
         left: 3vw;
         top: 2vw;
-    
-        .form{
-            position: relative;
-            top: 0.1vw;
-        }
 
         input{
             border: solid 1px;
             width: 100%;
-            height: 30px;
+            height: 1.5vw;
+            
         }       
       
         .p-panel .p-panel-header{
@@ -31,10 +27,26 @@
             
         }
 
+        .col-6{
+            position: relative;
+            top: 0.5vw;
+            left: 1vw;
+        }
+
+        .col-1{
+            position: relative;
+            top: 0.5vw;
+            left: 1vw;
+        }
+
         .col-2{
             position: relative;
-            left: 0.6vw;
-            top: 1vw;
+            left: 1vw;
+            top: 0.5vw;
+
+            .radiobtn{
+                margin-left: 1vw;
+            }
         }
         
         
@@ -43,10 +55,10 @@
             margin-left: 67vw;
             margin-top: 1vw;
 
-            .btn{
-                margin-top: 15px;
-                padding-left: 24px;
-            }
+           .btn{
+            position: relative;
+            margin-left: 1vw;
+           }
         }
        
 
