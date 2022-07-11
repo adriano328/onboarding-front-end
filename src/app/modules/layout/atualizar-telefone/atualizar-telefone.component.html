@@ -1,1 +1,35 @@
-<p>atualizar-telefone works!</p>
+<p-toast></p-toast>
+<div class="quadro">
+    <div class="painel">
+        <p-panel header="Novo">
+            <form [formGroup]="form_telefone">
+                <div class="grid">           
+                        <div class="col-1">
+                            <label for="">Tipo</label>
+                            <p-dropdown [options]="tipoTelefone" [ngModelOptions]="{standalone: true}" [(ngModel)]="telefoneSave.tipo" optionValue="descricao" optionLabel="descricao" ></p-dropdown>
+                        </div>
+                        <div class="col-3" style="margin-left: 1.4vw;">
+                            <label for="">Nr. Telefone</label><br>
+                            <input type="text" [(ngModel)]="telefoneSave.numeroTelefone" formControlName="numeroTelefone" pInputText/>
+                        </div>
+                        <div class="col-4">
+                            <label for="">Contato</label><br>
+                            <input type="text" [(ngModel)]="telefoneSave.contato" formControlName="contato" pInputText/>
+                        </div>
+                        <div class="col-2">
+                            <label for="">Padrão</label><br>
+                                <p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="telefoneSave.padrao"  label="Ativo"></p-radioButton>  
+                        </div>
+                        
+                    </div> 
+                </form> 
+
+                   <div class="btn-categoria">
+            <p-button class="btn" (click)="atualizar()"><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
+            <p-button type="submit" (click)="resetForm();" class="btn" style="margin-left: 1vw"><i class="pi pi-refresh"></i><p style="margin-left: 0.7vw;">Limpar</p></p-button>
+                   </div>           
+        </p-panel><br><br>                
+    </div>
+</div>
+
+

@@ -55,7 +55,7 @@ const routes: Routes = [
         path: 'atualizar-cliente/:id', component: AtualizarClienteComponent
       },
       {
-        path: 'atualizar-tefone/:id', component: AtualizarTelefoneComponent
+        path: 'atualizar-telefone/:id', component: AtualizarTelefoneComponent
       },
       {
         path: 'atualizar-endereco/:id', component: AtualizarEnderecoComponent

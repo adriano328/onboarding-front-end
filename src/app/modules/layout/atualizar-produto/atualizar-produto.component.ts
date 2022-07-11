@@ -69,6 +69,7 @@ export class AtualizarProdutoComponent implements OnInit {
     this.produtoSave.nome = this.form.value.nome;
 
 
+    
 
     if(this.form.valid && this.produtoSave.situacao != undefined){
       
@@ -82,6 +83,9 @@ export class AtualizarProdutoComponent implements OnInit {
       
       this.messageService.add({severity:'error', summary:'Produto', detail:'Erro ao salvar Produto!'})
     }
+
+    console.log();
+    
   
   }
 
