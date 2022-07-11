@@ -54,8 +54,6 @@ export class AtualizarCategoriaComponent implements OnInit {
   this.messageService.add({severity:'success', summary: 'Categória', detail: 'Categória atualizada com sucesso!'});
     setTimeout(()=>{
   this.form.reset();
-  
-  
     
 }, 700)
   }else{

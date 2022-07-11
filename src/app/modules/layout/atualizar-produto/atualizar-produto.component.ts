@@ -73,6 +73,11 @@ export class AtualizarProdutoComponent implements OnInit {
     if(this.form.valid && this.produtoSave.situacao != undefined){
       
       this.produtoService.atualizar(this.produtoSave).subscribe();
+      this.messageService.add({severity:'success', summary: 'Produto', detail: 'Produto atualizadoé com sucesso!'});
+      setTimeout(()=>{
+        this.form.reset();
+      },700)
+
     } else {
       
       this.messageService.add({severity:'error', summary:'Produto', detail:'Erro ao salvar Produto!'})

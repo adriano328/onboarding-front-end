@@ -73,7 +73,6 @@ export class AtualizarClienteComponent implements OnInit {
     private activedRouter: ActivatedRoute,
     private router: Router,
 
-    
   ) {
 
     this.tipoPessoa = [
@@ -115,6 +114,7 @@ export class AtualizarClienteComponent implements OnInit {
      this.form_email = formBuilder.group({
       email: ['',[Validators.required, Validators.email]],
      })
+
 
      const idUrl = this.activedRouter.snapshot.paramMap.get('id');
      const id = Number(idUrl);
@@ -177,9 +177,9 @@ export class AtualizarClienteComponent implements OnInit {
     
 
    if(this.form_pessoa && this.form_endereco && this.form_telefone && this.form_email 
-    && this.selectedTipos && this.selectedSexos && this.selectedPadraoTelefone && this.selectedSituacao
+    && this.selectedTipos && this.selectedSexos && this.selectedSituacao
         && this.selectedEmail && this.selectedTipoTelefones != undefined){
-        this.clienteService.save(this.pessoaSave).then(sucess => {
+        this.clienteService.atualizar(this.pessoaSave).subscribe()
           this.messageService.add({severity:'success', summary:'Cliente', detail:'Cliente salvo com sucesso!'})
           setTimeout(()=> {
             this.form_pessoa.reset();
@@ -189,7 +189,7 @@ export class AtualizarClienteComponent implements OnInit {
           },700);
 
           
-        })
+        
       }else{
         this.messageService.add({severity:'error', summary:'Cliente', detail:'Erro ao salvar Cliente'})
       }
