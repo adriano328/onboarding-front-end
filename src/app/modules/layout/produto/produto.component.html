@@ -5,10 +5,10 @@
            <div class="grid">
                 <div class="col-1">
                     <label for="" style="margin-left: 1vw;">Categoria</label><br>
-                    <p-dropdown [options]="listCategoria" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCat" optionLabel="nome" style="margin-left: 0.5vw;"></p-dropdown>
+                    <p-dropdown [options]="listCategoria" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCat" optionLabel="nome"></p-dropdown>
                 </div>
                 <div class="col-9">
-                    <label for="">Nome</label><br>
+                    <label for="" style="margin-left: 0.5vw;">Nome</label><br>
                     <input type="text" formControlName="nome" pInputText/>
                 </div>
                 <div class="col-1">
@@ -17,8 +17,8 @@
                     </div>   
             </div>
             <div class="btn-categoria">
-                <p-button class="btn"><i class="pi pi-search" ></i>Pesquisar</p-button>
-                <p-button type="submit" (click)="resetForm();" style="margin-left:1vw"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
+                <p-button class="btn"><i class="pi pi-search" ></i><p style="margin-left: 0.5vw;">Pesquisar</p></p-button>
+                <p-button type="submit" (click)="resetForm();"><i class="pi pi-refresh"></i><p style="margin-left: 0.5vw;">Limpar</p></p-button>
             </div>
     </form> 
         </p-panel><br><br>
@@ -27,7 +27,7 @@
         <p-panel >
             <ng-template pTemplate="header">
                 <p>Lista Produtos</p>
-                <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus" style="margin-right: 1vw; width: 0.1vw;"></i>Adicionar</p-button>
+                <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus"></i><p style="margin-left: 0.5vw;">Adicionar</p></p-button>
             </ng-template>
             <p-table [value]="listProduto" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
             currentPageReportTemplate="" [rowsPerPageOptions]="[6,25,50]">

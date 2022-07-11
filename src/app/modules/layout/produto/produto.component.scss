@@ -8,25 +8,39 @@
     ::ng-deep .painel{
         position: relative;
         background-color: white;
-        height: 175px;
         width: 80vw;
         left: 5.5vw;
         top: 2vw;
+
+        .grid{
+            margin-left: 3vw;
+        }
+
+
         
         input{
-            width: 58vw;
+            margin-left: 0.5vw;
+            width: 55vw;
             height: 1.5vw;
         }
 
         .btn-categoria{
-            margin-left: 56.2vw;
+            margin-left: 62.5vw;
             margin-top: 1vw;
+
             
-            .btn{
-                margin-top: 5px;
-                padding-left: 24px;
-            }
+
         }
+
+        
+
+        .btn{
+            margin-right: 1vw;
+        }
+
+       
+
+        
         
     
         .listar-categoria{

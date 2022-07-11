@@ -25,7 +25,8 @@ export class AtualizarCategoriaComponent implements OnInit {
     private router: Router
   ) {
   this.form = this.formBuilder.group({
-   nome: ['', Validators.required]
+   nome: ['', Validators.required],
+   
   })
 
   const idUrl = this.activedRouter.snapshot.paramMap.get('id');
@@ -49,6 +50,14 @@ export class AtualizarCategoriaComponent implements OnInit {
 
   if(this.form.valid && this.categoriaSave.situacao != undefined){
     this.categoriaService.atualizar(this.categoriaSave).subscribe();
+    
+  this.messageService.add({severity:'success', summary: 'Categória', detail: 'Categória atualizada com sucesso!'});
+    setTimeout(()=>{
+  this.form.reset();
+  
+  
+    
+}, 700)
   }else{
     this.messageService.add({severity:'error', summary:'Categoria', detail:'Erro ao salvar Categoria!'})
   }

@@ -78,9 +78,9 @@ export class AtualizarEnderecoComponent implements OnInit {
      this.form_endereco = formBuilder.group({
       endereco: ['', Validators.required],
       bairro: ['', Validators.required],
-      cep: ['78143312', Validators.required],
-      municipio: ['Várzea grande', Validators.required],
-      uf: ['MT', Validators.required],
+      cep: ['', Validators.required],
+      municipio: ['', Validators.required],
+      uf: ['', Validators.required],
      })
 
      const idUrl = this.activedRouter.snapshot.paramMap.get('id');
@@ -120,6 +120,7 @@ export class AtualizarEnderecoComponent implements OnInit {
 
     if(this.form_endereco != undefined){
       this.enderecoService.atualizar(this.enderecoSave).subscribe();
+      
     }else{
       this.messageService.add({severity:'error', summary:'Endereço', detail:'Erro ao atualizar Endereço'})
     }

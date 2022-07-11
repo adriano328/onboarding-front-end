@@ -27,15 +27,27 @@
 
             
         }
+
+        .radio{
+            margin-left: 1vw;
+        }
+
+    
         
         .btn-inserir-categoria{
             display: inline-flex;
             margin-left: 60vw;
+            margin-top: 1vw;
 
             .btn{
-                margin-top: 15px;
-                padding-left: 24px;
+                margin-left: 1vw;
             }
+
+            .text{
+                margin-left: 0.5vw;
+            }
+
+            
         }
        
 

@@ -13,12 +13,11 @@
             <div class="col-4">
                 <label for="">Situação</label><br>
                     <p-radioButton name="ativo" [value]="true" [(ngModel)]="categoriaSave.situacao" [ngModelOptions]="{standalone: true}" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" [value]="false" [(ngModel)]="categoriaSave.situacao" [ngModelOptions]="{standalone: true}" label="Inativo"></p-radioButton>       
-                                 
+                    <p-radioButton  class="radio" name="desativo" [value]="false" [(ngModel)]="categoriaSave.situacao" [ngModelOptions]="{standalone: true}" label="Inativo"></p-radioButton>                
             </div>
             <div class="btn-inserir-categoria">
-                <p-button (click)="save()" class="btn"><i class="pi pi-check"></i><p style="padding-left: 0.5vw;">Salvar<p></p-button>
-                <p-button class="btn" routerLink="/layout/categoria"><i class="pi pi-times-circle"></i><p style="padding-left: 0.5vw;">Cancelar</p></p-button> 
+                <p-button (click)="save()" class="btn"><i class="pi pi-check"></i><p class="text">Salvar<p></p-button>
+                    <p-button class="btn" routerLink="/layout/categoria"><i class="pi pi-times-circle"></i><p class="text">Cancelar<p></p-button>
             </div> 
            </div>
         
