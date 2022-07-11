@@ -12,8 +12,8 @@
                 <p-dropdown [options]="situacoes" [(ngModel)]="selectedtipo" [ngModelOptions]="{standalone: true}"  optionLabel="situacao"></p-dropdown>
             </div>
         <div class="btn-categoria">
-            <p-button class="btn"><i class="pi pi-search"></i><p style="margin-left: 0.5vw;">Pesquisar</p></p-button>
-            <p-button type="submit" (click)="resetForm();"><i class="pi pi-refresh"></i>Limpar</p-button>
+            <p-button ><i class="pi pi-search"></i><p>Pesquisar</p></p-button>
+            <p-button class="btn" type="submit" (click)="resetForm();" style=><i class="pi pi-refresh"></i>Limpar</p-button>
         </div>
            </div>
         </form>
@@ -21,7 +21,7 @@
 
         <p-panel >
             <ng-template pTemplate="header">
-                <p style="float: left">Categorias</p>
+                <p style="float: left">Lista de categórias</p>
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-categoria"><i class="pi pi-plus"></i><p style="padding-left: 0.3vw">Adicionar</p></p-button>
             </ng-template>
             <p-table [value]="listCategoria" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
@@ -41,7 +41,7 @@
                         <td>{{categoria.situacao == true? "Ativo":"Inativo"}}</td>
                         <td>
                             <i class="pi pi-trash"></i>
-                            <i class="pi pi-pencil" routerLink="/layout/atualizar-categoria/{{categoria.id}}"></i>
+                            <i class="pi pi-pencil" routerLink="/layout/atualizar-categoria/{{categoria.id}}" style="margin-left: 1vw;"></i>
                         </td>
                     </tr>
                 </ng-template>

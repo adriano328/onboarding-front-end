@@ -26,9 +26,12 @@
     
         .btn-categoria{
             display: inline-flex;
-            margin-left: 64.2vw;
+            margin-left: 63.6vw;
             margin-top: 1vw;
             
+            .btn{
+                margin-left: 1vw;
+            }
            
         }
         
@@ -36,24 +39,36 @@
         .listar-categoria{
             position: relative;
             border: solid 1px;
+
+            
         }
     
-        .p-panel .p-panel-header{
-            background-color: #4153b3;
-            color: white;
+        .p-panel {
 
+            .pi pi-pencil{
+                margin-left: 1vw;
+            }
+
+            .p-panel-header{
+                background-color: #4153b3;
+                color: white;
+            }
+            
+            
             
         }
         
         .btn-cabecalho{
             position: relative;
-            left: 66.3vw;
+            left: 62.4vw;
         }
+       
        
         
        
     }
 
+    
     
 }
 
