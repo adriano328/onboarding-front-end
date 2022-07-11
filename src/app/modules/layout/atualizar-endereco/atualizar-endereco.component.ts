@@ -106,7 +106,6 @@ export class AtualizarEnderecoComponent implements OnInit {
     this.enderecoSave.cep = this.form_endereco.value.cep
     this.enderecoSave.municipio = this.form_endereco.value.municipio
     this.enderecoSave.uf = this.form_endereco.value.uf
-
     this.enderecoList.push(this.enderecoSave)
   }
 
@@ -116,10 +115,11 @@ export class AtualizarEnderecoComponent implements OnInit {
     this.enderecoSave.cep = this.form_endereco.value.cep;
     this.enderecoSave.municipio = this.form_endereco.value.municipio;
     this.enderecoSave.uf = this.form_endereco.value.uf;
-    this.enderecoSave.uf = this.form_endereco.value.padrao;
+    this.enderecoSave.padrao = this.form_endereco.value.padrao;
 
-    if(this.form_endereco != undefined){
+    if(this.form_endereco.valid != undefined){
       this.enderecoService.atualizar(this.enderecoSave).subscribe();
+      this.messageService.add({severity:'success', summary:'Endereço', detail:'Endereço atualizado com sucesso!'})
       
     }else{
       this.messageService.add({severity:'error', summary:'Endereço', detail:'Erro ao atualizar Endereço'})
