@@ -6,28 +6,28 @@
             <div class="grid">
             <div class="col-1">                
                 <label for="">Tipo</label> 
-                <p-dropdown [options]="tipoPessoa" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedTipos" optionValue="descricao" optionLabel="descricao"></p-dropdown>
+                <p-dropdown [options]="tipoPessoa" [ngModelOptions]="{standalone: true}" [(ngModel)]="clienteSave.tipo" optionValue="descricao" optionLabel="descricao"></p-dropdown>
             </div>
             <div class="col-6" style="margin-top: 0.1vw;"> 
                 <label for="" style="margin-left: 2vw;">CPF/CNPJ</label><br>
-                <input type="text" formControlName="cpf_cnpj" style="margin-left: 2vw;" pInputText/>
+                <input type="text" formControlName="cpf_cnpj" [(ngModel)]="clienteSave.cpfoucnpj" style="margin-left: 2vw;" pInputText/>
             </div>
             <div class="col-2">
                 <label for="" style="margin-left: 2vw;">Inscrição Estadual</label><br>
-                <input type="text"  formControlName="inscricao_estadual" style="margin-left: 2vw;" pInputText/>
+                <input type="text" [(ngModel)]="clienteSave.inscricaoEstadual" formControlName="inscricao_estadual" style="margin-left: 2vw;" pInputText/>
             </div>
             <div class="col-2" style="margin-top: 0.1vw; margin-left: 2.5vw;">
                 <label for="" style="margin-left: 0.1vw;">Situação</label><br>
-                    <p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" value="true" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Inativo" style="margin-left: 1vw"></p-radioButton>               
+                    <p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="clienteSave.situacao" [value]="true" label="Ativo"></p-radioButton>  
+                    <p-radioButton name="desativo" [value]="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="clienteSave.situacao" label="Inativo" style="margin-left: 1vw"></p-radioButton>               
             </div>
             <div class="col-8">
                 <label for="">Nome ou Razão Social</label><br>
-                <input type="text" formControlName="razao_social" pInputText/>
+                <input type="text" [(ngModel)]="clienteSave.nomeRazao" formControlName="razao_social" pInputText/>
             </div>
             <div class="col-1">
                 <label for="">Sexo</label><br>
-                <p-dropdown [options]="sexo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSexos" optionValue="value" optionLabel="descricao"></p-dropdown>
+                <p-dropdown [options]="sexo" [ngModelOptions]="{standalone: true}" [(ngModel)]="clienteSave.sexo" optionValue="value" optionLabel="descricao"></p-dropdown>
             </div>
             <div class="col-2" style="margin-left: 1vw;">
                 <label for="">Data Nascimento</label><br>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-12">
                             <p-panel>
-                                <p-table [value]="enderecoList">
+                                <p-table [value]="clienteSave.enderecos">
                                     <ng-template pTemplate="header">
                                         <tr>
                                             <th>Endereço</th>
@@ -129,7 +129,7 @@
                     </form> 
                             <div class="col-12">
                                 <p-panel>
-                                    <p-table [value]="telefoneList">
+                                    <p-table [value]="clienteSave.telefones">
                                         <ng-template pTemplate="header">
                                             <tr>
                                                 <th>Tipo</th>
@@ -172,7 +172,7 @@
                             
                         <div class="lista" style="margin-top: 1vw;">
                             <p-panel header="Lista E-mail">
-                                <p-table [value]="emaiList">
+                                <p-table [value]="clienteSave.emails">
                                     <ng-template pTemplate="header">
                                         <tr>
                                             <th>#</th>

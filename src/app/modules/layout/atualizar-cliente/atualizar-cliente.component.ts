@@ -72,7 +72,7 @@ export class AtualizarClienteComponent implements OnInit {
     private messageService: MessageService,
     private activedRouter: ActivatedRoute,
     private router: Router,
-
+    
   ) {
 
     this.tipoPessoa = [
@@ -115,7 +115,6 @@ export class AtualizarClienteComponent implements OnInit {
       email: ['',[Validators.required, Validators.email]],
      })
 
-
      const idUrl = this.activedRouter.snapshot.paramMap.get('id');
      const id = Number(idUrl);
 
@@ -143,7 +142,7 @@ export class AtualizarClienteComponent implements OnInit {
     this.enderecoSave.municipio = this.form_endereco.value.municipio
     this.enderecoSave.uf = this.form_endereco.value.uf
 
-    this.enderecoList.push(this.enderecoSave)
+    this.clienteSave.enderecos.push(this.enderecoSave)
   }
 
   addTelefoneOnListSave(){
@@ -151,48 +150,26 @@ export class AtualizarClienteComponent implements OnInit {
     this.telefoneSave.contato = this.form_telefone.value.contato    
     this.telefoneSave.tipo = this.selectedTipoTelefones;
     this.telefoneSave.padrao = this.selectedPadraoTelefone;
-    this.telefoneList.push(this.telefoneSave)
+
+    this.clienteSave.telefones.push(this.telefoneSave)
 
   }
 
   addEmailOnListSave(){
     this.emailSave.email = this.form_email.value.email
-    this.emaiList.push(this.emailSave)
+    this.clienteSave.emails.push(this.emailSave)
+
+
   }
 
 
   save(){
-    this.pessoaSave.cpfoucnpj = this.form_pessoa.value.cpf_cnpj;
-    this.pessoaSave.inscricaoEstadual = this.form_pessoa.value.inscricao_estadual
-    this.pessoaSave.nomeRazao = this.form_pessoa.value.razao_social
-    this.pessoaSave.dtaNascimento = this.form_pessoa.value.data_nascimento
-    this.pessoaSave.tipo = this.selectedTipos;
-    this.pessoaSave.situacao = this.selectedSituacao;
-    this.pessoaSave.sexo = this.selectedSexos;
-    this.pessoaSave.enderecos = this.enderecoList;
-    this.pessoaSave.emails = this.emaiList;
-    this.pessoaSave.telefones = this.telefoneList;
-    
 
-    
-
-   if(this.form_pessoa && this.form_endereco && this.form_telefone && this.form_email 
-    && this.selectedTipos && this.selectedSexos && this.selectedSituacao
-        && this.selectedEmail && this.selectedTipoTelefones != undefined){
-        this.clienteService.atualizar(this.pessoaSave).subscribe()
-          this.messageService.add({severity:'success', summary:'Cliente', detail:'Cliente salvo com sucesso!'})
-          setTimeout(()=> {
-            this.form_pessoa.reset();
-            this.form_endereco.reset();
-            this.form_telefone.reset();
-            this.form_email.reset();
-          },700);
+  
 
           
-        
-      }else{
-        this.messageService.add({severity:'error', summary:'Cliente', detail:'Erro ao salvar Cliente'})
-      }
+          
+        this.clienteService.atualizar(this.clienteSave).subscribe()
 
      
     
