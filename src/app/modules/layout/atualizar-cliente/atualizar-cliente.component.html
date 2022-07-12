@@ -94,7 +94,7 @@
                                             <td><p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedPadraoEndereco" [value]="true"></p-radioButton></td>
                                             <td>
                                                 <i class="pi pi-trash"></i>
-                                                <i class="pi pi-pencil" routerLink="/layout/atualizar-endereco/{{endereco.id}}"></i>
+                                                <i class="pi pi-pencil" routerLink="/layout/atualizar-endereco/{{endereco.id}}" style="margin-left: 1vw;"></i>
                                             </td>
                                         </tr>
                                     </ng-template>
@@ -147,7 +147,7 @@
                                                 <td><p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="status" value="ps4"></p-radioButton></td>                                     
                                                 <td>
                                                     <i class="pi pi-trash"></i>
-                                                    <i class="pi pi-pencil" routerLink="/layout/atualizar-telefone/{{telefone.id}}"></i>
+                                                    <i class="pi pi-pencil" routerLink="/layout/atualizar-telefone/{{telefone.id}}" style="margin-left: 1vw;"></i>
                                                 </td>
                                             </tr>
                                         </ng-template>
@@ -190,7 +190,7 @@
                                             
                                             <td>                                               
                                                 <i class="pi pi-trash"></i>
-                                                <i class="pi pi-pencil" routerLink="/layout/atualizar-email/{{email.id}}"></i>
+                                                <i class="pi pi-pencil" routerLink="/layout/atualizar-email/{{email.id}}" style="margin-left: 1vw;"></i>
                                             </td>
                                         </tr>
                                     </ng-template>
@@ -201,8 +201,8 @@
                 </p-tabView>
 
                    <div class="btn-categoria">
-            <p-button class="btn" (click)="save()"><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
-            <p-button type="submit" (click)="resetForm();" class="btn"><i class="pi pi-refresh"></i><p style="margin-left: 0.7vw;">Limpar</p></p-button>
+            <p-button class="btn" (click)="save()"><i class="pi pi-check"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
+            <p-button type="submit" (click)="resetForm();" class="btn"><i class="pi pi-times-circle"></i><p style="margin-left: 0.7vw;">Cancelar</p></p-button>
         </div>
             </div>
            
