@@ -3,7 +3,7 @@
     <div class="painel">
         <p-panel header="Endereço">
             <div class="col-12">
-                <p-tabView>
+
                         <form [formGroup]="form_endereco">
                        <div class="grid">
                         <div class="col-10">
@@ -28,17 +28,14 @@
                         </div>
                         <div class="col-2">
                             <label for="">Padrão</label><br>
-                                <p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="enderecoSave.padrao"  label="Ativo"></p-radioButton>  
-                                <p-radioButton name="desativo" [value]="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="enderecoSave.padrao" label="Inativo" style="margin-left: 1vw"></p-radioButton>                     
-                        </div>
+                                <p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="enderecoSave.padrao"  label="Ativo"></p-radioButton>                          </div>
                     </div>
                 </form>
               
-                </p-tabView>
-
+                
                    <div class="btn-categoria">
             <p-button class="btn" (click)="atualizar(); "><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
-            <p-button type="submit" (click)="resetForm();" class="btn" style="margin-left: 1vw"><i class="pi pi-refresh"></i><p style="margin-left: 0.7vw;">Limpar</p></p-button>
+            <p-button type="submit" class="btn"><i class="pi pi-times-circle"></i><p style="margin-left: 0.7vw;">Cancelar</p></p-button>
         </div>
             </div>
            

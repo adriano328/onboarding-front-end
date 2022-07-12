@@ -66,8 +66,14 @@ export class AtualizarEmailComponent implements OnInit {
   save(){
    
     this.emailSave.email = this.form_email.value.email; 
-   
+    
+      if(this.form_email.valid != undefined){
         this.emailService.atualizar(this.emailSave).subscribe();
+        this.messageService.add({severity:'success', summary:'Email', detail:'E-mail atualizado com sucesso!'})
+      }else{
+        this.messageService.add({severity:'error', summary:'Email', detail:'Erro ao atualizar E-mail'})
+
+      }
 
         
     

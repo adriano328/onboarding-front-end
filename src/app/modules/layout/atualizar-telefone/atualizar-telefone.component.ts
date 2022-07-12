@@ -77,10 +77,14 @@ export class AtualizarTelefoneComponent implements OnInit {
     this.telefoneSave.contato = this.form_telefone.value.contato;
     this.telefoneSave.numeroTelefone = this.form_telefone.value.numeroTelefone;
     this.telefoneSave.padrao = this.form_telefone.value.padrao;
-    
     this.telefoneSave.numeroTelefone = this.form_telefone.value.numeroTelefone;
-      this.telefoneService.atualizar(this.telefoneSave).subscribe();      
-      console.log(this.telefoneSave);
+      if(this.form_telefone.valid != undefined){
+        this.telefoneService.atualizar(this.telefoneSave).subscribe(); 
+        this.messageService.add({severity:'success', summary:'Telefone', detail:'Telefone atualizado com sucesso'})     
+     
+      }else{
+        this.messageService.add({severity:'error', summary:'Endereço', detail:'Erro ao atualizar telefone!'})
+      }
 
     }
    

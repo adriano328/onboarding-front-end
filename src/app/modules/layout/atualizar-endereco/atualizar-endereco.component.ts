@@ -8,6 +8,7 @@ import { IEndereco } from 'src/app/interface/IEndereco';
 import { ITelefone } from 'src/app/interface/ITelefone';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { EnderecoService } from 'src/app/services/endereco.service';
+import { ClienteComponent } from '../cliente/cliente.component';
 
 @Component({
   selector: 'app-atualizar-endereco',
@@ -70,7 +71,8 @@ export class AtualizarEnderecoComponent implements OnInit {
     private messageService: MessageService,
     private enderecoService: EnderecoService,
     private activedRouter: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    
     
     
   ) {
@@ -99,6 +101,7 @@ export class AtualizarEnderecoComponent implements OnInit {
   resetForm(){
     this.form_endereco.reset();
   }
+
 
   addEnderecoOnListSave(){
     this.enderecoSave.endereco = this.form_endereco.value.endereco
