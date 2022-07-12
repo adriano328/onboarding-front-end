@@ -182,14 +182,7 @@ export class AtualizarClienteComponent implements OnInit {
 
   save(){
 
-  
-
-          
-          
-        this.clienteService.atualizar(this.clienteSave).subscribe()
-
-     
-    
+        this.clienteService.atualizar(this.clienteSave).subscribe(); 
 
     
   }

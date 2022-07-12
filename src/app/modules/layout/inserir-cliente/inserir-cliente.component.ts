@@ -9,15 +9,18 @@ import { ITelefone } from 'src/app/interface/ITelefone';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { EnderecoService } from 'src/app/services/endereco.service';
 import { MessageService } from 'primeng/api';
+import { AtualizarEnderecoComponent } from '../atualizar-endereco/atualizar-endereco.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-inserir-cliente',
   templateUrl: './inserir-cliente.component.html',
   styleUrls: ['./inserir-cliente.component.scss'],
-  providers: [EnderecoService, ClienteService, MessageService]
+  providers: [EnderecoService, ClienteService, MessageService, AtualizarEnderecoComponent]
 })
 export class InserirClienteComponent implements OnInit {
 
+  clienteSave: ICliente = {} as ICliente;
 
   items!: MenuItem[];
 
@@ -68,7 +71,11 @@ export class InserirClienteComponent implements OnInit {
     private formBuilder: FormBuilder,
     private endereco: EnderecoService,
     private clienteService: ClienteService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private atualizarEndereco: AtualizarEnderecoComponent,
+    private activedRouter: ActivatedRoute,
+    private router: Router,
+
   ) {
 
     this.tipoPessoa = [
@@ -111,7 +118,20 @@ export class InserirClienteComponent implements OnInit {
       email: ['alefepdias@gmail.com',[Validators.required, Validators.email]],
      })
 
+     const idUrl = this.activedRouter.snapshot.paramMap.get('id');
+     const id = Number(idUrl);
+     
+
+     this.clienteService.buscarPorId(id).subscribe(retorno =>{
+      this.clienteSave = retorno;      
+
+     })
+
+     
+
    }
+
+   
 
   ngOnInit(): void {
 
