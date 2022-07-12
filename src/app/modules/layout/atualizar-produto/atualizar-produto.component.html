@@ -18,7 +18,7 @@
             <div class="col-2">
                 <label for="">Situação</label><br>
                     <p-radioButton name="ativo" [value]="true" [ngModelOptions]="{standalone: true}" [(ngModel)]="produtoSave.situacao" label="Ativo"></p-radioButton>  
-                    <p-radioButton style="margin-left:1vw" name="desativo" [value]="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="produtoSave.situacao" label="Inativo"></p-radioButton>             
+                    <p-radioButton class="btnradio" name="desativo" [value]="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="produtoSave.situacao" label="Inativo"></p-radioButton>             
             </div>
             <div class="btn-inserir-categoria">
                 <p-button (click)="save();" class="btn"><i class="pi pi-check"></i><p style="margin-left: 0.5vw;">Salvar</p></p-button>
