@@ -1,1 +1,28 @@
-<p>atualizar-email works!</p>
+<p-toast></p-toast>
+<div class="quadro">
+    <div class="painel">
+        <p-panel header="E-mail">
+            <div class="col-12">
+                        <form [formGroup]="form_email">
+                        <div class="grid">                         
+                            <div class="col-4">
+                                <label for="">E-mail</label>
+                                <input type="text" [(ngModel)]="emailSave.email" formControlName="email" pInputText/>
+                            </div>
+                            <div class="col-2">
+                                <label for="">Padrão</label><br>
+                                    <p-radioButton name="ativo" [(ngModel)]="emailSave.padrao" [value]="true" [ngModelOptions]="{standalone: true}" label="Ativo"></p-radioButton>  
+                                </div> 
+                            </div>
+                        </form>
+                   <div class="btn-categoria">
+            <p-button class="btn" (click)="save()"><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
+            <p-button type="submit" (click)="resetForm();" class="btn" style="margin-left: 1vw"><i class="pi pi-refresh"></i><p style="margin-left: 0.7vw;">Limpar</p></p-button>
+        </div>
+            </div>
+           
+        </p-panel><br><br>                
+    </div>
+</div>
+
+
