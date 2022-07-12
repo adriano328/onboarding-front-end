@@ -71,6 +71,10 @@ export class AtualizarTelefoneComponent implements OnInit {
     this.form_telefone.reset();
   }
 
+  voltar(){
+    window.history.back()
+  }
+
 
    atualizar(){
     

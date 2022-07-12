@@ -102,6 +102,10 @@ export class AtualizarEnderecoComponent implements OnInit {
     this.form_endereco.reset();
   }
 
+  voltar(){
+    window.history.back()
+  }
+
 
   addEnderecoOnListSave(){
     this.enderecoSave.endereco = this.form_endereco.value.endereco

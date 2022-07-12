@@ -62,6 +62,11 @@ export class AtualizarEmailComponent implements OnInit {
     this.form_email.reset();
   }
 
+  voltar(){
+    window.history.back()
+  }
+
+
 
   save(){
    

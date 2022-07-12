@@ -138,6 +138,11 @@ export class AtualizarClienteComponent implements OnInit {
     this.form_email.reset();
   }
 
+  voltar(){
+    window.history.back()
+  }
+
+
   addEnderecoOnListSave(){
 
     this.enderecoEdit = {};
