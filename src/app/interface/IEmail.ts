@@ -1,5 +1,5 @@
 export interface IEmail {
- Id: number;
- email: string;
- padrao: string;
+ Id?: number;
+ email?: string;
+ padrao?: string;
 }

@@ -60,7 +60,9 @@ export class AtualizarClienteComponent implements OnInit {
   enderecoEdit: IEndereco = {} as IEndereco;
   enderecoSave: IEndereco = {} as IEndereco;
   emailSave: IEmail = {} as IEmail;
+  emailEdit: IEmail = {} as IEmail;
   telefoneSave: ITelefone = {} as ITelefone;
+  telefoneEdit: ITelefone = {} as ITelefone;
 
   enderecoList: IEndereco[] = [];
   emaiList: IEmail[] = [];
@@ -145,24 +147,29 @@ export class AtualizarClienteComponent implements OnInit {
     this.enderecoEdit.cep = this.form_endereco.value.cep
     this.enderecoEdit.municipio = this.form_endereco.value.municipio
     this.enderecoEdit.uf = this.form_endereco.value.uf
-  
     
     this.clienteSave.enderecos.push(this.enderecoEdit)
   }
 
   addTelefoneOnListSave(){
-    this.telefoneSave.numeroTelefone = this.form_telefone.value.nr_telefone
-    this.telefoneSave.contato = this.form_telefone.value.contato    
-    this.telefoneSave.tipo = this.selectedTipoTelefones;
-    this.telefoneSave.padrao = this.selectedPadraoTelefone;
 
-    this.clienteSave.telefones.push(this.telefoneSave)
+    this.telefoneEdit = {};
+
+    this.telefoneEdit.numeroTelefone = this.form_telefone.value.nr_telefone
+    this.telefoneEdit.contato = this.form_telefone.value.contato    
+    this.telefoneEdit.tipo = this.selectedTipoTelefones;
+    this.telefoneEdit.padrao = this.selectedPadraoTelefone;
+
+    this.clienteSave.telefones.push(this.telefoneEdit)
 
   }
 
   addEmailOnListSave(){
-    this.emailSave.email = this.form_email.value.email
-    this.clienteSave.emails.push(this.emailSave)
+
+    this.emailEdit = {};
+
+    this.emailEdit.email = this.form_email.value.email
+    this.clienteSave.emails.push(this.emailEdit)
 
 
   }
