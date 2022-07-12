@@ -55,8 +55,16 @@ export class ClienteComponent implements OnInit {
     this.form1.reset();
   }
     
-  onEdit(){
-
+  excluir(id: number): void{
+    if(this.clienteService.excuir(id).subscribe()){
+      this.carregarClientes();
+    }
+  }
+  
+  carregarClientes(){
+    this.clienteService.findAll().then(success =>{
+      this.listCliente = success!;
+    })
   }
   
 

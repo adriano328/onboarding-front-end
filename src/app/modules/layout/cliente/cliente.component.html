@@ -51,8 +51,8 @@
                         <td>{{cliente.cpfoucnpj}}</td>
                         <td>{{cliente.situacao == true? "Ativo":"Inativo"}}</td>
                         <td>
-                            <i class="pi pi-trash"></i>
-                            <i class="pi pi-pencil" style="margin-left: 1vw;" routerLink="/layout/atualizar-cliente/{{cliente.id}}"></i>
+                            <i class="pi pi-trash" (click)="excluir(cliente.id)" style="cursor: pointer;"></i>
+                            <i class="pi pi-pencil" style="margin-left: 1vw; cursor: pointer;"  routerLink="/layout/atualizar-cliente/{{cliente.id}}"></i>
                         </td>
                     </tr>
                 </ng-template>

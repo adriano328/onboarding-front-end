@@ -40,8 +40,8 @@
                         <td>{{categoria.nome}}</td>
                         <td>{{categoria.situacao == true? "Ativo":"Inativo"}}</td>
                         <td>
-                            <i class="pi pi-trash"></i>
-                            <i class="pi pi-pencil" routerLink="/layout/atualizar-categoria/{{categoria.id}}" style="margin-left: 1vw;"></i>
+                            <i class="pi pi-trash" (click)="excluir(categoria.id)" style="cursor: pointer;"></i>
+                            <i class="pi pi-pencil"  routerLink="/layout/atualizar-categoria/{{categoria.id}}" style="margin-left: 1vw; cursor: pointer;"></i>
                         </td>
                     </tr>
                 </ng-template>

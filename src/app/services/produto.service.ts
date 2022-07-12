@@ -24,7 +24,7 @@ export class ProdutoService {
         return await this.http.get<IProduto[]>(url).toPromise();
     }
 
-    excluir(id: number): Observable<IProduto>{
+    excluir(id: number): Observable<any>{
         return this.http.delete<any>(`${this.URL}/${id}`).pipe(
             map(retorno => retorno)
         )

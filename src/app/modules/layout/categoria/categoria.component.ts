@@ -49,6 +49,19 @@ export class CategoriaComponent implements OnInit {
   }
 
 
+  excluir(id: number): void{
+    if(this.categoriaService.excluir(id).subscribe()){
+      this.carregarCategoria();
+    }
+  }
+
+  carregarCategoria(){
+    this.categoriaService.findAll().then(success =>{
+      this.listCategoria = success!;
+    })
+  }
+
+
   resetForm(){
     this.form.reset();
   }

@@ -68,7 +68,7 @@
                     </div>
                 </form>
                         <div class="col-2" style="margin-left: 73vw; margin-bottom: 1vw;">
-                            <p-button class="btn-endereco" (click)="addEnderecoOnListSave()"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
+                            <p-button class="btn-endereco" (click)="addEnderecoOnListSave()"><i class="pi pi-plus"></i><p style="margin-left: 0.5vw;">Adicionar</p></p-button>
                         </div>
                         <div class="col-12">
                             <p-panel>
@@ -123,7 +123,7 @@
                                     <p-radioButton name="ativo" value="true" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedPadraoTelefone"  label="Ativo"></p-radioButton>  
                             </div>
                             <div class="col-2" style="margin-left: 73vw; margin-bottom: 1vw;">
-                                <p-button class="btn-endereco" (click)="addTelefoneOnListSave()"><i class="pi pi-plus"></i><p>Adicionar</p></p-button>
+                                <p-button class="btn-endereco" (click)="addTelefoneOnListSave()"><i class="pi pi-plus"></i><p style="margin-left: 0.5vw;">Adicionar</p></p-button>
                             </div>
                         </div> 
                     </form> 
@@ -168,7 +168,7 @@
                                 </div>
                             </div>
                         </form>
-                        <p-button class="btn-email" (click)="addEmailOnListSave()"><i class="pi pi-plus"></i><p style="padding-left: 0.5vw;" >Adicionar</p></p-button>
+                        <p-button class="btn-email" (click)="addEmailOnListSave()"><i class="pi pi-plus"></i><p style="margin-left: 0.5vw;" >Adicionar</p></p-button>
                             
                         <div class="lista" style="margin-top: 1vw;">
                             <p-panel header="Lista E-mail">
@@ -201,8 +201,8 @@
                 </p-tabView>
 
                    <div class="btn-categoria">
-            <p-button class="btn" (click)="save()"><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
-            <p-button type="submit" routerLink="/layout/cliente" class="btn" ><i class="pi pi-times-circle"></i><p style="margin-left: 0.7vw;">Cancelar</p></p-button>
+            <p-button class="btn" (click)="save()"><i class="pi pi-check"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
+            <p-button type="submit" class="btn" routerLink="/layout/cliente"><i class="pi pi-times-circle"></i><p style="margin-left: 0.7vw;">Cancelar</p></p-button>
         </div>
             </div>
            

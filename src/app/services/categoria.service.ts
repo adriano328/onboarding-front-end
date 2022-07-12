@@ -27,6 +27,11 @@ export class CategoriaService {
         return await this.http.get<ICategoria[]>(url).toPromise();
     }
 
+    excluir(id: number): Observable<any>{
+        return this.http.delete<any>(`${this.URL}/${id}`).pipe(
+            map(retorno => retorno)
+        )
+    }
 
     buscaTodos(){
         return this.http.get<ICategoria[]>(`${this.URL}/lista-categoria`);

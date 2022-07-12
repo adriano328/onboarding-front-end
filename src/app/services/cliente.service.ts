@@ -24,6 +24,12 @@ export class ClienteService{
         return await this.http.get<ICliente[]>(url).toPromise();
     }
 
+    excuir(id: number): Observable<any>{
+        return this.http.delete<any>(`${this.URL}/${id}`).pipe(
+            map(retorno => retorno)
+        )
+    }
+
     buscarTodos(){
         return this.http.get<ICliente[]>(`${this.URL}/lista-cliente`)
     }
