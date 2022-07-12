@@ -138,13 +138,14 @@ export class AtualizarClienteComponent implements OnInit {
 
   addEnderecoOnListSave(){
 
+    this.enderecoEdit = {};
+
     this.enderecoEdit.endereco = this.form_endereco.value.endereco;
     this.enderecoEdit.bairro = this.form_endereco.value.bairro
     this.enderecoEdit.cep = this.form_endereco.value.cep
     this.enderecoEdit.municipio = this.form_endereco.value.municipio
     this.enderecoEdit.uf = this.form_endereco.value.uf
-
-    console.log(this.clienteSave.enderecos);
+  
     
     this.clienteSave.enderecos.push(this.enderecoEdit)
   }
