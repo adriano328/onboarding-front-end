@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-1">
                     <label for="">Situação</label>
-                    <p-dropdown [options]="listCategoria" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedCat" optionLabel="nome"></p-dropdown>
+                    <p-dropdown [options]="situacoes" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedtipo" optionLabel="situacao"></p-dropdown>
                     </div>   
             </div>
             <div class="btn-categoria">
@@ -29,8 +29,8 @@
                 <p>Lista Produtos</p>
                 <p-button class="btn-cabecalho" routerLink="/layout/inserir-produto"><i class="pi pi-plus"></i><p style="margin-left: 0.5vw;">Adicionar</p></p-button>
             </ng-template>
-            <p-table [value]="listProduto" [paginator]="true" [rows]="6" [showCurrentPageReport]="true" responsiveLayout="scroll"
-            currentPageReportTemplate="" [rowsPerPageOptions]="[6,25,50]">
+            <p-table [value]="listProduto" [paginator]="true" [rows]="4" [showCurrentPageReport]="true" responsiveLayout="scroll"
+            currentPageReportTemplate="" [rowsPerPageOptions]="[4,25,50]">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>#</th>

@@ -27,12 +27,17 @@ listCategoria: ICategoria[] = [];
 
 selectedCat!: ICategoria;
 
+public situacoes: Array<situacao> = [];
+
+selectedtipo!: String;
+
+
   constructor(
   private produtoService: ProdutoService,
   private categoriaService: CategoriaService,
   private formBuilder: FormBuilder,
   private router: Router,
-  private route: ActivatedRoute
+  private activedRouter: ActivatedRoute
 
   ) {
     this.produtoService.findAll().then(sucess =>{
@@ -44,11 +49,21 @@ selectedCat!: ICategoria;
     this.carregarProdutos();
     this.categoriaService.findAll().then(success => {
       this.listCategoria = success!;
-    });
+    }),
     
     this.form = this.formBuilder.group({
       nome:['', Validators.required]
-    })
+    }),
+
+    this.situacoes.push(
+      {
+        situacao:"Ativo"
+      },
+      {
+        situacao:"Inativo"
+      }
+    )
+    
   }
 
   resetForm(){
@@ -66,11 +81,10 @@ selectedCat!: ICategoria;
     this.listProduto = success!;
    })
   }
+}
 
-  
-  
-
-
+interface situacao{
+  situacao: String;
 }
 
 

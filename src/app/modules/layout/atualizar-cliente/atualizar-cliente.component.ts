@@ -57,6 +57,7 @@ export class AtualizarClienteComponent implements OnInit {
   form_email!:  FormGroup;
 
   pessoaSave: ICliente = {} as ICliente;
+  enderecoEdit: IEndereco = {} as IEndereco;
   enderecoSave: IEndereco = {} as IEndereco;
   emailSave: IEmail = {} as IEmail;
   telefoneSave: ITelefone = {} as ITelefone;
@@ -136,13 +137,16 @@ export class AtualizarClienteComponent implements OnInit {
   }
 
   addEnderecoOnListSave(){
-    this.enderecoSave.endereco = this.form_endereco.value.endereco
-    this.enderecoSave.bairro = this.form_endereco.value.bairro
-    this.enderecoSave.cep = this.form_endereco.value.cep
-    this.enderecoSave.municipio = this.form_endereco.value.municipio
-    this.enderecoSave.uf = this.form_endereco.value.uf
 
-    this.clienteSave.enderecos.push(this.enderecoSave)
+    this.enderecoEdit.endereco = this.form_endereco.value.endereco;
+    this.enderecoEdit.bairro = this.form_endereco.value.bairro
+    this.enderecoEdit.cep = this.form_endereco.value.cep
+    this.enderecoEdit.municipio = this.form_endereco.value.municipio
+    this.enderecoEdit.uf = this.form_endereco.value.uf
+
+    console.log(this.clienteSave.enderecos);
+    
+    this.clienteSave.enderecos.push(this.enderecoEdit)
   }
 
   addTelefoneOnListSave(){

@@ -6,14 +6,14 @@
             <form [formGroup]="form">
             <div class="col-8">
                 <label for="">Nome</label><br>
-                <input type="text" style="border-radius: 0.5vw;" formControlName="nome" pInputText/>
+                <input type="text" formControlName="nome" pInputText/>
                 
             </div>
         </form>
             <div class="col-4">
                 <label for="">Situação</label><br>
                     <p-radioButton name="ativo" value="true" [(ngModel)]="selectedSituacao" [ngModelOptions]="{standalone: true}" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="false" [(ngModel)]="selectedSituacao" [ngModelOptions]="{standalone: true}" label="Inativo"></p-radioButton>       
+                    <p-radioButton class="btnradio" name="desativo" value="false" [(ngModel)]="selectedSituacao" [ngModelOptions]="{standalone: true}" label="Inativo"></p-radioButton>       
                                  
             </div>
             <div class="btn-inserir-categoria">
