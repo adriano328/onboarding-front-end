@@ -19,7 +19,7 @@
             <div class="col-2" style="margin-top: 0.1vw; margin-left: 2.5vw;">
                 <label for="" style="margin-left: 0.1vw;">Situação</label><br>
                     <p-radioButton name="ativo" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" value="true" label="Ativo"></p-radioButton>  
-                    <p-radioButton name="desativo" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Inativo" style="margin-left: 1vw"></p-radioButton>               
+                    <p-radioButton name="desativo" class="btn-radio" value="false" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" label="Inativo"></p-radioButton>               
             </div>
             <div class="col-8">
                 <label for="">Nome ou Razão Social</label><br>
@@ -202,7 +202,7 @@
 
                    <div class="btn-categoria">
             <p-button class="btn" (click)="save()"><i class="pi pi-search"></i><p style="margin-left: 0.7vw;">Salvar</p></p-button>
-            <p-button type="submit" (click)="resetForm();" class="btn" style="margin-left: 1vw"><i class="pi pi-refresh"></i><p style="margin-left: 0.7vw;">Limpar</p></p-button>
+            <p-button type="submit" routerLink="/layout/cliente" class="btn" ><i class="pi pi-times-circle"></i><p style="margin-left: 0.7vw;">Cancelar</p></p-button>
         </div>
             </div>
            
