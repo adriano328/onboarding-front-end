@@ -18,54 +18,43 @@
             border: solid 1px;
             width: 100%;
             height: 1.5vw;
-           
 
         }
-    
-         
-    
+
         .listar-categoria{
             position: relative;
             border: solid 1px;
         }
-    
+
         .p-panel .p-panel-header{
             background-color: #4153b3;
-            color: white;
-
-            
+            color: white;    
         }
+
+        .btn-telefone{
+            position: relative;
+            top: 10px;
+            left: 966px;
+           }
+
+        .btn-email{
+            position: relative;
+            top: 1vw;
+            left: 73.7vw;
+            bottom: 1vw;
+          
+           }
         
+           .btn-categoria{
+            margin-left: 67.2vw;
 
-       .btn-telefone{
-        position: relative;
-        top: 10px;
-        left: 966px;
-       }
-
-       .btn-email{
-        position: relative;
-        top: 1vw;
-        left: 73.7vw;
-        bottom: 1vw;
-      
-       }
-
-       .lista{
-        position: relative;
-        top: 20px;    
-    }
+            .btn{
+                margin-left: 1vw;
+            }
+            
+           }
        
 
-    .btn-categoria{
-        position: relative;
-        left: 68.3vw;
     }
 
-    }
-
-    
 }
-
-
-
