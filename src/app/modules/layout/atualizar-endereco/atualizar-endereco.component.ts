@@ -85,12 +85,6 @@ export class AtualizarEnderecoComponent implements OnInit {
       uf: ['', Validators.required],
      })
 
-     const idUrl = this.activedRouter.snapshot.paramMap.get('id');
-     const id = Number(idUrl);
-
-     this.enderecoService.buscarPorId(id).subscribe(retorno => {
-      this.enderecoSave = retorno;
-     })
 
    }
 

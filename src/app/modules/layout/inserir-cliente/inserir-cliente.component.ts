@@ -118,14 +118,7 @@ export class InserirClienteComponent implements OnInit {
       email: ['alefepdias@gmail.com',[Validators.required, Validators.email]],
      })
 
-     const idUrl = this.activedRouter.snapshot.paramMap.get('id');
-     const id = Number(idUrl);
-     
-
-     this.clienteService.buscarPorId(id).subscribe(retorno =>{
-      this.clienteSave = retorno;      
-
-     })
+ 
 
      
 
