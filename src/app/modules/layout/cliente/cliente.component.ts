@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { lastValueFrom } from 'rxjs';
 import { ICliente } from 'src/app/interface/ICliente';
 import { ClienteService } from 'src/app/services/cliente.service';
-
 
 @Component({
   selector: 'app-cliente',
@@ -23,7 +22,9 @@ export class ClienteComponent implements OnInit {
 
   selectedSituacao!: String;
 
-  form1!: FormGroup;
+  form!: FormGroup;
+
+  nomeRazao!: String;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,8 +38,8 @@ export class ClienteComponent implements OnInit {
 
   ngOnInit(): void {
 
-  this.form1 = this.formBuilder.group({
-      nome:['']
+  this.form = this.formBuilder.group({
+      nomeRazao:['', Validators.required]
   })
 
   this.tipos.push(
@@ -53,9 +54,17 @@ export class ClienteComponent implements OnInit {
   }
 
   resetForm(){
-    this.form1.reset();
+    this.form.reset();
     this.carregarClientes();
   }
+
+  async findByNome(){
+      const dates = await lastValueFrom(this.clienteService.buscarPorNome(this.form.value.nomeRazao));
+      this.listCliente = dates;   
+    
+  }
+
+  
 
   excluir(id: number): void{
     if(this.clienteService.excuir(id).subscribe()){
@@ -73,7 +82,6 @@ export class ClienteComponent implements OnInit {
 }
 
 
-
 interface tipo{
   tipo: String
 }
@@ -81,3 +89,4 @@ interface tipo{
 interface situacao{
   situacao: String
 }
+

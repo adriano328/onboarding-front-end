@@ -23,10 +23,6 @@ produtoList: IProduto = {} as IProduto
 
 listProduto: IProduto[] = [];
 
-filterProduto: IProduto[] = [];
-
-baseApiUrl = environment.api
-
 form!: FormGroup;
 
 listCategoria: ICategoria[] = [];
@@ -77,8 +73,6 @@ nome!: String;
     )
     
   }
-
-
 
   resetForm(){
     this.form.reset();

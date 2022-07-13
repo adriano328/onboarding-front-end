@@ -1,7 +1,7 @@
 <div class="quadro">
     <div class="painel">
         <p-panel header="Pesquisar">
-            <form [formGroup]="form1">
+            <form [formGroup]="form">
            <div class="grid">
             <div class="col-1" >
                 <div class="col-1">                
@@ -12,7 +12,7 @@
             
             <div class="col-9" style="margin-top: 0.4vw;">
                 <label for="" style="margin-left: 3vw;">Nome</label><br>
-                <input type="text" formControlName="nome" pInputText/>
+                <input type="text" formControlName="nomeRazao" name="nomeRazao" pInputText/>
             </div>
             
             <div class="col-1" style="margin-top: 0.4vw;">
@@ -20,7 +20,7 @@
                 <p-dropdown [options]="situacoes" [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedSituacao" optionLabel="situacao"></p-dropdown>
             </div>
         <div class="btn-categoria">
-            <p-button class="btn" ><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
+            <p-button class="btn" (click)="findByNome()"><i class="pi pi-search" style="margin-right: 10px;"></i>Pesquisar</p-button>
             <p-button  type="submit"(click)="resetForm();" class="btn"><i class="pi pi-refresh" style="margin-right: 10px;"></i>Limpar</p-button>
         </div>
            </div>
@@ -60,7 +60,6 @@
         </p-panel> 
                 
     </div>
-
 
    
 

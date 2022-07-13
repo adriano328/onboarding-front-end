@@ -48,7 +48,12 @@ export class ClienteService{
         )
     }
 
+    buscarPorNome(nomeRazao: string){
+        return this.http.get<ICliente[]>(`${this.URL}/listar-por-nome`,
+        {params: new HttpParams().set('nomeRazao', nomeRazao || '')}).pipe(
+            map(retorno => retorno)
+        )
+    }
  
-
 
 }
