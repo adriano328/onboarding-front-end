@@ -1,7 +1,7 @@
 <div class="quadro">
     <div class="painel">
         <p-panel header="Pesquisar">
-            <form [formGroup]="form" #produtoForm="ngForm">
+            <form [formGroup]="form">
            <div class="grid">
                 <div class="col-1">
                     <label for="" style="margin-left: 1vw;">Categoria</label><br>
@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-9">
                     <label for="" style="margin-left: 0.5vw;">Nome</label><br>
-                    <input type="text" formControlName="nome" pInputText/>
+                    <input type="text" formControlName="nome" name="nome" pInputText/>
                 </div>
                 <div class="col-1">
                     <label for="">Situação</label>
@@ -17,7 +17,7 @@
                     </div>   
             </div>
             <div class="btn-categoria">
-                <p-button class="btn"><i class="pi pi-search" ></i><p style="margin-left: 0.5vw;">Pesquisar</p></p-button>
+                <p-button class="btn" (click)="findByNome()"><i class="pi pi-search" ></i><p style="margin-left: 0.5vw;">Pesquisar</p></p-button>
                 <p-button type="submit" (click)="resetForm();"><i class="pi pi-refresh"></i><p style="margin-left: 0.5vw;">Limpar</p></p-button>
             </div>
     </form> 

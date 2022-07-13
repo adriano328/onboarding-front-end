@@ -47,7 +47,8 @@ import { AtualizarEmailComponent } from './atualizar-email/atualizar-email.compo
     AtualizarClienteComponent,
     AtualizarTelefoneComponent,
     AtualizarEnderecoComponent,
-    AtualizarEmailComponent
+    AtualizarEmailComponent,
+    
     
     
 

@@ -1,13 +1,16 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { IProduto } from "../interface/IProduto";
 import {map, catchError} from 'rxjs/operators';
+import { ProdutoComponent } from "../modules/layout/produto/produto.component";
 
 @Injectable()
 
 export class ProdutoService {
+
+    nome!: string;
 
     private URL: string = 'http://localhost:8080/produto'
 
@@ -45,6 +48,16 @@ export class ProdutoService {
             map(retorno => retorno)
         )
     }
+
+    buscarPorNome(nome: string){
+        return this.http.get<IProduto[]>(`${this.URL}/listar-por-nome`, 
+        {params: new HttpParams().set('nome', nome || '')}).pipe(
+            map(retorno => retorno)
+        );
+    }
+
+    
+   
 
 
 }
