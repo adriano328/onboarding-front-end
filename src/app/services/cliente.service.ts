@@ -21,12 +21,14 @@ export class ClienteService{
      return this.http.post(url, cliente).toPromise();
     }
 
-    async findAll(){
+    findAll(): Observable<any>{
         const url = `${environment.api}/cliente/lista-cliente`;
-        return await this.http.get<ICliente[]>(url).toPromise();
+      return  this.http.get<ICliente[]>(url).pipe(
+        map(retorno => retorno)
+      )
     }
 
-    excuir(id: number): Observable<any>{
+    excluir(id: number): Observable<any>{
         return this.http.delete<any>(`${this.URL}/${id}`).pipe(
             map(retorno => retorno)
         )

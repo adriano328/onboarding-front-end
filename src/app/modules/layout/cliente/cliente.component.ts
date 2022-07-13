@@ -31,9 +31,10 @@ export class ClienteComponent implements OnInit {
     private clienteService: ClienteService,
   
   ) { 
-    this.clienteService.findAll().then(sucess =>{
-      this.listCliente = sucess!;
-    })
+  
+    this.clienteService.findAll().subscribe(success => {
+      this.listCliente = success
+    }) 
   }
 
   ngOnInit(): void {
@@ -66,16 +67,20 @@ export class ClienteComponent implements OnInit {
 
   
 
-  excluir(id: number): void{
-    if(this.clienteService.excuir(id).subscribe()){
-      this.carregarClientes();
-    }
+  excluir(id: number){
+    console.log('entrou');
+    
+   this.clienteService.excluir(id).subscribe(success => {
+    this.carregarClientes();
+   })
+      
+    
   }
   
-  carregarClientes(){
-    this.clienteService.findAll().then(success =>{
-      this.listCliente = success!;
-    })
+  carregarClientes(){ 
+   this.clienteService.findAll().subscribe(success => {
+    this.listCliente = success;
+   })
   }
   
 
