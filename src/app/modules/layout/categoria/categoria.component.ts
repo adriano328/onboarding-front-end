@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { lastValueFrom } from 'rxjs';
 import { ICategoria } from 'src/app/interface/ICategoria';
 import { CategoriaService } from 'src/app/services/categoria.service';
 
@@ -64,6 +65,14 @@ export class CategoriaComponent implements OnInit {
 
   resetForm(){
     this.form.reset();
+    this.carregarCategoria();
+  }
+
+  async findByNome(){
+    const dates = await lastValueFrom(this.categoriaService.buscarPorNome(this.form.value.nome));
+    this.listCategoria = dates;
+
+    console.log(dates)
   }
 
 }

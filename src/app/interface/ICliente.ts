@@ -5,12 +5,12 @@ import { ITelefone } from "./ITelefone";
 export interface ICliente{
  Id: number;   
  tipo: string;
- cpfoucnpj: String;
- inscricaoEstadual: String;
+ cpfoucnpj: string;
+ inscricaoEstadual: string;
  situacao: Boolean;
- nomeRazao: String;
+ nomeRazao: string;
  sexo: Boolean;
- dtaNascimento: String;
+ dtaNascimento: string;
  enderecos: IEndereco[];
  telefones: ITelefone[];
  emails: IEmail[];

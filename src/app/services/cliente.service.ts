@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
@@ -8,6 +8,8 @@ import {map, catchError} from 'rxjs/operators';
 @Injectable()
 
 export class ClienteService{
+
+    nome!: String;
 
     private URL: string = 'http://localhost:8080/cliente'
 
@@ -45,5 +47,8 @@ export class ClienteService{
             map(retorno => retorno)
         )
     }
+
+ 
+
 
 }

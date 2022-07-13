@@ -27,8 +27,6 @@ filterProduto: IProduto[] = [];
 
 baseApiUrl = environment.api
 
-searchTerm = "";
-
 form!: FormGroup;
 
 listCategoria: ICategoria[] = [];

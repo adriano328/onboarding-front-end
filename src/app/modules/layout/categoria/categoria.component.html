@@ -5,14 +5,14 @@
            <div class="grid">
             <div class="col-11">
                 <label for="">Nome</label><br>
-                <input type="text" formControlName="nome" pInputText/>
+                <input type="text" formControlName="nome" name="nome" pInputText/>
             </div>
             <div class="col-1">
                 <label for="">Situação</label>
                 <p-dropdown [options]="situacoes" [(ngModel)]="selectedtipo" [ngModelOptions]="{standalone: true}"  optionLabel="situacao"></p-dropdown>
             </div>
         <div class="btn-categoria">
-            <p-button ><i class="pi pi-search"></i><p class="text">Pesquisar</p></p-button>
+            <p-button (click)="findByNome()"><i class="pi pi-search"></i><p class="text">Pesquisar</p></p-button>
             <p-button class="btn" type="submit" (click)="resetForm();" style=><i class="pi pi-refresh"></i><p class="text">Limpar</p></p-button>
         </div>
            </div>

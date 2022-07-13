@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
@@ -47,6 +47,13 @@ export class CategoriaService {
         return this.http.put<ICategoria>(`${this.URL}`, categoria).pipe(
             map(retorno => retorno)
         )
+    }
+
+    buscarPorNome(nome: string){
+        return this.http.get<IProduto[]>(`${this.URL}/listar-por-nome`,
+        {params: new HttpParams().set('nome', nome || '')}).pipe(
+            map(retorno => retorno)
+        );
     }
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { lastValueFrom } from 'rxjs';
 import { ICliente } from 'src/app/interface/ICliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 
@@ -53,8 +54,9 @@ export class ClienteComponent implements OnInit {
 
   resetForm(){
     this.form1.reset();
+    this.carregarClientes();
   }
-    
+
   excluir(id: number): void{
     if(this.clienteService.excuir(id).subscribe()){
       this.carregarClientes();
